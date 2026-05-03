@@ -9,7 +9,7 @@ import java.util.Map;
 public class BeginnerEmoteClueAreas {
     public static final Map<String, DigArea> AREAS = new ImmutableMap.Builder<String, DigArea>()
             .put("Blow a raspberry at Aris in her tent. Equip a gold ring and a gold necklace.",
-                    new DigArea(new WorldPoint(3203, 3424, 0), 3))
+                    new DigArea(new WorldPoint(3203, 3424, 0), 5))
             .put("Bow to Brugsen Bursen at the Grand Exchange.",
                     new DigArea(new WorldPoint(3164, 3477, 0), 5))
             .put("Cheer at Iffie Nitter. Equip a chef hat and a red cape.",
