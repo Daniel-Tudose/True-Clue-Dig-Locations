@@ -39,8 +39,7 @@ tasks.register('run', JavaExec) {
 	classpath = sourceSets.test.runtimeClasspath
 	mainClass = pluginMainClass
 	jvmArgs "-ea"
-	jvmArgs "-Duser.home=/home/Max/.var/app/com.adamcake.Bolt/data/bolt-launcher"
-	args "--developer-mode"
+	args "--developer-mode", "--debug"
 }
 
 tasks.register('shadowJar', Jar) {
