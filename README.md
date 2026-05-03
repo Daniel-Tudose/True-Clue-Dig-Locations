@@ -66,12 +66,19 @@ Most areas are square:
 - Coordinate clues: *More data needed*
 
 ### Adding Map Clue Data
-
-*Future Feature*
+- [ ] [Beginner Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/1#issue-4372315461)
+- [ ] Easy Map Clue Steps Thread - Coming soon
+- [ ] Medium Map Clue Steps Thread - Coming soon
+- [ ] Hard Map Clue Steps Thread - Coming soon
+- [ ] Elite Map Clue Steps Thread - Coming soon
+- [ ] Master Map Clue Steps Thread - Coming soon
 
 ### Adding Emote Clue Data
-
-*Future Feature*
+- [ ] [Beginner Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/3#issue-4372430299)
+- [ ] Easy Emote Clue Steps Thread - Coming soon
+- [ ] Medium Emote Clue Steps Thread - Coming soon
+- [ ] Hard Emote Clue Steps Thread - Coming soon
+- [ ] Elite Emote Clue Steps Thread - Coming soon
 
 ### Adding Coordinate Clue Data
 
