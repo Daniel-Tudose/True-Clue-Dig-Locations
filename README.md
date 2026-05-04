@@ -61,7 +61,7 @@ If running RuneLite in developer mode, the developer tools panel has a "Location
 ### Finding the Area Size
 Most areas are square:
 - Map clues: usually **3×3**
-- Emote clues: some are **3×3** or rectangles
+- Emote clues: some are **5×5** or rectangles
 - Hot/cold clues: always **9×9**
 - Coordinate clues: *More data needed*
 
