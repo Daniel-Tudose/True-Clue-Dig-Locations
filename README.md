@@ -19,12 +19,12 @@ A RuneLite plugin that highlights the **true dig/emote area** for clue scroll st
 
 | Tier | Map Clues | Emote Clues | Hot/Cold | Coordinate | Cryptic |
 |------|-----------|-------------|----------|----------|----------|
-| Beginner | ✅ Partial (verifying) | ✅ Partial (verifying) | ✅ | N/A | N/A |
+| Beginner | ✅ Verified | 🧪 Testing | ✅ Verified | N/A | N/A |
 | Easy | 🔲 Needs data | 🔲 Needs data | N/A | N/A | 🔲 Needs data |
 | Medium | 🔲 Needs data | 🔲 Needs data | N/A | 🔲 Needs data | N/A |
 | Hard | 🔲 Needs data | 🔲 Needs data | N/A | 🔲 Needs data | 🔲 Needs data |
 | Elite | 🔲 Needs data | 🔲 Needs data | N/A | 🔲 Needs data | 🔲 Needs data |
-| Master | 🔲 Needs data | 🔲 Needs data | ✅ (testing needed) | 🔲 Needs data | 🔲 Needs data |
+| Master | 🔲 Needs data | 🔲 Needs data | 🚧 In Progress | 🔲 Needs data | 🔲 Needs data |
 
 ---
 
@@ -61,17 +61,24 @@ If running RuneLite in developer mode, the developer tools panel has a "Location
 ### Finding the Area Size
 Most areas are square:
 - Map clues: usually **3×3**
-- Emote clues: some are **3×3** or rectangles
+- Emote clues: some are **5×5** or rectangles
 - Hot/cold clues: always **9×9**
 - Coordinate clues: *More data needed*
 
 ### Adding Map Clue Data
-
-*Future Feature*
+- [x] [Beginner Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/1#issue-4372315461)
+- [ ] Easy Map Clue Steps Thread - Coming soon
+- [ ] Medium Map Clue Steps Thread - Coming soon
+- [ ] Hard Map Clue Steps Thread - Coming soon
+- [ ] Elite Map Clue Steps Thread - Coming soon
+- [ ] Master Map Clue Steps Thread - Coming soon
 
 ### Adding Emote Clue Data
-
-*Future Feature*
+- [ ] [Beginner Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/3#issue-4372430299)
+- [ ] Easy Emote Clue Steps Thread - Coming soon
+- [ ] Medium Emote Clue Steps Thread - Coming soon
+- [ ] Hard Emote Clue Steps Thread - Coming soon
+- [ ] Elite Emote Clue Steps Thread - Coming soon
 
 ### Adding Coordinate Clue Data
 
