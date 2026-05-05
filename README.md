@@ -19,12 +19,12 @@ A RuneLite plugin that highlights the **true dig/emote area** for clue scroll st
 
 | Tier | Map Clues | Emote Clues | Hot/Cold | Coordinate | Cryptic |
 |------|-----------|-------------|----------|----------|----------|
-| Beginner | ✅ | ✅ Partial (verifying) | ✅ | N/A | N/A |
+| Beginner | ✅ Verified | 🧪 Testing | ✅ Verified | N/A | N/A |
 | Easy | 🔲 Needs data | 🔲 Needs data | N/A | N/A | 🔲 Needs data |
 | Medium | 🔲 Needs data | 🔲 Needs data | N/A | 🔲 Needs data | N/A |
 | Hard | 🔲 Needs data | 🔲 Needs data | N/A | 🔲 Needs data | 🔲 Needs data |
 | Elite | 🔲 Needs data | 🔲 Needs data | N/A | 🔲 Needs data | 🔲 Needs data |
-| Master | 🔲 Needs data | 🔲 Needs data | ✅ (testing needed) | 🔲 Needs data | 🔲 Needs data |
+| Master | 🔲 Needs data | 🔲 Needs data | 🚧 In Progress | 🔲 Needs data | 🔲 Needs data |
 
 ---
 
