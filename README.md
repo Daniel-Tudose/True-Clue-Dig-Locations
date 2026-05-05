@@ -66,7 +66,7 @@ Most areas are square:
 - Coordinate clues: *More data needed*
 
 ### Adding Map Clue Data
-- [ ] [Beginner Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/1#issue-4372315461)
+- [x] [Beginner Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/1#issue-4372315461)
 - [ ] Easy Map Clue Steps Thread - Coming soon
 - [ ] Medium Map Clue Steps Thread - Coming soon
 - [ ] Hard Map Clue Steps Thread - Coming soon
