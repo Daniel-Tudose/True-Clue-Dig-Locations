@@ -10,8 +10,7 @@ import net.runelite.client.config.Range;
 import java.awt.Color;
 
 @ConfigGroup("trueclue")
-public interface TrueClueAreasConfig extends Config
-{
+public interface TrueClueAreasConfig extends Config {
 	@ConfigSection(
 			name = "Map Clues",
 			description = "Settings for map clue step highlights",

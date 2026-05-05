@@ -70,10 +70,9 @@ public class TrueClueAreasPlugin extends Plugin {
 	}
 
 	@Subscribe
-	public void onWidgetLoaded(WidgetLoaded event)
-	{
+	public void onWidgetLoaded(WidgetLoaded event) {
 		log.debug("Widget loaded: groupId={}", event.getGroupId());
-		// Map clues
+
 		DigArea mapArea = BeginnerMapClueAreas.AREAS.get(event.getGroupId());
 		if (mapArea != null)
 		{
@@ -84,12 +83,9 @@ public class TrueClueAreasPlugin extends Plugin {
 			return;
 		}
 
-		// Emote and other text-based clues — read the widget text
-		// Group ID 203 is the clue scroll interface (CLUE_SCROLL_GROUP_ID)
 		if (event.getGroupId() != 203) return;
 
-		clientThread.invokeLater(() ->
-		{
+		clientThread.invokeLater(() -> {
 			net.runelite.api.widgets.Widget clueWidget = client.getWidget(203, 2);
 			if (clueWidget == null || clueWidget.getText() == null
 					|| clueWidget.getText().isEmpty()) return false;
@@ -101,8 +97,7 @@ public class TrueClueAreasPlugin extends Plugin {
 			log.debug("Clue scroll text: '{}'", text);
 
 			DigArea emoteArea = BeginnerEmoteClueAreas.AREAS.get(text);
-			if (emoteArea != null)
-			{
+			if (emoteArea != null) {
 				overlay.setDigArea(emoteArea, TrueClueAreasOverlay.ClueType.EMOTE);
 				overlay.setHotColdLocations(null);
 				ticksSinceAreaSet = 0;
@@ -117,40 +112,30 @@ public class TrueClueAreasPlugin extends Plugin {
 		if (widget == null) return;
 
 		String text = widget.getText();
-		if (text != null && !text.isEmpty())
-		{
+		if (text != null && !text.isEmpty()) {
 			log.debug("{}Widget id={} text='{}'",
 					"  ".repeat(depth),
 					widget.getId(),
 					text);
 		}
 
-		// Scan direct children
 		net.runelite.api.widgets.Widget[] children = widget.getChildren();
-		if (children != null)
-		{
-			for (net.runelite.api.widgets.Widget child : children)
-			{
+		if (children != null) {
+			for (net.runelite.api.widgets.Widget child : children) {
 				scanWidget(child, depth + 1);
 			}
 		}
 
-		// Scan dynamic children
 		net.runelite.api.widgets.Widget[] dynamicChildren = widget.getDynamicChildren();
-		if (dynamicChildren != null)
-		{
-			for (net.runelite.api.widgets.Widget child : dynamicChildren)
-			{
+		if (dynamicChildren != null) {
+			for (net.runelite.api.widgets.Widget child : dynamicChildren) {
 				scanWidget(child, depth + 1);
 			}
 		}
 
-		// Scan nested children
 		net.runelite.api.widgets.Widget[] nestedChildren = widget.getNestedChildren();
-		if (nestedChildren != null)
-		{
-			for (net.runelite.api.widgets.Widget child : nestedChildren)
-			{
+		if (nestedChildren != null) {
+			for (net.runelite.api.widgets.Widget child : nestedChildren) {
 				scanWidget(child, depth + 1);
 			}
 		}
@@ -158,8 +143,7 @@ public class TrueClueAreasPlugin extends Plugin {
 	@Subscribe
 	public void onGameTick(GameTick event) {
 		net.runelite.api.widgets.Widget clueWidget = client.getWidget(203, 2);
-		if (clueWidget != null && !clueWidget.getText().isEmpty())
-		{
+		if (clueWidget != null && !clueWidget.getText().isEmpty()) {
 			String text = clueWidget.getText()
 					.replaceAll("<[^>]*>", "")
 					.trim();

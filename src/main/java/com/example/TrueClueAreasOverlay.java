@@ -19,6 +19,7 @@ import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.Polygon;
 import java.util.Set;
+
 @Slf4j
 public class TrueClueAreasOverlay extends Overlay {
     private final Client client;
@@ -39,16 +40,13 @@ public class TrueClueAreasOverlay extends Overlay {
     }
 
     @Override
-    public Dimension render(Graphics2D graphics)
-    {
-        if (digArea != null && digAreaType != null)
-        {
+    public Dimension render(Graphics2D graphics) {
+        if (digArea != null && digAreaType != null) {
             boolean shouldShow = digAreaType == ClueType.MAP
                     ? config.showMapClues()
                     : config.showEmoteClues();
 
-            if (shouldShow)
-            {
+            if (shouldShow) {
                 Color color = digAreaType == ClueType.MAP
                         ? config.mapClueColor()
                         : config.emoteClueColor();
@@ -61,11 +59,9 @@ public class TrueClueAreasOverlay extends Overlay {
             }
         }
 
-        if (hotColdLocations != null && config.showHotColdClues())
-        {
+        if (hotColdLocations != null && config.showHotColdClues()) {
             Color color = config.hotColdColor();
-            for (HotColdLocation location : hotColdLocations)
-            {
+            for (HotColdLocation location : hotColdLocations) {
                 java.awt.Rectangle rect = location.getRect();
                 WorldPoint sw = new WorldPoint(
                         rect.x,
