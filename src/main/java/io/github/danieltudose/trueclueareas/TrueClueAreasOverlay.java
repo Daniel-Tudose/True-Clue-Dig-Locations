@@ -1,6 +1,6 @@
-package com.example;
+package io.github.danieltudose.trueclueareas;
 
-import com.example.data.DigArea;
+import io.github.danieltudose.trueclueareas.data.DigArea;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.Perspective;
@@ -20,7 +20,6 @@ import java.awt.Graphics2D;
 import java.awt.Polygon;
 import java.util.Set;
 
-@Slf4j
 public class TrueClueAreasOverlay extends Overlay {
     private final Client client;
     private final TrueClueAreasConfig config;

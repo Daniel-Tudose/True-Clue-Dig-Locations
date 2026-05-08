@@ -1,4 +1,4 @@
-package com.example.data;
+package io.github.danieltudose.trueclueareas.data;
 
 import net.runelite.api.coords.WorldPoint;
 

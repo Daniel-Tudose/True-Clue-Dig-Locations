@@ -1,4 +1,4 @@
-package com.example;
+package io.github.danieltudose.trueclueareas;
 
 import net.runelite.client.config.Alpha;
 import net.runelite.client.config.Config;
@@ -9,7 +9,7 @@ import net.runelite.client.config.Range;
 
 import java.awt.Color;
 
-@ConfigGroup("trueclue")
+@ConfigGroup("trueclueareas")
 public interface TrueClueAreasConfig extends Config {
 	@ConfigSection(
 			name = "Map Clues",

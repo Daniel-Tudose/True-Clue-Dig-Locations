@@ -1,16 +1,27 @@
-package com.example;
+package io.github.danieltudose.trueclueareas;
 
-import com.example.data.emote.BeginnerEmoteClueAreas;
-import com.example.data.map.BeginnerMapClueAreas;
-import com.example.data.DigArea;
+import io.github.danieltudose.trueclueareas.data.emote.BeginnerEmoteClueAreas;
+import io.github.danieltudose.trueclueareas.data.map.BeginnerMapClueAreas;
+import io.github.danieltudose.trueclueareas.data.map.EasyMapClueAreas;
+import io.github.danieltudose.trueclueareas.data.map.MediumMapClueAreas;
+import io.github.danieltudose.trueclueareas.data.map.HardMapClueAreas;
+import io.github.danieltudose.trueclueareas.data.map.EliteMapClueAreas;
+import io.github.danieltudose.trueclueareas.data.map.MasterMapClueAreas;
+import io.github.danieltudose.trueclueareas.data.emote.EasyEmoteClueAreas;
+import io.github.danieltudose.trueclueareas.data.emote.MediumEmoteClueAreas;
+import io.github.danieltudose.trueclueareas.data.emote.HardEmoteClueAreas;
+import io.github.danieltudose.trueclueareas.data.emote.EliteEmoteClueAreas;
+import io.github.danieltudose.trueclueareas.data.emote.MasterEmoteClueAreas;
+
+import java.util.*;
+
+import io.github.danieltudose.trueclueareas.data.DigArea;
 import com.google.inject.Provides;
 import lombok.extern.slf4j.Slf4j;
-import net.runelite.api.ChatMessageType;
-import net.runelite.api.Client;
+import net.runelite.api.*;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.ChatMessage;
 import net.runelite.api.events.WidgetLoaded;
-import net.runelite.api.widgets.Widget;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.plugins.Plugin;
@@ -22,8 +33,7 @@ import net.runelite.client.ui.overlay.OverlayManager;
 import net.runelite.api.events.GameTick;
 
 import javax.inject.Inject;
-import java.util.HashSet;
-import java.util.Set;
+
 
 @Slf4j
 @PluginDescriptor(
@@ -50,13 +60,35 @@ public class TrueClueAreasPlugin extends Plugin {
 	private int ticksSinceAreaSet = 0;
 	private static final int HINT_ARROW_CHECK_DELAY = 3;
 
+	private static final Map<Integer, DigArea> ALL_MAP_AREAS;
+	private static final Map<String, DigArea> ALL_EMOTE_AREAS;
+
+	static {
+		Map<Integer, DigArea> mapAreas = new HashMap<>();
+		mapAreas.putAll(BeginnerMapClueAreas.AREAS);
+		mapAreas.putAll(EasyMapClueAreas.AREAS);
+		mapAreas.putAll(MediumMapClueAreas.AREAS);
+		mapAreas.putAll(HardMapClueAreas.AREAS);
+		mapAreas.putAll(EliteMapClueAreas.AREAS);
+		mapAreas.putAll(MasterMapClueAreas.AREAS);
+		ALL_MAP_AREAS = Collections.unmodifiableMap(mapAreas);
+
+		Map<String, DigArea> emoteAreas = new HashMap<>();
+		emoteAreas.putAll(BeginnerEmoteClueAreas.AREAS);
+		emoteAreas.putAll(EasyEmoteClueAreas.AREAS);
+		emoteAreas.putAll(MediumEmoteClueAreas.AREAS);
+		emoteAreas.putAll(HardEmoteClueAreas.AREAS);
+		emoteAreas.putAll(EliteEmoteClueAreas.AREAS);
+		emoteAreas.putAll(MasterEmoteClueAreas.AREAS);
+		ALL_EMOTE_AREAS = Collections.unmodifiableMap(emoteAreas);
+	}
+
 	private void clearAll()	{
 		overlay.setDigArea(null);
 		overlay.setHotColdLocations(null);
 		hotColdSolver = null;
 		ticksSinceAreaSet = 0;
-		log.debug("Overlay cleared");
-	}
+		}
 
 	@Override
 	protected void startUp() throws Exception {
@@ -71,15 +103,12 @@ public class TrueClueAreasPlugin extends Plugin {
 
 	@Subscribe
 	public void onWidgetLoaded(WidgetLoaded event) {
-		log.debug("Widget loaded: groupId={}", event.getGroupId());
-
-		DigArea mapArea = BeginnerMapClueAreas.AREAS.get(event.getGroupId());
+		DigArea mapArea = ALL_MAP_AREAS.get(event.getGroupId());
 		if (mapArea != null)
 		{
 			overlay.setDigArea(mapArea, TrueClueAreasOverlay.ClueType.MAP);
 			overlay.setHotColdLocations(null);
 			ticksSinceAreaSet = 0;
-			log.debug("Map clue detected");
 			return;
 		}
 
@@ -94,61 +123,29 @@ public class TrueClueAreasPlugin extends Plugin {
 					.replaceAll("<[^>]*>", "")
 					.trim();
 
-			log.debug("Clue scroll text: '{}'", text);
-
-			DigArea emoteArea = BeginnerEmoteClueAreas.AREAS.get(text);
+			DigArea emoteArea = ALL_EMOTE_AREAS.get(text);
 			if (emoteArea != null) {
 				overlay.setDigArea(emoteArea, TrueClueAreasOverlay.ClueType.EMOTE);
 				overlay.setHotColdLocations(null);
 				ticksSinceAreaSet = 0;
-				log.debug("Emote clue detected: {}", text);
 			}
 
 			return true;
 		});
 	}
-	private void scanWidget(net.runelite.api.widgets.Widget widget, int depth)
-	{
-		if (widget == null) return;
 
-		String text = widget.getText();
-		if (text != null && !text.isEmpty()) {
-			log.debug("{}Widget id={} text='{}'",
-					"  ".repeat(depth),
-					widget.getId(),
-					text);
+	private boolean isMasterHotCold() {
+		ItemContainer inventory = client.getItemContainer(InventoryID.INVENTORY);
+		if (inventory == null) return false;
+		for (Item item : inventory.getItems()) {
+			if (item.getId() == ItemID.CLUE_SCROLL_MASTER) return true;
 		}
-
-		net.runelite.api.widgets.Widget[] children = widget.getChildren();
-		if (children != null) {
-			for (net.runelite.api.widgets.Widget child : children) {
-				scanWidget(child, depth + 1);
-			}
-		}
-
-		net.runelite.api.widgets.Widget[] dynamicChildren = widget.getDynamicChildren();
-		if (dynamicChildren != null) {
-			for (net.runelite.api.widgets.Widget child : dynamicChildren) {
-				scanWidget(child, depth + 1);
-			}
-		}
-
-		net.runelite.api.widgets.Widget[] nestedChildren = widget.getNestedChildren();
-		if (nestedChildren != null) {
-			for (net.runelite.api.widgets.Widget child : nestedChildren) {
-				scanWidget(child, depth + 1);
-			}
-		}
+		return false;
 	}
+
 	@Subscribe
 	public void onGameTick(GameTick event) {
-		net.runelite.api.widgets.Widget clueWidget = client.getWidget(203, 2);
-		if (clueWidget != null && !clueWidget.getText().isEmpty()) {
-			String text = clueWidget.getText()
-					.replaceAll("<[^>]*>", "")
-					.trim();
-			log.debug("Clue widget text: '{}'", text);
-		}		if (!overlay.hasActiveArea()) return;
+		if (!overlay.hasActiveArea()) return;
 
 		ticksSinceAreaSet++;
 		if (ticksSinceAreaSet < HINT_ARROW_CHECK_DELAY) return;
@@ -166,34 +163,27 @@ public class TrueClueAreasPlugin extends Plugin {
 
 		String message = event.getMessage().replaceAll("<[^>]*>", "").trim();
 
-		DigArea emoteArea = BeginnerEmoteClueAreas.AREAS.get(message);
-		if (emoteArea != null) {
-			overlay.setDigArea(emoteArea, TrueClueAreasOverlay.ClueType.EMOTE);
-			overlay.setHotColdLocations(null);
-			ticksSinceAreaSet = 0;
-			log.debug("Emote clue detected");
-			return;
-		}
-
+		boolean isMaster = isMasterHotCold();
 		HotColdTemperature temperature = HotColdTemperature.getFromTemperatureSet(
-				HotColdTemperature.BEGINNER_HOT_COLD_TEMPERATURES, message);
+				isMaster ? HotColdTemperature.MASTER_HOT_COLD_TEMPERATURES
+						: HotColdTemperature.BEGINNER_HOT_COLD_TEMPERATURES,
+				message);
 
 		if (temperature != null) {
 			if (hotColdSolver == null) {
-				Set<HotColdLocation> beginnerLocations = new HashSet<>();
+				Set<HotColdLocation> locations = new HashSet<>();
 				for (HotColdLocation loc : HotColdLocation.values()) {
-					if (loc.isBeginnerClue()) {
-						beginnerLocations.add(loc);
+					if (loc.isBeginnerClue() != isMaster) {
+						locations.add(loc);
 					}
 				}
-				hotColdSolver = new HotColdSolver(beginnerLocations);
+				hotColdSolver = new HotColdSolver(locations);
 			}
 
 			WorldPoint playerLocation = client.getLocalPlayer().getWorldLocation();
 			hotColdSolver.signal(playerLocation, temperature, null);
 
 			int remaining = hotColdSolver.getPossibleLocations().size();
-			log.debug("Hot/cold: {} — {} locations remain", temperature, remaining);
 
 			if (remaining <= config.hotColdThreshold() && remaining > 0) {
 				overlay.setHotColdLocations(hotColdSolver.getPossibleLocations());

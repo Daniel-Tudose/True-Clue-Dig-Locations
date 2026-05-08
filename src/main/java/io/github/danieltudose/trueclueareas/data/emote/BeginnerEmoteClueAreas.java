@@ -1,6 +1,6 @@
-package com.example.data.emote;
+package io.github.danieltudose.trueclueareas.data.emote;
 
-import com.example.data.DigArea;
+import io.github.danieltudose.trueclueareas.data.DigArea;
 import com.google.common.collect.ImmutableMap;
 import net.runelite.api.coords.WorldPoint;
 
@@ -15,7 +15,7 @@ public class BeginnerEmoteClueAreas {
             .put("Cheer at Iffie Nitter. Equip a chef hat and a red cape.",
                     new DigArea(new WorldPoint(3202, 3414, 0), new WorldPoint(3208,3419,0)))
             .put("Clap at Bob's Brilliant Axes. Equip a bronze axe and leather boots.",
-                    new DigArea(new WorldPoint(3231, 3203, 0), 3))
+                    new DigArea(new WorldPoint(3228, 3201, 0),new WorldPoint(3233, 3205, 0)))
             .put("Panic at Al Kharid mine.",
                     new DigArea(new WorldPoint(3285, 3271, 0), new WorldPoint(3314,3318,0)))
             .put("Spin at Flynn's Mace Shop.",

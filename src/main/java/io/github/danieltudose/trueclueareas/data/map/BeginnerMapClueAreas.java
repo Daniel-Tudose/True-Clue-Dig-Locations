@@ -1,13 +1,12 @@
-package com.example.data.map;
+package io.github.danieltudose.trueclueareas.data.map;
 
-import com.example.data.DigArea;
+import io.github.danieltudose.trueclueareas.data.DigArea;
 import com.google.common.collect.ImmutableMap;
 import net.runelite.api.coords.WorldPoint;
 
 import java.util.Map;
 
-public class BeginnerMapClueAreas
-{
+public class BeginnerMapClueAreas {
     // Int IDs instead of WidgetID (deprecated) from WidgetID source:
     private static final int CHAMPIONS_GUILD    = 346;
     private static final int VARROCK_EAST_MINE  = 347;
