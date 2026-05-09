@@ -1,9 +1,13 @@
 # True Tile Clue Areas
 
 A RuneLite plugin that highlights the **true dig/emote area** for clue scroll steps, instead of the single tile that the base clue scroll plugin highlights.
-
----
-
+## Preview
+### Map clue
+![Map clue area highlight](doc/map-compressed.gif)
+### Hot&Cold clue
+![Hot&Cold clue area highlight](doc/h&c-compressed.gif)
+### Emote clue
+![Emote clue area highlight](doc/emote-compressed.gif)
 ## Features
 
 - Highlights the true dig area for **map clue** steps
@@ -12,8 +16,6 @@ A RuneLite plugin that highlights the **true dig/emote area** for clue scroll st
 - Highlights the true dig area for **coordinate clue** steps - *Coming soon*
 - Highlights the true dig area for **cryptic clue** steps - *Coming soon*
 - Configurable — toggle each clue type on/off, change highlight colors
-
----
 
 ## Supported Clue Tiers
 
