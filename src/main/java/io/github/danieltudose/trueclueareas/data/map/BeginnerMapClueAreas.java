@@ -3,7 +3,7 @@ package io.github.danieltudose.trueclueareas.data.map;
 import io.github.danieltudose.trueclueareas.data.DigArea;
 import com.google.common.collect.ImmutableMap;
 import net.runelite.api.coords.WorldPoint;
-
+import net.runelite.api.gameval.ItemID;
 import java.util.Map;
 
 public class BeginnerMapClueAreas {

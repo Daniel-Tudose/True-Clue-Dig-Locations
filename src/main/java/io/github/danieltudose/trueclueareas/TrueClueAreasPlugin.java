@@ -21,6 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.*;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.ChatMessage;
+import net.runelite.api.events.ItemContainerChanged;
 import net.runelite.api.events.WidgetLoaded;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
@@ -30,7 +31,6 @@ import net.runelite.client.plugins.cluescrolls.clues.hotcold.HotColdLocation;
 import net.runelite.client.plugins.cluescrolls.clues.hotcold.HotColdSolver;
 import net.runelite.client.plugins.cluescrolls.clues.hotcold.HotColdTemperature;
 import net.runelite.client.ui.overlay.OverlayManager;
-import net.runelite.api.events.GameTick;
 
 import javax.inject.Inject;
 
@@ -57,8 +57,6 @@ public class TrueClueAreasPlugin extends Plugin {
 	private TrueClueAreasOverlay overlay;
 
 	private HotColdSolver hotColdSolver = null;
-	private int ticksSinceAreaSet = 0;
-	private static final int HINT_ARROW_CHECK_DELAY = 3;
 
 	private static final Map<Integer, DigArea> ALL_MAP_AREAS;
 	private static final Map<String, DigArea> ALL_EMOTE_AREAS;
@@ -87,7 +85,7 @@ public class TrueClueAreasPlugin extends Plugin {
 		overlay.setDigArea(null);
 		overlay.setHotColdLocations(null);
 		hotColdSolver = null;
-		ticksSinceAreaSet = 0;
+
 		}
 
 	@Override
@@ -102,17 +100,25 @@ public class TrueClueAreasPlugin extends Plugin {
 	}
 
 	@Subscribe
-	public void onWidgetLoaded(WidgetLoaded event) {
+	public void onWidgetLoaded(WidgetLoaded event)
+	{
+		// Map clues — detected by widget group ID (the map image interface)
 		DigArea mapArea = ALL_MAP_AREAS.get(event.getGroupId());
 		if (mapArea != null)
 		{
-			overlay.setDigArea(mapArea, TrueClueAreasOverlay.ClueType.MAP);
 			overlay.setHotColdLocations(null);
-			ticksSinceAreaSet = 0;
+			hotColdSolver = null;
+			overlay.setDigArea(mapArea, TrueClueAreasOverlay.ClueType.MAP);
 			return;
 		}
 
+		// Text clue interface (emote, cryptic, NPC steps etc.)
 		if (event.getGroupId() != 203) return;
+
+		// Always clear when a new text step loads
+		overlay.setDigArea(null);
+		overlay.setHotColdLocations(null);
+		hotColdSolver = null;
 
 		clientThread.invokeLater(() -> {
 			net.runelite.api.widgets.Widget clueWidget = client.getWidget(203, 2);
@@ -123,17 +129,17 @@ public class TrueClueAreasPlugin extends Plugin {
 					.replaceAll("<[^>]*>", "")
 					.trim();
 
+			// Only emote clues here — map clues have their own widget group
 			DigArea emoteArea = ALL_EMOTE_AREAS.get(text);
-			if (emoteArea != null) {
+			if (emoteArea != null)
+			{
 				overlay.setDigArea(emoteArea, TrueClueAreasOverlay.ClueType.EMOTE);
-				overlay.setHotColdLocations(null);
-				ticksSinceAreaSet = 0;
 			}
+			// If no match found, overlay stays cleared (NPC step, cryptic etc.)
 
 			return true;
 		});
 	}
-
 	private boolean isMasterHotCold() {
 		ItemContainer inventory = client.getItemContainer(InventoryID.INVENTORY);
 		if (inventory == null) return false;
@@ -144,15 +150,26 @@ public class TrueClueAreasPlugin extends Plugin {
 	}
 
 	@Subscribe
-	public void onGameTick(GameTick event) {
+	public void onItemContainerChanged(ItemContainerChanged event)
+	{
+		if (event.getContainerId() != InventoryID.INVENTORY.getId()) return;
 		if (!overlay.hasActiveArea()) return;
 
-		ticksSinceAreaSet++;
-		if (ticksSinceAreaSet < HINT_ARROW_CHECK_DELAY) return;
-
-		if (client.getHintArrowPoint() == null && client.getHintArrowNpc() == null) {
-			clearAll();
+		for (Item item : event.getItemContainer().getItems())
+		{
+			int id = item.getId();
+			if (id == ItemID.CLUE_SCROLL_BEGINNER
+					|| id == ItemID.CLUE_SCROLL_EASY
+					|| id == ItemID.CLUE_SCROLL_MEDIUM
+					|| id == ItemID.CLUE_SCROLL_HARD
+					|| id == ItemID.CLUE_SCROLL_ELITE
+					|| id == ItemID.CLUE_SCROLL_MASTER)
+			{
+				return; // still has clue
+			}
 		}
+
+		clearAll();
 	}
 
 	@Subscribe
@@ -188,7 +205,6 @@ public class TrueClueAreasPlugin extends Plugin {
 			if (remaining <= config.hotColdThreshold() && remaining > 0) {
 				overlay.setHotColdLocations(hotColdSolver.getPossibleLocations());
 				overlay.setDigArea(null);
-				ticksSinceAreaSet = 0;
 			}
 			else {
 				overlay.setHotColdLocations(null);

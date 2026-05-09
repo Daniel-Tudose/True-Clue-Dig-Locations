@@ -24,7 +24,7 @@ public class TrueClueAreasOverlay extends Overlay {
     private final Client client;
     private final TrueClueAreasConfig config;
 
-    public enum ClueType { MAP, EMOTE, HOT_COLD }
+    public enum ClueType {MAP, EMOTE, HOT_COLD}
 
     private DigArea digArea = null;
     private ClueType digAreaType = null;
@@ -80,8 +80,7 @@ public class TrueClueAreasOverlay extends Overlay {
 
     private void renderArea(Graphics2D graphics,
                             WorldPoint sw, WorldPoint ne,
-                            Color fillColor, Color borderColor)
-    {
+                            Color fillColor, Color borderColor) {
         LocalPoint swLocal = LocalPoint.fromWorld(client, sw);
         LocalPoint neLocal = LocalPoint.fromWorld(client, ne);
         if (swLocal == null || neLocal == null) return;
