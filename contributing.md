@@ -45,7 +45,7 @@ Most areas are square:
 - [ ] [Elite Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/7#issue-4407799473)
 
 ### Adding Emote Clue Data
-- [ ] [Beginner Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/3#issue-4372430299)
+- [x] [Beginner Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/3#issue-4372430299)
 - [ ] [Easy Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/8#issue-4407821433)
 - [ ] [Medium Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/9#issue-4407838694)
 - [ ] [Hard Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/10#issue-4407845807)
