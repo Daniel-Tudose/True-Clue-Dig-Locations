@@ -104,14 +104,16 @@ public class TrueClueAreasPlugin extends Plugin {
 	{
 		// Map clues — detected by widget group ID (the map image interface)
 		DigArea mapArea = ALL_MAP_AREAS.get(event.getGroupId());
-		if (mapArea != null) {
+		if (mapArea != null)
+		{
 			overlay.setHotColdLocations(null);
 			hotColdSolver = null;
 			overlay.setDigArea(mapArea, TrueClueAreasOverlay.ClueType.MAP);
 			return;
 		}
 
-		if (event.getGroupId() != 203) return; // Text clue interface (emote, cryptic, NPC steps etc.)
+		// Text clue interface (emote, cryptic, NPC steps etc.)
+		if (event.getGroupId() != 203) return;
 
 		// Always clear when a new text step loads
 		overlay.setDigArea(null);
@@ -129,9 +131,11 @@ public class TrueClueAreasPlugin extends Plugin {
 
 			// Only emote clues here — map clues have their own widget group
 			DigArea emoteArea = ALL_EMOTE_AREAS.get(text);
-			if (emoteArea != null) {
+			if (emoteArea != null)
+			{
 				overlay.setDigArea(emoteArea, TrueClueAreasOverlay.ClueType.EMOTE);
 			}
+			// If no match found, overlay stays cleared (NPC step, cryptic etc.)
 
 			return true;
 		});
