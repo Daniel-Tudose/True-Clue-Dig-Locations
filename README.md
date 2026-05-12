@@ -3,11 +3,11 @@
 A RuneLite plugin that highlights the **true dig/emote area** for clue scroll steps, instead of the single tile that the base clue scroll plugin highlights.
 ## Preview
 ### Map clue
-![Map clue area highlight](doc/map-compressed.gif)
+![Map clue area highlight](doc/map-compressed.webp)
 ### Hot&Cold clue
-![Hot&Cold clue area highlight](doc/h&c-compressed.gif)
+![Hot&Cold clue area highlight](doc/h&c-compressed.webp)
 ### Emote clue
-![Emote clue area highlight](doc/emote-compressed.gif)
+![Emote clue area highlight](doc/emote-compressed.webp)
 ## Features
 
 - Highlights the true dig area for **map clue** steps
