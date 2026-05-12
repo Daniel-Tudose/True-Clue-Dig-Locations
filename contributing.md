@@ -14,7 +14,7 @@ This plugin's data grows through community contributions. If you have a clue ste
 Install from the Plugin Hub. This lets you place a marker on the tile the player is standing on (plus some radiuses around it). The plugin also tell you the exact coordinates of that tile - this is what we are after!
 
 **Developer Tools (RuneLite developer mode)**
-If running RuneLite in developer mode, the developer tools panel has a "Location" / "Tile Location" button that shows the `WorldPoint` of your current tile.
+If running RuneLite in developer mode, the developer tools panel has a "Location" / "Tile Location" button that shows the `WorldPoint` of your current / mouse hovering tile.
 
 ### Finding the Correct WorldPoint
 
