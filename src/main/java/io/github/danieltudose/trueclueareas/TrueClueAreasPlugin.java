@@ -21,7 +21,6 @@ import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.*;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.ChatMessage;
-import net.runelite.api.events.ItemContainerChanged;
 import net.runelite.api.events.WidgetLoaded;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
@@ -32,32 +31,23 @@ import net.runelite.client.plugins.cluescrolls.clues.hotcold.HotColdSolver;
 import net.runelite.client.plugins.cluescrolls.clues.hotcold.HotColdTemperature;
 import net.runelite.client.ui.overlay.OverlayManager;
 
-import javax.inject.Inject;
 
+import javax.inject.Inject;
 
 @Slf4j
 @PluginDescriptor(
 		name = "True Clue Areas",
 		description = "Highlights the true dig/emote areas for clue scroll steps",
 		tags = {"clue", "scroll", "overlay", "dig", "area", "emote", "clues"})
+
 public class TrueClueAreasPlugin extends Plugin {
-	@Inject
-	private net.runelite.client.callback.ClientThread clientThread;
-
-	@Inject
-	private Client client;
-
-	@Inject
-	private TrueClueAreasConfig config;
-
-	@Inject
-	private OverlayManager overlayManager;
-
-	@Inject
-	private TrueClueAreasOverlay overlay;
+	@Inject	private net.runelite.client.callback.ClientThread clientThread;
+	@Inject	private Client client;
+	@Inject	private TrueClueAreasConfig config;
+	@Inject	private OverlayManager overlayManager;
+	@Inject	private TrueClueAreasOverlay overlay;
 
 	private HotColdSolver hotColdSolver = null;
-
 	private static final Map<Integer, DigArea> ALL_MAP_AREAS;
 	private static final Map<String, DigArea> ALL_EMOTE_AREAS;
 
@@ -85,8 +75,7 @@ public class TrueClueAreasPlugin extends Plugin {
 		overlay.setDigArea(null);
 		overlay.setHotColdLocations(null);
 		hotColdSolver = null;
-
-		}
+	}
 
 	@Override
 	protected void startUp() throws Exception {
@@ -102,44 +91,73 @@ public class TrueClueAreasPlugin extends Plugin {
 	@Subscribe
 	public void onWidgetLoaded(WidgetLoaded event)
 	{
-		// Map clues — detected by widget group ID (the map image interface)
-		DigArea mapArea = ALL_MAP_AREAS.get(event.getGroupId());
+		int groupId = event.getGroupId();
+		//log.debug("this widget groud id is {}", event.getGroupId());
+		//Handle Map Clue steps
+		DigArea mapArea = ALL_MAP_AREAS.get(groupId);
 		if (mapArea != null)
 		{
-			overlay.setHotColdLocations(null);
-			hotColdSolver = null;
+			clearAll();
 			overlay.setDigArea(mapArea, TrueClueAreasOverlay.ClueType.MAP);
 			return;
 		}
 
-		// Text clue interface (emote, cryptic, NPC steps etc.)
-		if (event.getGroupId() != 203) return;
+		// Handle other specific Widget Groups
+		switch (groupId)
+		{
+			case 203: // Standard Text Clue Interface
+				handleTextClue();
+				break;
+			case 231: // NPC Dialog (Uri)
+				handleUriDialog();
+				break;
+			case 193: // Sprite Dialog (Clue Step Finished)
+				handleClueFinished();
+				break;
+		}
+	}
 
-		// Always clear when a new text step loads
-		overlay.setDigArea(null);
-		overlay.setHotColdLocations(null);
-		hotColdSolver = null;
+	private void handleTextClue() {
+		// Clear state for new text step
+		clearAll();
 
 		clientThread.invokeLater(() -> {
 			net.runelite.api.widgets.Widget clueWidget = client.getWidget(203, 2);
-			if (clueWidget == null || clueWidget.getText() == null
-					|| clueWidget.getText().isEmpty()) return false;
 
-			String text = clueWidget.getText()
-					.replaceAll("<[^>]*>", "")
-					.trim();
+			if (clueWidget == null || clueWidget.getText() == null || clueWidget.getText().isEmpty()) {return;}
+			else {
+				//log.debug("this is a text widget proc. actual text is: {}", clueWidget.getText());
+			}
 
-			// Only emote clues here — map clues have their own widget group
+			String text = clueWidget.getText().replaceAll("<[^>]*>", "").trim();
+
 			DigArea emoteArea = ALL_EMOTE_AREAS.get(text);
-			if (emoteArea != null)
-			{
+			if (emoteArea != null) {
 				overlay.setDigArea(emoteArea, TrueClueAreasOverlay.ClueType.EMOTE);
 			}
-			// If no match found, overlay stays cleared (NPC step, cryptic etc.)
-
-			return true;
 		});
 	}
+
+	private void handleUriDialog() {
+		clientThread.invokeLater(() -> {
+			// Widget 231, 4 is the NPC Name in a dialog
+			net.runelite.api.widgets.Widget nameWidget = client.getWidget(231,4);
+			if (nameWidget != null && "Uri".equals(nameWidget.getText())) {
+				clearAll();
+			}
+		});
+	}
+
+	private void handleClueFinished() {
+		clientThread.invokeLater(() -> {
+			// Widget 193, 2 is the text in a Sprite Dialog
+			net.runelite.api.widgets.Widget textWidget = client.getWidget(193, 2);
+			if (textWidget != null && (textWidget.getText().contains("casket") || textWidget.getText().contains("new clue" ))) {
+				clearAll();
+			}
+		});
+	}
+
 	private boolean isMasterHotCold() {
 		ItemContainer inventory = client.getItemContainer(InventoryID.INVENTORY);
 		if (inventory == null) return false;
@@ -147,29 +165,6 @@ public class TrueClueAreasPlugin extends Plugin {
 			if (item.getId() == ItemID.CLUE_SCROLL_MASTER) return true;
 		}
 		return false;
-	}
-
-	@Subscribe
-	public void onItemContainerChanged(ItemContainerChanged event)
-	{
-		if (event.getContainerId() != InventoryID.INVENTORY.getId()) return;
-		if (!overlay.hasActiveArea()) return;
-
-		for (Item item : event.getItemContainer().getItems())
-		{
-			int id = item.getId();
-			if (id == ItemID.CLUE_SCROLL_BEGINNER
-					|| id == ItemID.CLUE_SCROLL_EASY
-					|| id == ItemID.CLUE_SCROLL_MEDIUM
-					|| id == ItemID.CLUE_SCROLL_HARD
-					|| id == ItemID.CLUE_SCROLL_ELITE
-					|| id == ItemID.CLUE_SCROLL_MASTER)
-			{
-				return; // still has clue
-			}
-		}
-
-		clearAll();
 	}
 
 	@Subscribe

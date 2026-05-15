@@ -1,7 +1,6 @@
 package io.github.danieltudose.trueclueareas;
 
 import io.github.danieltudose.trueclueareas.data.DigArea;
-import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.Perspective;
 import net.runelite.api.coords.LocalPoint;
