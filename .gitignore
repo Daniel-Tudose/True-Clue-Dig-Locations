@@ -4,7 +4,9 @@ build
 .project
 .settings/
 .classpath
+gradle.properties
 nbactions.xml
 nb-configuration.xml
 nbproject/out/
 out/
+src/documentation.txt
