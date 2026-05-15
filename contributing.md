@@ -2,6 +2,9 @@
 
 This plugin's data grows through community contributions. If you have a clue step that isn't covered yet, here's how to add data:
 
+> [!Note]
+> If you prefer to contribute, and do not want to use git directly, you can find me in Discord (ID:288390373414404097) or send me an email daniel.tudose09@yahoo.com.</details>
+
 ### What You Need
 
 - The clue scroll step you want to add
@@ -20,17 +23,10 @@ If running RuneLite in developer mode, the developer tools panel has a "Location
    Click <img width="122" height="67" alt="image" src="https://github.com/user-attachments/assets/00b51b20-d987-4192-a98a-9e844420c4ff" /><br>
    Then click <img width="120" height="89" alt="image" src="https://github.com/user-attachments/assets/23076f66-647d-4aa5-bf4d-4ae8265129b5" /><br>
    Then look for this window and note your curent character's position <img width="134" height="237" alt="image" src="https://github.com/user-attachments/assets/4d8fa3d4-7ac4-4571-91fa-a36c1f45a1f3" />(3353, 3281, 0 - in this case)<br>
-   
    OR<br>
-   
    After you click <img width="122" height="67" alt="image" src="https://github.com/user-attachments/assets/00b51b20-d987-4192-a98a-9e844420c4ff" /><br>
    click on <img width="149" height="96" alt="image" src="https://github.com/user-attachments/assets/42c58faf-97a5-43d7-afc4-bd96d464be35" /> instead<br>
    And then move your mouse to the target tile you want the coordinates of <img width="197" height="149" alt="image" src="https://github.com/user-attachments/assets/4d41403f-419b-4313-9a14-ddff1f5e0d1c" />
-
-
-
-
-
 </details>
 
 ### Finding the Correct WorldPoint
