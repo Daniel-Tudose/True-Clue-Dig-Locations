@@ -10,11 +10,28 @@ This plugin's data grows through community contributions. If you have a clue ste
 
 ### Tools for Finding Coordinates
 
-**Radius Markers plugin (Plugin Hub)**
+**[Radius Markers](https://runelite.net/plugin-hub/show/radius-markers) plugin (Plugin Hub)**
 Install from the Plugin Hub. This lets you place a marker on the tile the player is standing on (plus some radiuses around it). The plugin also tell you the exact coordinates of that tile - this is what we are after!
 
-**Developer Tools (RuneLite developer mode)**
+**[Developer Tools](https://github.com/runelite/runelite/wiki/Using-the-client-developer-tools) (RuneLite developer mode)**
 If running RuneLite in developer mode, the developer tools panel has a "Location" / "Tile Location" button that shows the `WorldPoint` of your current / mouse hovering tile.
+<details><summary>In-game instructions</summary>
+   After you enable debug mode,<br>
+   Click <img width="122" height="67" alt="image" src="https://github.com/user-attachments/assets/00b51b20-d987-4192-a98a-9e844420c4ff" /><br>
+   Then click <img width="120" height="89" alt="image" src="https://github.com/user-attachments/assets/23076f66-647d-4aa5-bf4d-4ae8265129b5" /><br>
+   Then look for this window and note your curent character's position <img width="134" height="237" alt="image" src="https://github.com/user-attachments/assets/4d8fa3d4-7ac4-4571-91fa-a36c1f45a1f3" />(3353, 3281, 0 - in this case)<br>
+   
+   OR<br>
+   
+   After you click <img width="122" height="67" alt="image" src="https://github.com/user-attachments/assets/00b51b20-d987-4192-a98a-9e844420c4ff" /><br>
+   click on <img width="149" height="96" alt="image" src="https://github.com/user-attachments/assets/42c58faf-97a5-43d7-afc4-bd96d464be35" /> instead<br>
+   And then move your mouse to the target tile you want the coordinates of <img width="197" height="149" alt="image" src="https://github.com/user-attachments/assets/4d41403f-419b-4313-9a14-ddff1f5e0d1c" />
+
+
+
+
+
+</details>
 
 ### Finding the Correct WorldPoint
 
