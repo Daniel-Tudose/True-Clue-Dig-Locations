@@ -1,6 +1,8 @@
 package io.github.danieltudose.trueclueareas;
 
 import io.github.danieltudose.trueclueareas.data.DigArea;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.Perspective;
 import net.runelite.api.coords.LocalPoint;
@@ -19,14 +21,17 @@ import java.awt.Graphics2D;
 import java.awt.Polygon;
 import java.util.Set;
 
+
+@Slf4j
 public class TrueClueAreasOverlay extends Overlay {
     private final Client client;
     private final TrueClueAreasConfig config;
 
-    public enum ClueType {MAP, EMOTE, HOT_COLD}
+    public enum ClueType {MAP, EMOTE}
 
     private DigArea digArea = null;
     private ClueType digAreaType = null;
+    @Setter
     private Set<HotColdLocation> hotColdLocations = null;
 
     @Inject
@@ -49,7 +54,7 @@ public class TrueClueAreasOverlay extends Overlay {
                         ? config.mapClueColor()
                         : config.emoteClueColor();
 
-                renderArea(graphics,
+                drawArea(graphics,
                         digArea.getSouthWestCorner(),
                         digArea.getNorthEastCorner(),
                         new Color(color.getRed(), color.getGreen(), color.getBlue(), 50),
@@ -69,12 +74,20 @@ public class TrueClueAreasOverlay extends Overlay {
                         rect.x + rect.width - 1,
                         rect.y + rect.height - 1,
                         location.getWorldPoint().getPlane());
-                renderArea(graphics, sw, ne,
+                drawArea(graphics, sw, ne,
                         new Color(color.getRed(), color.getGreen(), color.getBlue(), 50),
                         new Color(color.getRed(), color.getGreen(), color.getBlue(), 200));
             }
         }
         return null;
+    }
+
+    private void drawArea(Graphics2D graphics, WorldPoint sw, WorldPoint ne, Color fill, Color border) {
+        if (config.renderStyle() == TrueClueAreasConfig.RenderStyle.TILES) {
+            renderAreaAsTiles(graphics, sw, ne, fill, border);
+        } else {
+            renderArea(graphics, sw, ne, fill, border);
+        }
     }
 
     private void renderArea(Graphics2D graphics,
@@ -119,16 +132,30 @@ public class TrueClueAreasOverlay extends Overlay {
         this.digAreaType = type;
     }
 
-    public void setDigArea(DigArea area) {
-        this.digArea = area;
+    public void clearDigArea() {
+        this.digArea = null;
         this.digAreaType = null;
     }
 
-    public void setHotColdLocations(Set<HotColdLocation> locations) {
-        this.hotColdLocations = locations;
-    }
+    private void renderAreaAsTiles(Graphics2D graphics,
+                                   WorldPoint sw, WorldPoint ne,
+                                   Color fillColor, Color borderColor) {
+        int plane = sw.getPlane();
+        graphics.setStroke(new BasicStroke(1));
 
-    public boolean hasActiveArea() {
-        return digArea != null || hotColdLocations != null;
+        for (int x = sw.getX(); x <= ne.getX(); x++) {
+            for (int y = sw.getY(); y <= ne.getY(); y++) {
+                LocalPoint lp = LocalPoint.fromWorld(client, new WorldPoint(x, y, plane));
+                if (lp == null) continue;
+
+                Polygon poly = Perspective.getCanvasTilePoly(client, lp);
+                if (poly == null) continue;
+
+                graphics.setColor(fillColor);
+                graphics.fill(poly);
+                graphics.setColor(borderColor);
+                graphics.draw(poly);
+            }
+        }
     }
 }

@@ -11,6 +11,32 @@ import java.awt.Color;
 
 @ConfigGroup("trueclueareas")
 public interface TrueClueAreasConfig extends Config {
+	enum RenderStyle {
+		AREA("Single area"),
+		TILES("Individual tiles");
+
+
+		private final String name;
+		RenderStyle(String name) { this.name = name; }
+
+		@Override
+		public String toString() { return name; }
+	}
+	@ConfigSection(
+			name = "General",
+			description = "General display settings",
+			position = -1)
+	String generalSection = "general";
+
+	@ConfigItem(
+			keyName = "renderStyle",
+			name = "Render style",
+			description = "How to draw the highlighted area. 'Tiles' follows terrain height. 'Area' draws a flat rectangle.",
+			section = generalSection,
+			position = 0)
+	default RenderStyle renderStyle() {
+		return RenderStyle.TILES;
+	}
 	@ConfigSection(
 			name = "Map Clues",
 			description = "Settings for map clue step highlights",
