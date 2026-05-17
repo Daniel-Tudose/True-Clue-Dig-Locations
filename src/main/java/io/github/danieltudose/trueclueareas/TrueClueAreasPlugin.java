@@ -191,8 +191,7 @@ public class TrueClueAreasPlugin extends Plugin {
 
 	@Subscribe
 	public void onGameStateChanged(net.runelite.api.events.GameStateChanged event) {
-		if (event.getGameState() == GameState.LOGIN_SCREEN ||
-				event.getGameState() == GameState.LOADING) {
+		if (event.getGameState() == GameState.LOGIN_SCREEN) {
 			clearAll();
 		}
 	}
