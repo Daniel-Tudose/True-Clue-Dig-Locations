@@ -3,27 +3,21 @@ package io.github.danieltudose.trueclueareas.data.map;
 import io.github.danieltudose.trueclueareas.data.DigArea;
 import com.google.common.collect.ImmutableMap;
 import net.runelite.api.coords.WorldPoint;
+import net.runelite.api.gameval.InterfaceID;
 
 import java.util.Map;
 
 public class BeginnerMapClueAreas {
-    // Int IDs instead of WidgetID (deprecated) from WidgetID source:
-    private static final int CHAMPIONS_GUILD    = 346;
-    private static final int VARROCK_EAST_MINE  = 347;
-    private static final int DRAYNOR            = 348;
-    private static final int NORTH_OF_FALADOR   = 351;
-    private static final int WIZARDS_TOWER      = 356;
-
     public static final Map<Integer, DigArea> AREAS = new ImmutableMap.Builder<Integer, DigArea>()
-            .put(CHAMPIONS_GUILD,
+            .put(InterfaceID.TRAIL_MAP01, // 346 = champion's guild
                     new DigArea(new WorldPoint(3167, 3360, 0), 3))
-            .put(VARROCK_EAST_MINE,
+            .put(InterfaceID.TRAIL_MAP02, // 347 = varrock east mine
                     new DigArea(new WorldPoint(3290, 3373, 0), 3))
-            .put(DRAYNOR,
+            .put(InterfaceID.TRAIL_MAP03, // 348 = south of draynor bank
                     new DigArea(new WorldPoint(3092, 3226, 0), 3))
-            .put(NORTH_OF_FALADOR,
+            .put(InterfaceID.TRAIL_MAP06, // 351 = standing stones north of falador
                     new DigArea(new WorldPoint(3043, 3399, 0), 3))
-            .put(WIZARDS_TOWER,
+            .put(InterfaceID.TRAIL_MAP11, // 356 = south of wizard's tower
                     new DigArea(new WorldPoint(3109, 3153, 0), 3))
             .build();
 }

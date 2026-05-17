@@ -8,20 +8,14 @@ import net.runelite.api.gameval.ItemID;
 import java.util.Map;
 
 public class EasyMapClueAreas {
-    private static final int CHAMPIONS_GUILD = ItemID.TRAIL_CLUE_EASY_MAP001;
-    private static final int VARROCK_EAST_MINE = ItemID.TRAIL_CLUE_EASY_MAP002;
-    private static final int NORTH_OF_FALADOR = ItemID.TRAIL_CLUE_EASY_MAP003;
-    private static final int WIZARDS_TOWER = ItemID.TRAIL_CLUE_EASY_MAP005;
-
-
     public static final Map<Integer, DigArea> AREAS = new ImmutableMap.Builder<Integer, DigArea>()
-            .put(CHAMPIONS_GUILD,
+            .put(ItemID.TRAIL_CLUE_EASY_MAP001, // 2713 = champion's guild
                     new DigArea(new WorldPoint(3167, 3360, 0), 3))
-            .put(VARROCK_EAST_MINE,
+            .put(ItemID.TRAIL_CLUE_EASY_MAP002, // 2716 = south-east mine of varrock
                     new DigArea(new WorldPoint(3290, 3373, 0), 3))
-            .put(NORTH_OF_FALADOR,
+            .put(ItemID.TRAIL_CLUE_EASY_MAP003, // 2719 = standing stones north of falador
                     new DigArea(new WorldPoint(3043, 3399, 0), 3))
-            .put(WIZARDS_TOWER,
+            .put(ItemID.TRAIL_CLUE_EASY_MAP005, // 3518 = south of wizard's tower
                     new DigArea(new WorldPoint(3109, 3153, 0), 3))
             .build();
 }
