@@ -1,7 +1,9 @@
 package io.github.danieltudose.trueclueareas.data;
 
+import lombok.Getter;
 import net.runelite.api.coords.WorldPoint;
 
+@Getter
 public class DigArea {
     private final WorldPoint southWestCorner;
     private final WorldPoint northEastCorner;
@@ -28,6 +30,4 @@ public class DigArea {
                 center.getPlane());
     }
 
-    public WorldPoint getSouthWestCorner() { return southWestCorner; }
-    public WorldPoint getNorthEastCorner() { return northEastCorner; }
 }
