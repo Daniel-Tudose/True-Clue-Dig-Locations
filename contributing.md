@@ -40,7 +40,7 @@ If running RuneLite in developer mode, the developer tools panel has a "Location
    2. If you are checking and Emote step, unless you click Uri to complete the step, you can hop worlds and check (step 5 & 6) the other 3 borders ;)
 7. Continue with the rest of the clue and repeat 2-6 for any other steps you get.
 8. If you get the same step as before, choose another direction and do 2-7
-9. When you have the 4 borders of the area you can pinpoint the center of that area (in case the tile indicator is not centered) and the height / width of the area
+9. When you have the 4 borders of the area you can pinpoint the center of that area (in case the tile indicator is not centered and the area is a square) OR the SW and NE (or SE&NE) corners coordinates
 
 ### Finding the Area Size
 Most areas are square:
