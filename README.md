@@ -23,9 +23,9 @@ A RuneLite plugin that highlights the **true dig/emote area** for clue scroll st
 |------|-----------|-------------|----------|----------|----------|
 | Beginner | ✅ Verified | ✅ Verified | ✅ Verified | N/A | N/A |
 | Easy | 🔲 Needs data | 🔲 Needs data | N/A | N/A | 🔲 Needs data |
-| Medium | 🔲 Needs data | 🔲 Needs data | N/A | 🔲 Needs data | N/A |
+| Medium | 🔲 Needs data | 🚧 In Progress | N/A | 🔲 Needs data | N/A |
 | Hard | 🔲 Needs data | 🔲 Needs data | N/A | 🔲 Needs data | 🔲 Needs data |
-| Elite | 🔲 Needs data | 🔲 Needs data | N/A | 🔲 Needs data | 🔲 Needs data |
-| Master | 🔲 Needs data | 🔲 Needs data | 🚧 In Progress | 🔲 Needs data | 🔲 Needs data |
+| Elite | 🚧 In Progress | 🔲 Needs data | N/A | 🔲 Needs data | 🔲 Needs data |
+| Master | 🔲 Needs data | 🚧 In Progress | 🚧 In Progress | 🔲 Needs data | 🔲 Needs data |
 
 #### [Instructions on how to contribute data!](contributing.md)
