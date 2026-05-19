@@ -12,8 +12,9 @@ import java.awt.Color;
 @ConfigGroup("trueclueareas")
 public interface TrueClueAreasConfig extends Config {
 	enum RenderStyle {
-		AREA("Single area"),
-		TILES("Individual tiles");
+		TILES("Individual tiles"),
+		AREA("Single area");
+
 
 
 		private final String name;
