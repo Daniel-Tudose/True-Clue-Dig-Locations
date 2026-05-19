@@ -29,3 +29,14 @@ A RuneLite plugin that highlights the **true dig/emote area** for clue scroll st
 | Master | 🔲 Needs data | 🚧 In Progress | 🚧 In Progress | 🔲 Needs data | 🔲 Needs data |
 
 #### [Instructions on how to contribute data!](contributing.md)
+
+## Changelog
+
+### 1.1.0
+- Added individual tile rendering option in config (the new option ```Individual Tiles``` is selected by default)
+
+### 1.0.1
+- Fixed overlay persisting after clue step completion
+
+### 1.0.0
+- Initial release
