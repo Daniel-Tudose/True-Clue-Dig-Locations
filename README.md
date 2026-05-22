@@ -27,9 +27,9 @@ A RuneLite plugin that highlights the **true dig/emote area** for clue scroll st
 | Hard | 🔲 Needs data | 🔲 Needs data | N/A | 🔲 Needs data | 🔲 Needs data |
 | Elite | 🚧 In Progress | 🔲 Needs data | N/A | 🔲 Needs data | 🔲 Needs data |
 | Master | 🔲 Needs data | 🚧 In Progress | 🚧 In Progress | 🔲 Needs data | 🔲 Needs data |
-
-#### [Instructions on how to contribute data!](contributing.md)
-
+___
+### [Contribute to the plugin here!](contributing.md)
+___
 ## Changelog
 
 ### 1.1.0
