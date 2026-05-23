@@ -32,11 +32,12 @@ ___
 ___
 ## Changelog
 
-### 1.1.0
+#### 1.1.0
 - Added individual tile rendering option in config (the new option ```Individual Tiles``` is selected by default)
+- Added support for 5 new clue steps: 2 Master Emote steps, 2 Medium Emote steps and 1 Elite Map step
 
-### 1.0.1
+#### 1.0.1
 - Fixed overlay persisting after clue step completion
 
-### 1.0.0
+#### 1.0.0
 - Initial release
