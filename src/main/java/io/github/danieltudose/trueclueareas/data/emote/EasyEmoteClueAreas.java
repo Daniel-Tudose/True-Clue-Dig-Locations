@@ -50,7 +50,5 @@ public class EasyEmoteClueAreas {
                     new DigArea(new WorldPoint(3202, 3167, 0), new WorldPoint(3205, 3170, 0)))
             .put("Bow outside the entrance to the Legends' Guild. Equip iron platelegs, an emerald amulet and an oak longbow.",
                     new DigArea(new WorldPoint(2725, 3343, 0), new WorldPoint(2732, 3349, 0)))
-            .put("Bow outside the entrance to the Legends' Guild. Equip iron platelegs, an emerald amulet and an oak longbow.",
-                    new DigArea(new WorldPoint(2725, 3343, 0), new WorldPoint(2732, 3349, 0)))
             .build();
 }
