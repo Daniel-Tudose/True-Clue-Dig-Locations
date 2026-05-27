@@ -3,7 +3,7 @@
 This plugin's data grows through community contributions. If you have a clue step that isn't covered yet, here's how to add data:
 
 > [!Note]
-> If you prefer to contribute, and do not want to use git directly, you can find me in Discord (ID:288390373414404097) or send me an email daniel.tudose09@yahoo.com.</details>
+> If you prefer to contribute, and do not want to use git directly, you can find me in Discord (ID:288390373414404097), reddit (/user/MaXaRaYkIn/) or send me an email daniel.tudose09@yahoo.com.</details>
 
 ### What You Need
 
