@@ -32,6 +32,10 @@ ___
 ___
 ## Changelog
 
+#### 1.2.0
+- Reworked the plugin's logic to use RuneLite's build in Clue Scroll Plugin for H&C, Map and Cryptic clues
+- Added support for an additional 21 Easy Emote steps and 3 Master Emote steps
+
 #### 1.1.0
 - Added individual tile rendering option in config (the new option ```Individual Tiles``` is selected by default)
 - Added support for 5 new clue steps: 2 Master Emote steps, 2 Medium Emote steps and 1 Elite Map step
