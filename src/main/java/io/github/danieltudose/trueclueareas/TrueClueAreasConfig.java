@@ -56,6 +56,33 @@ public interface TrueClueAreasConfig extends Config {
 			position = 2)
 	String hotColdSection = "hotColdClues";
 
+	@ConfigSection(
+			name = "Coordinate Clues",
+			description = "Settings for coordinate clue step highlights",
+			position = 3)
+	String coordinateSection = "coordinateClues";
+
+	@ConfigItem(
+			keyName = "showCoordinateClues",
+			name = "Show coordinate clue areas",
+			description = "Highlight the dig area for coordinate clue steps",
+			section = coordinateSection,
+			position = 0)
+	default boolean showCoordinateClues() {
+		return true;
+	}
+
+	@Alpha
+	@ConfigItem(
+			keyName = "coordinateClueColor",
+			name = "Highlight color",
+			description = "Color of the coordinate clue dig area highlight",
+			section = coordinateSection,
+			position = 1)
+	default Color coordinateClueColor() {
+		return new Color(255, 165, 0, 50); // orange, semi-transparent
+	}
+
 	@ConfigItem(
 			keyName = "showMapClues",
 			name = "Show map clue areas",
