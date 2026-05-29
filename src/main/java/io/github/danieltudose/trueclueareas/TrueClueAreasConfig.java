@@ -99,7 +99,7 @@ public interface TrueClueAreasConfig extends Config {
 			section = mapSection,
 			position = 1)
 	default Color mapClueColor() {
-		return new Color(212, 255, 0, 50); // orange, semi-transparent
+		return new Color(212, 255, 0, 50);
 	}
 
 	@ConfigItem(
@@ -120,7 +120,7 @@ public interface TrueClueAreasConfig extends Config {
 			section = emoteSection,
 			position = 1)
 	default Color emoteClueColor() {
-		return new Color(255, 165, 0, 50); // orange, semi-transparent
+		return new Color(255, 165, 0, 50);
 	}
 
 	@ConfigItem(
@@ -141,7 +141,7 @@ public interface TrueClueAreasConfig extends Config {
 			section = hotColdSection,
 			position = 1)
 	default Color hotColdColor() {
-		return new Color(255, 69, 69, 50); // red, semi-transparent
+		return new Color(255, 69, 69, 50);
 	}
 
 	@Range(min = 1, max = 5)
