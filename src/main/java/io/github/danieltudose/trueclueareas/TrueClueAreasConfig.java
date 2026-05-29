@@ -15,8 +15,6 @@ public interface TrueClueAreasConfig extends Config {
 		TILES("Individual tiles"),
 		AREA("Single area");
 
-
-
 		private final String name;
 		RenderStyle(String name) { this.name = name; }
 
@@ -80,7 +78,7 @@ public interface TrueClueAreasConfig extends Config {
 			section = coordinateSection,
 			position = 1)
 	default Color coordinateClueColor() {
-		return new Color(255, 165, 0, 50); // orange, semi-transparent
+		return new Color(255, 107, 0, 50); // orange, semi-transparent
 	}
 
 	@ConfigItem(
@@ -101,7 +99,7 @@ public interface TrueClueAreasConfig extends Config {
 			section = mapSection,
 			position = 1)
 	default Color mapClueColor() {
-		return new Color(255, 165, 0, 50); // orange, semi-transparent
+		return new Color(212, 255, 0, 50); // orange, semi-transparent
 	}
 
 	@ConfigItem(
@@ -143,7 +141,7 @@ public interface TrueClueAreasConfig extends Config {
 			section = hotColdSection,
 			position = 1)
 	default Color hotColdColor() {
-		return new Color(255, 0, 0, 50); // red, semi-transparent
+		return new Color(255, 69, 69, 50); // red, semi-transparent
 	}
 
 	@Range(min = 1, max = 5)
