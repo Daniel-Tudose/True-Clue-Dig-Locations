@@ -98,14 +98,11 @@ public class TrueClueAreasPlugin extends Plugin {
 		ClueScrollPlugin cluePlugin = getClueScrollPlugin();
 		ClueScroll current = cluePlugin != null ? cluePlugin.getClue() : null;
 
-		// Only do work when the active clue step actually changes.
 		if (current != lastKnownClue) {
 			lastKnownClue = current;
 			onClueChanged(current, cluePlugin);
 		}
 
-		// H&C possible locations narrow as the player takes temperature readings,
-		// so this must update every tick regardless of whether the clue changed.
 		if (current instanceof HotColdClue) {
 			updateHotColdFromBasePlugin((HotColdClue) current, cluePlugin);
 		} else {
@@ -129,8 +126,7 @@ public class TrueClueAreasPlugin extends Plugin {
 
 		if (newClue instanceof CoordinateClue) {
 			CoordinateClue coordClue = (CoordinateClue) newClue;
-			// Elite coordinate clues are always a single tile, already highlighted
-			// by the base plugin. Skip them to avoid a redundant overlay.
+			// Skip Elite coordinate clues to avoid a redundant overlay since they are just 1 tile
 			if (coordClue.getEnemy() == ARMADYLEAN_OR_BANDOSIAN_GUARD
 					|| coordClue.getEnemy() == ARMADYLEAN_GUARD
 					|| coordClue.getEnemy() == BANDOSIAN_GUARD) {
@@ -141,8 +137,6 @@ public class TrueClueAreasPlugin extends Plugin {
 				overlay.setDigArea(new DigArea(loc, 2), TrueClueAreasOverlay.ClueType.COORDINATE);
 			}
 		}
-
-		// Emote clues and all other types are handled by onWidgetLoaded below.
 	}
 
 	private void updateHotColdFromBasePlugin(HotColdClue hotColdClue, ClueScrollPlugin cluePlugin) {
