@@ -27,7 +27,7 @@ public class TrueClueAreasOverlay extends Overlay {
     private final Client client;
     private final TrueClueAreasConfig config;
 
-    public enum ClueType {MAP, EMOTE}
+    public enum ClueType {MAP, EMOTE, COORDINATE}
 
     private DigArea digArea = null;
     private ClueType digAreaType = null;
@@ -45,15 +45,19 @@ public class TrueClueAreasOverlay extends Overlay {
     @Override
     public Dimension render(Graphics2D graphics) {
         if (digArea != null && digAreaType != null) {
-            boolean shouldShow = digAreaType == ClueType.MAP
-                    ? config.showMapClues()
-                    : config.showEmoteClues();
-
+            boolean shouldShow;
+            Color color;
+            if (digAreaType == ClueType.MAP) {
+                shouldShow = config.showMapClues();
+                color = config.mapClueColor();
+            } else if (digAreaType == ClueType.COORDINATE) {
+                shouldShow = config.showCoordinateClues();
+                color = config.coordinateClueColor();
+            } else {
+                shouldShow = config.showEmoteClues();
+                color = config.emoteClueColor();
+            }
             if (shouldShow) {
-                Color color = digAreaType == ClueType.MAP
-                        ? config.mapClueColor()
-                        : config.emoteClueColor();
-
                 drawArea(graphics,
                         digArea.getSouthWestCorner(),
                         digArea.getNorthEastCorner(),
