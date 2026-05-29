@@ -1,12 +1,6 @@
 package io.github.danieltudose.trueclueareas;
 
 import io.github.danieltudose.trueclueareas.data.emote.BeginnerEmoteClueAreas;
-import io.github.danieltudose.trueclueareas.data.map.BeginnerMapClueAreas;
-import io.github.danieltudose.trueclueareas.data.map.EasyMapClueAreas;
-import io.github.danieltudose.trueclueareas.data.map.MediumMapClueAreas;
-import io.github.danieltudose.trueclueareas.data.map.HardMapClueAreas;
-import io.github.danieltudose.trueclueareas.data.map.EliteMapClueAreas;
-import io.github.danieltudose.trueclueareas.data.map.MasterMapClueAreas;
 import io.github.danieltudose.trueclueareas.data.emote.EasyEmoteClueAreas;
 import io.github.danieltudose.trueclueareas.data.emote.MediumEmoteClueAreas;
 import io.github.danieltudose.trueclueareas.data.emote.HardEmoteClueAreas;
@@ -29,11 +23,15 @@ import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.plugins.PluginManager;
 import net.runelite.client.plugins.cluescrolls.ClueScrollPlugin;
 import net.runelite.client.plugins.cluescrolls.clues.ClueScroll;
+import net.runelite.client.plugins.cluescrolls.clues.CoordinateClue;
 import net.runelite.client.plugins.cluescrolls.clues.HotColdClue;
+import net.runelite.client.plugins.cluescrolls.clues.MapClue;
 import net.runelite.client.plugins.cluescrolls.clues.hotcold.HotColdLocation;
 import net.runelite.client.ui.overlay.OverlayManager;
 
 import javax.inject.Inject;
+
+import static net.runelite.client.plugins.cluescrolls.clues.Enemy.*;
 
 @Slf4j
 @PluginDescriptor(
@@ -49,19 +47,10 @@ public class TrueClueAreasPlugin extends Plugin {
 	@Inject private TrueClueAreasOverlay overlay;
 	@Inject private PluginManager pluginManager;
 
-	private static final Map<Integer, DigArea> ALL_MAP_AREAS;
 	private static final Map<String, DigArea> ALL_EMOTE_AREAS;
+	private ClueScroll lastKnownClue = null;
 
 	static {
-		Map<Integer, DigArea> mapAreas = new HashMap<>();
-		mapAreas.putAll(BeginnerMapClueAreas.AREAS);
-		mapAreas.putAll(EasyMapClueAreas.AREAS);
-		mapAreas.putAll(MediumMapClueAreas.AREAS);
-		mapAreas.putAll(HardMapClueAreas.AREAS);
-		mapAreas.putAll(EliteMapClueAreas.AREAS);
-		mapAreas.putAll(MasterMapClueAreas.AREAS);
-		ALL_MAP_AREAS = Collections.unmodifiableMap(mapAreas);
-
 		Map<String, DigArea> emoteAreas = new HashMap<>();
 		emoteAreas.putAll(BeginnerEmoteClueAreas.AREAS);
 		emoteAreas.putAll(EasyEmoteClueAreas.AREAS);
@@ -75,30 +64,23 @@ public class TrueClueAreasPlugin extends Plugin {
 	private void clearAll() {
 		overlay.clearDigArea();
 		overlay.setHotColdLocations(null);
+		lastKnownClue = null;
 	}
 
 	@Override
-	protected void startUp() throws Exception {
+	protected void startUp() {
 		overlayManager.add(overlay);
 	}
 
 	@Override
-	protected void shutDown() throws Exception {
+	protected void shutDown() {
 		overlayManager.remove(overlay);
 		clearAll();
 	}
 
 	@Subscribe
 	public void onWidgetLoaded(WidgetLoaded event) {
-		int groupId = event.getGroupId();
-		DigArea mapArea = ALL_MAP_AREAS.get(groupId);
-		if (mapArea != null) {
-			clearAll();
-			overlay.setDigArea(mapArea, TrueClueAreasOverlay.ClueType.MAP);
-			return;
-		}
-
-		switch (groupId) {
+		switch (event.getGroupId()) {
 			case 203: // Standard Text Clue Interface
 				handleTextClue();
 				break;
@@ -113,23 +95,57 @@ public class TrueClueAreasPlugin extends Plugin {
 
 	@Subscribe
 	public void onGameTick(GameTick event) {
-		updateHotColdFromBasePlugin();
+		ClueScrollPlugin cluePlugin = getClueScrollPlugin();
+		ClueScroll current = cluePlugin != null ? cluePlugin.getClue() : null;
+
+		// Only do work when the active clue step actually changes.
+		if (current != lastKnownClue) {
+			lastKnownClue = current;
+			onClueChanged(current, cluePlugin);
+		}
+
+		// H&C possible locations narrow as the player takes temperature readings,
+		// so this must update every tick regardless of whether the clue changed.
+		if (current instanceof HotColdClue) {
+			updateHotColdFromBasePlugin((HotColdClue) current, cluePlugin);
+		} else {
+			overlay.setHotColdLocations(null);
+		}
 	}
 
-	private void updateHotColdFromBasePlugin() {
-		ClueScrollPlugin cluePlugin = getClueScrollPlugin();
-		if (cluePlugin == null) {
-			overlay.setHotColdLocations(null);
+	private void onClueChanged(ClueScroll newClue, ClueScrollPlugin cluePlugin) {
+		if (newClue == null) {
+			clearAll();
 			return;
 		}
 
-		ClueScroll activeClue = cluePlugin.getClue();
-		if (!(activeClue instanceof HotColdClue)) {
-			overlay.setHotColdLocations(null);
+		if (newClue instanceof MapClue) {
+			WorldPoint loc = ((MapClue) newClue).getLocation(cluePlugin);
+			if (loc != null) {
+				overlay.setDigArea(new DigArea(loc, 2), TrueClueAreasOverlay.ClueType.MAP);
+			}
 			return;
 		}
 
-		HotColdClue hotColdClue = (HotColdClue) activeClue;
+		if (newClue instanceof CoordinateClue) {
+			CoordinateClue coordClue = (CoordinateClue) newClue;
+			// Elite coordinate clues are always a single tile, already highlighted
+			// by the base plugin. Skip them to avoid a redundant overlay.
+			if (coordClue.getEnemy() == ARMADYLEAN_OR_BANDOSIAN_GUARD
+					|| coordClue.getEnemy() == ARMADYLEAN_GUARD
+					|| coordClue.getEnemy() == BANDOSIAN_GUARD) {
+				return;
+			}
+			WorldPoint loc = coordClue.getLocation(cluePlugin);
+			if (loc != null) {
+				overlay.setDigArea(new DigArea(loc, 2), TrueClueAreasOverlay.ClueType.COORDINATE);
+			}
+		}
+
+		// Emote clues and all other types are handled by onWidgetLoaded below.
+	}
+
+	private void updateHotColdFromBasePlugin(HotColdClue hotColdClue, ClueScrollPlugin cluePlugin) {
 		WorldPoint[] locations = hotColdClue.getLocations(cluePlugin);
 
 		Set<HotColdLocation> matched = new HashSet<>();
