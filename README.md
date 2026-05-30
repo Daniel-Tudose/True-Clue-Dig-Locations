@@ -32,6 +32,8 @@ ___
 ___
 ## Changelog
 
+#### 1.2.1
+- Added support for an additional 2 Easy Emote steps, 18 Medium Emote steps, 3 Hard Emote steps, 5 Master Emote steps and modified one Master Emote step
 #### 1.2.0
 - Reworked the plugin's logic to use RuneLite's build in Clue Scroll Plugin for H&C, Map and Cryptic clues
 - Added support for an additional 21 Easy Emote steps and 3 Master Emote steps
