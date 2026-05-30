@@ -50,5 +50,9 @@ public class EasyEmoteClueAreas {
                     new DigArea(new WorldPoint(3202, 3167, 0), new WorldPoint(3205, 3170, 0)))
             .put("Bow outside the entrance to the Legends' Guild. Equip iron platelegs, an emerald amulet and an oak longbow.",
                     new DigArea(new WorldPoint(2725, 3343, 0), new WorldPoint(2732, 3349, 0)))
+            .put("Spin in the Varrock Castle courtyard. Equip a black axe, a coif and a ruby ring.",
+                    new DigArea(new WorldPoint(3208, 3459, 0), new WorldPoint(3217, 3464, 0)))
+            .put("Spin in Draynor Manor by the fountain. Equip an iron platebody, studded leather chaps and a bronze full helmet.",
+                    new DigArea(new WorldPoint(3085, 3332, 0), new WorldPoint(3090, 3337, 0)))
             .build();
 }
