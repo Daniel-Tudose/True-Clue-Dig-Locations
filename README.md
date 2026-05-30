@@ -21,12 +21,12 @@ A RuneLite plugin that highlights the **true dig/emote area** for clue scroll st
 
 | Tier | Map Clues | Emote Clues | Hot/Cold | Coordinate | Cryptic |
 |------|-----------|-------------|----------|----------|----------|
-| Beginner | ✅ Verified | ✅ Verified | ✅ Verified | N/A | N/A |
-| Easy | 🔲 Needs data | 🔲 Needs data | N/A | N/A | 🔲 Needs data |
-| Medium | 🔲 Needs data | 🚧 In Progress | N/A | 🔲 Needs data | N/A |
-| Hard | 🔲 Needs data | 🔲 Needs data | N/A | 🔲 Needs data | 🔲 Needs data |
-| Elite | 🚧 In Progress | 🔲 Needs data | N/A | 🔲 Needs data | 🔲 Needs data |
-| Master | N/A | 🚧 In Progress | 🚧 In Progress | 🔲 Needs data | 🔲 Needs data |
+| Beginner | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-100%25-green) | N/A | N/A |
+| Easy | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-23/33-orange) | N/A | N/A | 🚧 In Progress |
+| Medium | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-20/25-orange) | N/A | ![](https://img.shields.io/badge/Implemented-100%25-green) | N/A |
+| Hard | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-3/17-orange) | N/A | ![](https://img.shields.io/badge/Implemented-100%25-green) | 🚧 In Progress |
+| Elite | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-0/19-red) | N/A | ![](https://img.shields.io/badge/Implemented-100%25-green) | 🚧 In Progress |
+| Master | N/A | ![](https://img.shields.io/badge/Implemented-10/25-orange) | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-100%25-green) | 🚧 In Progress |
 ___
 ### [Contribute to the plugin here!](contributing.md)
 ___
