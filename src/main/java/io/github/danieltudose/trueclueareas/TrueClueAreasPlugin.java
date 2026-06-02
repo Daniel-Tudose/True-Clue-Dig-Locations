@@ -173,7 +173,11 @@ public class TrueClueAreasPlugin extends Plugin {
 			net.runelite.api.widgets.Widget clueWidget = client.getWidget(203, 2);
 			if (clueWidget == null || clueWidget.getText() == null || clueWidget.getText().isEmpty()) return;
 
-			String text = clueWidget.getText().replaceAll("<[^>]*>", "").trim();
+			String text = clueWidget.getText()
+					.replaceAll("(?i)<br\\s*/?>", " ")
+					.replaceAll("<[^>]*>", "")
+					.replaceAll("\\s+", " ")
+					.trim();
 			DigArea emoteArea = ALL_EMOTE_AREAS.get(text);
 			if (emoteArea != null) {
 				overlay.setDigArea(emoteArea, TrueClueAreasOverlay.ClueType.EMOTE);
