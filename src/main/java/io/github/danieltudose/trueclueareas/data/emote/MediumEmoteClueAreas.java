@@ -24,7 +24,7 @@ public class MediumEmoteClueAreas {
                     new DigArea(new WorldPoint(2609, 3088, 0), new WorldPoint(2613, 3097,0)))
             .put("Shrug in Catherby bank. Yawn before you talk to me. Equip a maple longbow, green d'hide chaps and an iron med helm.",
                     new DigArea(new WorldPoint(2806, 3438, 0), new WorldPoint(2812, 3441,0)))
-            .put("Yawn in the centre of the Arceuus Library. Nod your head before you talk to me. Equip blue dragonhide vambraces, adamant boots and an adamant dagger.",
+            .put("Yawn in the centre of the Arceuus Library.Nod your head before you talk to me.Equip blue dragonhide vambraces, adamant boots and an adamant dagger.",
                     new DigArea(new WorldPoint(1627, 3802, 0), new WorldPoint(1638, 3813,0)))
             .put("Spin on the bridge by the Barbarian Village. Salute before you talk to me. Equip purple gloves, a steel kiteshield and a mithril full helmet.",
                     new DigArea(new WorldPoint(3103, 3420, 0), new WorldPoint(3107, 3421,0)))
