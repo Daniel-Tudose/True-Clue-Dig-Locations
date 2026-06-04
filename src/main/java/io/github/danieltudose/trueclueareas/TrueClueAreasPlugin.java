@@ -12,7 +12,9 @@ import java.util.*;
 import io.github.danieltudose.trueclueareas.data.DigArea;
 import com.google.inject.Provides;
 import lombok.extern.slf4j.Slf4j;
-import net.runelite.api.*;
+import net.runelite.api.Client;
+import net.runelite.api.GameState;
+import net.runelite.api.gameval.*;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.GameTick;
 import net.runelite.api.events.WidgetLoaded;
@@ -22,10 +24,7 @@ import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
 import net.runelite.client.plugins.PluginManager;
 import net.runelite.client.plugins.cluescrolls.ClueScrollPlugin;
-import net.runelite.client.plugins.cluescrolls.clues.ClueScroll;
-import net.runelite.client.plugins.cluescrolls.clues.CoordinateClue;
-import net.runelite.client.plugins.cluescrolls.clues.HotColdClue;
-import net.runelite.client.plugins.cluescrolls.clues.MapClue;
+import net.runelite.client.plugins.cluescrolls.clues.*;
 import net.runelite.client.plugins.cluescrolls.clues.hotcold.HotColdLocation;
 import net.runelite.client.ui.overlay.OverlayManager;
 
@@ -50,6 +49,14 @@ public class TrueClueAreasPlugin extends Plugin {
 	private static final Map<String, DigArea> ALL_EMOTE_AREAS;
 	private ClueScroll lastKnownClue = null;
 
+	private static final Set<Integer> ELITE_MAP_CLUE_IDS = Set.of(
+			ItemID.TRAIL_ELITE_MAP_EXP1,
+			ItemID.TRAIL_ELITE_MAP_EXP2,
+			ItemID.TRAIL_ELITE_MAP_EXP3,
+			ItemID.TRAIL_ELITE_MAP_EXP4,
+			ItemID.TRAIL_ELITE_MAP_EXP5,
+			ItemID.TRAIL_ELITE_MAP_EXP6
+	);
 	static {
 		Map<String, DigArea> emoteAreas = new HashMap<>();
 		emoteAreas.putAll(BeginnerEmoteClueAreas.AREAS);
@@ -117,11 +124,23 @@ public class TrueClueAreasPlugin extends Plugin {
 		}
 
 		if (newClue instanceof MapClue) {
-			WorldPoint loc = ((MapClue) newClue).getLocation(cluePlugin);
+			MapClue mapClue = (MapClue) newClue;
+			if (ELITE_MAP_CLUE_IDS.contains(mapClue.getItemId())) return;
+			WorldPoint loc = mapClue.getLocation(cluePlugin);
 			if (loc != null) {
 				overlay.setDigArea(new DigArea(loc, 2), TrueClueAreasOverlay.ClueType.MAP);
 			}
 			return;
+		}
+
+		if (newClue instanceof CrypticClue) {
+			CrypticClue crypticClue = (CrypticClue) newClue;
+			if (crypticClue.isRequiresSpade()) {
+				WorldPoint loc = crypticClue.getLocation(cluePlugin);
+				if (loc != null) {
+					overlay.setDigArea(new DigArea(loc, 2), TrueClueAreasOverlay.ClueType.MAP);
+				}
+			}
 		}
 
 		if (newClue instanceof CoordinateClue) {
