@@ -57,6 +57,22 @@ public class TrueClueAreasPlugin extends Plugin {
 			ItemID.TRAIL_ELITE_MAP_EXP5,
 			ItemID.TRAIL_ELITE_MAP_EXP6
 	);
+
+	private static final Set<Integer> ELITE_CRYPTIC_CLUE_IDS = Set.of(
+			ItemID.TRAIL_ELITE_RIDDLE_EXP7,
+			ItemID.TRAIL_ELITE_RIDDLE_EXP11,
+			ItemID.TRAIL_ELITE_RIDDLE_EXP9,
+			ItemID.TRAIL_ELITE_RIDDLE_EXP34,
+			ItemID.TRAIL_ELITE_RIDDLE_EXP35,
+			ItemID.TRAIL_ELITE_RIDDLE_EXP3,
+			ItemID.TRAIL_ELITE_RIDDLE_EXP19,
+			ItemID.TRAIL_ELITE_RIDDLE_EXP4,
+			ItemID.TRAIL_ELITE_RIDDLE_EXP37,
+			ItemID.TRAIL_ELITE_RIDDLE_EXP38,
+			ItemID.TRAIL_ELITE_RIDDLE_EXP39,
+			ItemID.TRAIL_ELITE_RIDDLE_EXP2
+			);
+
 	static {
 		Map<String, DigArea> emoteAreas = new HashMap<>();
 		emoteAreas.putAll(BeginnerEmoteClueAreas.AREAS);
@@ -128,17 +144,19 @@ public class TrueClueAreasPlugin extends Plugin {
 			if (ELITE_MAP_CLUE_IDS.contains(mapClue.getItemId())) return;
 			WorldPoint loc = mapClue.getLocation(cluePlugin);
 			if (loc != null) {
-				overlay.setDigArea(new DigArea(loc, 2), TrueClueAreasOverlay.ClueType.MAP);
+				overlay.setDigArea(new DigArea(loc, 3), TrueClueAreasOverlay.ClueType.MAP);
 			}
 			return;
 		}
 
 		if (newClue instanceof CrypticClue) {
 			CrypticClue crypticClue = (CrypticClue) newClue;
+			if (crypticClue.getItemIds().stream().anyMatch(ELITE_CRYPTIC_CLUE_IDS::contains)) return;
 			if (crypticClue.isRequiresSpade()) {
 				WorldPoint loc = crypticClue.getLocation(cluePlugin);
 				if (loc != null) {
-					overlay.setDigArea(new DigArea(loc, 2), TrueClueAreasOverlay.ClueType.MAP);
+					boolean isMaster = crypticClue.getItemIds().contains(ItemID.TRAIL_CLUE_MASTER);
+					overlay.setDigArea(new DigArea(loc, isMaster ? 7 : 3), TrueClueAreasOverlay.ClueType.MAP);
 				}
 			}
 		}
@@ -153,7 +171,7 @@ public class TrueClueAreasPlugin extends Plugin {
 			}
 			WorldPoint loc = coordClue.getLocation(cluePlugin);
 			if (loc != null) {
-				overlay.setDigArea(new DigArea(loc, 2), TrueClueAreasOverlay.ClueType.COORDINATE);
+				overlay.setDigArea(new DigArea(loc, 3), TrueClueAreasOverlay.ClueType.COORDINATE);
 			}
 		}
 	}
