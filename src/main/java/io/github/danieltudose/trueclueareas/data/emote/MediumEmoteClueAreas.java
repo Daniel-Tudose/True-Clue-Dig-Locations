@@ -48,5 +48,7 @@ public class MediumEmoteClueAreas {
                     new DigArea(new WorldPoint(3490, 3567, 0), new WorldPoint(3514, 3581,0)))
             .put("Cheer in the Edgeville general store. Dance before you talk to me. Equip a brown apron, leather boots and leather gloves.",
                     new DigArea(new WorldPoint(3076, 3507, 0), new WorldPoint(3084, 3513,0)))
+            .put("Cheer in the Ogre Pen in the Training Camp. Show you are angry before you talk to me. Equip a green dragonhide body and chaps and a steel square shield.",
+                    new DigArea(new WorldPoint(2523, 3373, 0), new WorldPoint(2533, 3377,0)))
             .build();
 }
