@@ -54,5 +54,7 @@ public class EasyEmoteClueAreas {
                     new DigArea(new WorldPoint(3208, 3459, 0), new WorldPoint(3217, 3464, 0)))
             .put("Spin in Draynor Manor by the fountain. Equip an iron platebody, studded leather chaps and a bronze full helmet.",
                     new DigArea(new WorldPoint(3085, 3332, 0), new WorldPoint(3090, 3337, 0)))
+            .put("Wave in the Falador gem store. Equip a Mithril pickaxe, Black platebody and an Iron Kiteshield.",
+                    new DigArea(new WorldPoint(2944, 3332, 0), new WorldPoint(2946, 3337, 0)))
             .build();
 }
