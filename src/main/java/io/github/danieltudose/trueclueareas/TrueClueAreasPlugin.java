@@ -49,18 +49,19 @@ public class TrueClueAreasPlugin extends Plugin {
 	private static final Map<String, DigArea> ALL_EMOTE_AREAS;
 	private ClueScroll lastKnownClue = null;
 
-	private static final Map<WorldPoint, DigArea> CRYPTIC_CUSTOM_AREAS = new HashMap<>();
+	private static final Map<WorldPoint, DigArea> CRYPTIC_CUSTOM_AREAS;
 	static {
-		// Add entries here as you discover impassable-center cases.
+		Map<WorldPoint, DigArea> m = new HashMap<>();
 		// Key = base plugin's stored WorldPoint for that clue
-		// Value = the actual dig area with correct SW/NE corners
-		CRYPTIC_CUSTOM_AREAS.put(new WorldPoint(2857, 2966, 0),	new DigArea(new WorldPoint(2857, 2965, 0), 7)); //Shilo Village furnace
-		CRYPTIC_CUSTOM_AREAS.put(new WorldPoint(2927, 3761, 0),	new DigArea(new WorldPoint(2927, 3763, 0), 7)); //by the large crossbow from GWD entrance
-		CRYPTIC_CUSTOM_AREAS.put(new WorldPoint(3303, 6092, 0),	new DigArea(new WorldPoint(3303, 6091, 0), 7)); //Priff onion patch
-		CRYPTIC_CUSTOM_AREAS.put(new WorldPoint(2410, 4714, 0),	new DigArea(new WorldPoint(2409, 4715, 0), 7)); //Viyeldi caves
-		CRYPTIC_CUSTOM_AREAS.put(new WorldPoint(3045, 10265, 0),new DigArea(new WorldPoint(3046, 10265, 0), 7)); //runite rock in Lava Maze Dungeon
-		CRYPTIC_CUSTOM_AREAS.put(new WorldPoint(2744, 5116, 0),	new DigArea(new WorldPoint(2745, 5115, 0), 7)); //Shadow Dungeon
-		CRYPTIC_CUSTOM_AREAS.put(new WorldPoint(3043, 4974, 1),	new DigArea(new WorldPoint(3043, 4973, 1), 7)); //fire in the Rogues' Den
+		// Value = the actual dig area with correct SW/NE corners or center tile with width/height
+		m.put(new WorldPoint(2857, 2966, 0),	new DigArea(new WorldPoint(2857, 2965, 0), 7)); //Shilo Village furnace
+		m.put(new WorldPoint(2927, 3761, 0),	new DigArea(new WorldPoint(2927, 3763, 0), 7)); //by the large crossbow from GWD entrance
+		m.put(new WorldPoint(3303, 6092, 0),	new DigArea(new WorldPoint(3303, 6091, 0), 7)); //Priff onion patch
+		m.put(new WorldPoint(2410, 4714, 0),	new DigArea(new WorldPoint(2409, 4715, 0), 7)); //Viyeldi caves
+		m.put(new WorldPoint(3045, 10265, 0),new DigArea(new WorldPoint(3046, 10265, 0), 7)); //runite rock in Lava Maze Dungeon
+		m.put(new WorldPoint(2744, 5116, 0),	new DigArea(new WorldPoint(2745, 5115, 0), 7)); //Shadow Dungeon
+		m.put(new WorldPoint(3043, 4974, 1),	new DigArea(new WorldPoint(3043, 4973, 1), 7)); //fire in the Rogues' Den
+		CRYPTIC_CUSTOM_AREAS = Collections.unmodifiableMap(m);
 	}
 
 	private static final Set<Integer> ELITE_MAP_CLUE_IDS = Set.of(
@@ -178,6 +179,7 @@ public class TrueClueAreasPlugin extends Plugin {
 
 				boolean isMaster = crypticClue.getItemIds().contains(ItemID.TRAIL_CLUE_MASTER);
 				overlay.setDigArea(new DigArea(loc, isMaster ? 7 : 3), TrueClueAreasOverlay.ClueType.MAP);
+				return;
 			}
 		}
 
