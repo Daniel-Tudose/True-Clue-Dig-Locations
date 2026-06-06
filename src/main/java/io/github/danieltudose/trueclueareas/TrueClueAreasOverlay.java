@@ -58,11 +58,11 @@ public class TrueClueAreasOverlay extends Overlay {
                 color = config.emoteClueColor();
             }
             if (shouldShow) {
-                drawArea(graphics,
-                        digArea.getSouthWestCorner(),
-                        digArea.getNorthEastCorner(),
-                        new Color(color.getRed(), color.getGreen(), color.getBlue(), 50),
-                        new Color(color.getRed(), color.getGreen(), color.getBlue(), 200));
+                Color fill   = new Color(color.getRed(), color.getGreen(), color.getBlue(), 50);
+                Color border = new Color(color.getRed(), color.getGreen(), color.getBlue(), 200);
+                for (int i = 0; i < digArea.getRectCount(); i++) {
+                    drawArea(graphics, digArea.getSouthWestCorner(i), digArea.getNorthEastCorner(i), fill, border);
+                }
             }
         }
 

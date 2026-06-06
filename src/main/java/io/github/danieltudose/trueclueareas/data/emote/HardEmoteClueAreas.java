@@ -14,5 +14,10 @@ public class HardEmoteClueAreas {
                     new DigArea(new WorldPoint(2949,2883, 0), new WorldPoint(2971,2945, 0)))
             .put("Panic outside the Twilight Temple. Beware of double agents! Equip a rune longsword, rune platebody and a rune plateskirt.",
                     new DigArea(new WorldPoint(1692, 3242, 0), new WorldPoint(1697, 3253, 0)))
+            .put("Blow a raspberry in the Fishing Guild bank. Beware of double agents! Equip an elemental shield, blue dragonhide chaps and a rune warhammer.",
+                    new DigArea(
+                            new WorldPoint(2586, 3418, 0), new WorldPoint(2589, 3422, 0),
+                            new WorldPoint(2588, 3413, 0), new WorldPoint(2592, 3419, 0)
+                    ))
             .build();
 }
