@@ -13,7 +13,7 @@ public class EasyEmoteClueAreas {
             .put("Bow in the office of the Emir's Arena. Equip an iron chain body, leather chaps and coif.",
                     new DigArea(new WorldPoint(3312, 3240, 0), new WorldPoint(3316, 3244, 0)))
             .put("Yawn in the Fortis Grand Museum. Equip an emerald necklace, blue skirt, and turqoise gnome robe top.",
-                     new DigArea(new WorldPoint(1710, 3171, 0), new WorldPoint(1714, 3165, 0)))
+                     new DigArea(new WorldPoint(1710, 3165, 0), new WorldPoint(1714, 3171, 0)))
             .put("Wave along the south fence of the Lumber Yard. Equip a hard leather body, leather chaps and a bronze axe.",
                     new DigArea(new WorldPoint(3300, 3488, 0), new WorldPoint(3313, 3492, 0)))
             .put("Panic on the pier where you catch the Fishing trawler. Have nothing equipped at all when you do.",
