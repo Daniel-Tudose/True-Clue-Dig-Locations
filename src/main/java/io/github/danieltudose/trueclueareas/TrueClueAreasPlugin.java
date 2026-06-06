@@ -159,6 +159,7 @@ public class TrueClueAreasPlugin extends Plugin {
 		if (newClue instanceof MapClue) {
 			MapClue mapClue = (MapClue) newClue;
 			if (ELITE_MAP_CLUE_IDS.contains(mapClue.getItemId())) return;
+			if (!mapClue.isRequiresSpade()) return;
 			WorldPoint loc = mapClue.getLocation(cluePlugin);
 			if (loc != null) {
 				overlay.setDigArea(new DigArea(loc, 3), TrueClueAreasOverlay.ClueType.MAP);
