@@ -31,7 +31,7 @@ public class MasterEmoteClueAreas {
             .put("Show your anger towards the Statue of Saradomin in Ellamaria's garden. Beware of double agents! Equip a zamorak godsword.",
                     new DigArea(new WorldPoint(3227, 3477, 0), new WorldPoint(3233, 3482, 0)))
             .put("Dance in Iban's temple. Beware of double agents! Equip Iban's staff, a black mystic top and a black mystic bottom.",
-                    new DigArea(new WorldPoint(2006, 4715, 0), new WorldPoint(2013, 4709, 0)))
+                    new DigArea(new WorldPoint(2006, 4709, 1), new WorldPoint(2013, 4716, 1)))
             .put("Stamp in the Enchanted valley west of the waterfall. Beware of double agents! Equip a dragon axe.",
                     new DigArea(new WorldPoint(3026, 4519, 0), new WorldPoint(3038, 4522, 0)))
             .put("Spin in front of the Soul altar. Beware of double agents! Equip a dragon pickaxe, helm of neitiznot and a pair of rune boots.",
