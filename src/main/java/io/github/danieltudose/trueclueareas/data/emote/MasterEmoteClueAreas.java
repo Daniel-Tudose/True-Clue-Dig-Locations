@@ -15,7 +15,7 @@ public class MasterEmoteClueAreas {
             .put("Show your anger at the Wise old man. Beware of double agents! Equip an abyssal whip, a legend's cape and some spined chaps.",
                     new DigArea(new WorldPoint(3088, 3251 , 0), new WorldPoint(3090, 3254 ,0)))
             .put("Bow in the Iorwerth Camp. Beware of double agents! Equip a charged crystal bow.",
-                    new DigArea(new WorldPoint(2208, 3251 , 0), new WorldPoint(2202, 3255 ,0)))
+                    new DigArea(new WorldPoint(2202, 3251 , 0), new WorldPoint(2208, 3255 ,0)))
             .put("Blow a raspberry in the bank of the Warriors' Guild. Beware of double agents! Equip a dragon battleaxe, a slayer helm of any kind and a dragon defender or avernic defender.",
                     new DigArea(new WorldPoint(2843, 3537, 0), new WorldPoint(2848, 3545, 0)))
             .put("Clap in the magic axe hut. Beware of double agents! Equip only some flared trousers.",
@@ -35,11 +35,11 @@ public class MasterEmoteClueAreas {
             .put("Stamp in the Enchanted valley west of the waterfall. Beware of double agents! Equip a dragon axe.",
                     new DigArea(new WorldPoint(3026, 4519, 0), new WorldPoint(3038, 4522, 0)))
             .put("Spin in front of the Soul altar. Beware of double agents! Equip a dragon pickaxe, helm of neitiznot and a pair of rune boots.",
-                    new DigArea(new WorldPoint(1810, 3850, 0), new WorldPoint(1821, 3589, 0)))
+                    new DigArea(new WorldPoint(1810, 3850, 0), new WorldPoint(1821, 3859, 0)))
             .put("Flap at the death altar. Beware of double agents! Equip a death tiara, a legend's cape and any ring of wealth.",
                     new DigArea(new WorldPoint(2200, 4831, 0), new WorldPoint(2211, 4842, 0)))
             .put("Swing a bullroarer at the top of the Watchtower. Beware of double agents! Equip a dragon plateskirt, climbing boots and a dragon chainbody.",
-                    new DigArea(new WorldPoint(2927, 4718, 2), new WorldPoint(2934, 4711, 2)))
+                    new DigArea(new WorldPoint(2927, 4711, 2), new WorldPoint(2934, 4718, 2)))
             .put("Bow in front of the cave on Brittle Isle. Beware of double agents! Equip a Medallion of the Deep and a rosewood blowpipe.",
                     new DigArea(new WorldPoint(1945, 4073, 0), new WorldPoint(1947, 4075, 0)))
             .put("Wave on the northern wall of Castle Drakan. Beware of double agents! Wear a dragon sq shield, splitbark body and any boater.",
