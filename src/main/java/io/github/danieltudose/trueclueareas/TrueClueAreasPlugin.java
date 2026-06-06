@@ -58,7 +58,7 @@ public class TrueClueAreasPlugin extends Plugin {
 		m.put(new WorldPoint(2927, 3761, 0),	new DigArea(new WorldPoint(2927, 3763, 0), 7)); //By the large crossbow from GWD entrance
 		m.put(new WorldPoint(3303, 6092, 0),	new DigArea(new WorldPoint(3303, 6091, 0), 7)); //Priff onion patch
 		m.put(new WorldPoint(2410, 4714, 0),	new DigArea(new WorldPoint(2409, 4715, 0), 7)); //Viyeldi caves
-		m.put(new WorldPoint(3045, 10265, 0),new DigArea(new WorldPoint(3046, 10265, 0), 7)); //Runite rock in Lava Maze Dungeon
+		m.put(new WorldPoint(3045, 10265, 0),  new DigArea(new WorldPoint(3046, 10265, 0), 7)); //Runite rock in Lava Maze Dungeon
 		m.put(new WorldPoint(2744, 5116, 0),	new DigArea(new WorldPoint(2745, 5115, 0), 7)); //Shadow Dungeon
 		m.put(new WorldPoint(3043, 4974, 1),	new DigArea(new WorldPoint(3043, 4973, 1), 7)); //Fire in the Rogues' Den
 		m.put(new WorldPoint(2874, 3757, 0),	new DigArea(new WorldPoint(2877, 3757, 0), 7)); //North of Trollheim
