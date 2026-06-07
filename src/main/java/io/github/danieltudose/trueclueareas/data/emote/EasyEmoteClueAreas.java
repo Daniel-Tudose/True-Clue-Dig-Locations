@@ -56,5 +56,7 @@ public class EasyEmoteClueAreas {
                     new DigArea(new WorldPoint(3085, 3332, 0), new WorldPoint(3090, 3337, 0)))
             .put("Wave in the Falador gem store. Equip a Mithril pickaxe, Black platebody and an Iron Kiteshield.",
                     new DigArea(new WorldPoint(2944, 3332, 0), new WorldPoint(2946, 3337, 0)))
+            .put("Clap on the causeway to the Wizards' Tower. Equip an iron medium helmet, emerald ring and a white apron.",
+                    new DigArea(new WorldPoint(3112, 3171, 0), new WorldPoint(3115, 3209, 0)))
             .build();
 }
