@@ -58,5 +58,7 @@ public class EasyEmoteClueAreas {
                     new DigArea(new WorldPoint(2944, 3332, 0), new WorldPoint(2946, 3337, 0)))
             .put("Clap on the causeway to the Wizards' Tower. Equip an iron medium helmet, emerald ring and a white apron.",
                     new DigArea(new WorldPoint(3112, 3171, 0), new WorldPoint(3115, 3209, 0)))
+            .put("Blow raspberries outside the entrance to Keep Le Faye. Equip a coif, an iron platebody and leather gloves.",
+                    new DigArea(new WorldPoint(2757, 3399, 0), new WorldPoint(2763, 3407, 0)))
             .build();
 }
