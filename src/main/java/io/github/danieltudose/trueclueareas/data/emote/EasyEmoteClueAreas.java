@@ -60,5 +60,9 @@ public class EasyEmoteClueAreas {
                     new DigArea(new WorldPoint(3112, 3171, 0), new WorldPoint(3115, 3209, 0)))
             .put("Blow raspberries outside the entrance to Keep Le Faye. Equip a coif, an iron platebody and leather gloves.",
                     new DigArea(new WorldPoint(2757, 3399, 0), new WorldPoint(2763, 3407, 0)))
+            .put("Cheer at the Druids' Circle. Equip a blue wizard hat, a bronze two-handed sword and HAM boots.",
+                    new DigArea(new WorldPoint(2920, 3478, 0), new WorldPoint(2931, 3489, 0)))
+            .put("Dance at the crossroads north of Draynor. Equip an iron chain body, a sapphire ring and a longbow.",
+                    new DigArea(new WorldPoint(3108, 3293, 0), new WorldPoint(3111, 3296, 0)))
             .build();
 }
