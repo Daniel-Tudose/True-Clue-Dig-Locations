@@ -64,5 +64,7 @@ public class EasyEmoteClueAreas {
                     new DigArea(new WorldPoint(2920, 3478, 0), new WorldPoint(2931, 3489, 0)))
             .put("Dance at the crossroads north of Draynor. Equip an iron chain body, a sapphire ring and a longbow.",
                     new DigArea(new WorldPoint(3108, 3293, 0), new WorldPoint(3111, 3296, 0)))
+            .put("Yawn in the Varrock library. Equip a green gnome robe top, HAM robe bottom and an iron warhammer.",
+                    new DigArea(new WorldPoint(3207, 3490, 0), new WorldPoint(3214, 3497, 0)))
             .build();
 }
