@@ -50,5 +50,11 @@ public class MasterEmoteClueAreas {
                     new DigArea(new WorldPoint(1659, 10043, 0), new WorldPoint(1668, 10052, 0)))
             .put("Goblin Salute in the Goblin Village. Beware of double agents! Equip a bandos godsword, a bandos cloak and a bandos platebody.",
                     new DigArea(new WorldPoint(2949, 3498, 0), new WorldPoint(2964, 3514, 0)))
+            .put("Beckon by a collection of crystalline maple trees. Beware of double agents! Equip Bryophyta's staff and a nature tiara.",
+                    new DigArea(new WorldPoint(2208, 3424, 0), new WorldPoint(2212, 3428, 0)))
+            .put("Yawn in the 7th room of Pyramid Plunder. Beware of double agents! Equip a pharaoh sceptre and a full set of menaphite robes.",
+                    new DigArea(new WorldPoint(1941, 4422, 0), new WorldPoint(1954, 4430, 0)))
+            .put("Do a jig at the barrows chest. Beware of double agents! Equip any full barrows set.",
+                    new DigArea(new WorldPoint(3547, 9690, 0), new WorldPoint(3556, 9699, 0)))
             .build();
 }
