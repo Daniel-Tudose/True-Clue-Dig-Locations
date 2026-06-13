@@ -14,5 +14,11 @@ public class EliteEmoteClueAreas {
                     new DigArea(new WorldPoint(3405, 3531, 2), new WorldPoint(3452, 3579, 2)))
             .put("Spin in West Ardougne Church. Equip a dragon spear and red dragonhide chaps.",
                     new DigArea(new WorldPoint(2524, 3285, 0), new WorldPoint(2532, 3295, 0)))
+            .put("Blow a kiss in the heart of the lava maze. Equip black dragonhide chaps, a spotted cape and a rolling pin.",
+                    new DigArea(new WorldPoint(3064, 3856, 0), new WorldPoint(3071, 3863, 0)))
+            .put("Yawn at the top of Trollheim. Equip a lava battlestaff, black dragonhide vambraces and a mind shield.",
+                    new DigArea(new WorldPoint(2886, 3674, 0), new WorldPoint(2895, 3682, 0)))
+            .put("Dance on the Fishing Platform. Equip barrows gloves, an amulet of glory and a dragon med helm.",
+                    new DigArea(new WorldPoint(2761, 3273, 0), new WorldPoint(2794, 3291, 0)))
             .build();
 }
