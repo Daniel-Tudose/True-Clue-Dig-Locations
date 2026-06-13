@@ -6,6 +6,9 @@ import io.github.danieltudose.trueclueareas.data.emote.MediumEmoteClueAreas;
 import io.github.danieltudose.trueclueareas.data.emote.HardEmoteClueAreas;
 import io.github.danieltudose.trueclueareas.data.emote.EliteEmoteClueAreas;
 import io.github.danieltudose.trueclueareas.data.emote.MasterEmoteClueAreas;
+import static io.github.danieltudose.trueclueareas.data.map.CustomMapClueAreas.*;
+import static io.github.danieltudose.trueclueareas.data.coordinate.CustomCoordinateClueAreas.*;
+import static io.github.danieltudose.trueclueareas.data.cryptic.CustomCrypticClueAreas.*;
 
 import java.util.*;
 
@@ -49,47 +52,6 @@ public class TrueClueAreasPlugin extends Plugin {
 	private static final Map<String, DigArea> ALL_EMOTE_AREAS;
 	private ClueScroll lastKnownClue = null;
 
-	private static final Map<WorldPoint, DigArea> CRYPTIC_CUSTOM_AREAS;
-	static {
-		Map<WorldPoint, DigArea> m = new HashMap<>();
-		// Key = base plugin's stored WorldPoint for that clue
-		// Value = the actual dig area with correct SW/NE corners or center tile with width/height
-		m.put(new WorldPoint(2857, 2966, 0),	new DigArea(new WorldPoint(2857, 2965, 0), 7)); //Shilo Village furnace - Master
-		m.put(new WorldPoint(2927, 3761, 0),	new DigArea(new WorldPoint(2927, 3763, 0), 7)); //By the large crossbow from GWD entrance - Master
-		m.put(new WorldPoint(3303, 6092, 0),	new DigArea(new WorldPoint(3303, 6091, 0), 7)); //Priff onion patch - Master
-		m.put(new WorldPoint(2410, 4714, 0),	new DigArea(new WorldPoint(2409, 4715, 0), 7)); //Viyeldi caves - Master
-		m.put(new WorldPoint(3045, 10265, 0),  new DigArea(new WorldPoint(3046, 10265, 0), 7)); //Runite rock in Lava Maze Dungeon - Master
-		m.put(new WorldPoint(2744, 5116, 0),	new DigArea(new WorldPoint(2745, 5115, 0), 7)); //Shadow Dungeon - Master
-		m.put(new WorldPoint(3043, 4974, 1),	new DigArea(new WorldPoint(3043, 4973, 1), 7)); //Fire in the Rogues' Den - Master
-		m.put(new WorldPoint(2874, 3757, 0),	new DigArea(new WorldPoint(2877, 3757, 0), 7)); //North of Trollheim - Master
-		m.put(new WorldPoint(2591, 3879, 0),	new DigArea(new WorldPoint(2592, 3879, 0), 3)); //Evergreen in Etceteria - Hard
-		CRYPTIC_CUSTOM_AREAS = Collections.unmodifiableMap(m);
-	}
-
-	private static final Set<Integer> ELITE_MAP_CLUE_IDS = Set.of(
-			ItemID.TRAIL_ELITE_MAP_EXP1,
-			ItemID.TRAIL_ELITE_MAP_EXP2,
-			ItemID.TRAIL_ELITE_MAP_EXP3,
-			ItemID.TRAIL_ELITE_MAP_EXP4,
-			ItemID.TRAIL_ELITE_MAP_EXP5,
-			ItemID.TRAIL_ELITE_MAP_EXP6
-	);
-
-	private static final Set<Integer> ELITE_CRYPTIC_CLUE_IDS = Set.of(
-			ItemID.TRAIL_ELITE_RIDDLE_EXP7,
-			ItemID.TRAIL_ELITE_RIDDLE_EXP11,
-			ItemID.TRAIL_ELITE_RIDDLE_EXP9,
-			ItemID.TRAIL_ELITE_RIDDLE_EXP34,
-			ItemID.TRAIL_ELITE_RIDDLE_EXP35,
-			ItemID.TRAIL_ELITE_RIDDLE_EXP3,
-			ItemID.TRAIL_ELITE_RIDDLE_EXP19,
-			ItemID.TRAIL_ELITE_RIDDLE_EXP4,
-			ItemID.TRAIL_ELITE_RIDDLE_EXP37,
-			ItemID.TRAIL_ELITE_RIDDLE_EXP38,
-			ItemID.TRAIL_ELITE_RIDDLE_EXP39,
-			ItemID.TRAIL_ELITE_RIDDLE_EXP2
-			);
-
 	static {
 		Map<String, DigArea> emoteAreas = new HashMap<>();
 		emoteAreas.putAll(BeginnerEmoteClueAreas.AREAS);
@@ -104,7 +66,6 @@ public class TrueClueAreasPlugin extends Plugin {
 	private void clearAll() {
 		overlay.clearDigArea();
 		overlay.setHotColdLocations(null);
-		lastKnownClue = null;
 	}
 
 	@Override
@@ -116,6 +77,7 @@ public class TrueClueAreasPlugin extends Plugin {
 	protected void shutDown() {
 		overlayManager.remove(overlay);
 		clearAll();
+		lastKnownClue = null;
 	}
 
 	@Subscribe
@@ -161,20 +123,20 @@ public class TrueClueAreasPlugin extends Plugin {
 			if (ELITE_MAP_CLUE_IDS.contains(mapClue.getItemId())) return;
 			if (!mapClue.isRequiresSpade()) return;
 			WorldPoint loc = mapClue.getLocation(cluePlugin);
-			if (loc != null) {
-				overlay.setDigArea(new DigArea(loc, 3), TrueClueAreasOverlay.ClueType.MAP);
-			}
+			if (loc == null) return;
+			DigArea custom = MAP_STEPS_CUSTOM_AREAS.get(loc);
+			overlay.setDigArea(custom != null ? custom : new DigArea(loc, 3), TrueClueAreasOverlay.ClueType.MAP);
 			return;
 		}
 
 		if (newClue instanceof CrypticClue) {
 			CrypticClue crypticClue = (CrypticClue) newClue;
-			if (crypticClue.getItemIds().stream().anyMatch(ELITE_CRYPTIC_CLUE_IDS::contains)) return;
+			if (crypticClue.getItemIds().stream().anyMatch(SKIP_CRYPTIC_CLUE_IDS::contains)) return;
 			if (crypticClue.isRequiresSpade()) {
 				WorldPoint loc = crypticClue.getLocation(cluePlugin);
 				if (loc == null) return;
 
-				DigArea customArea = CRYPTIC_CUSTOM_AREAS.get(loc);
+				DigArea customArea = CRYPTIC_STEPS_CUSTOM_AREAS.get(loc);
 				if (customArea != null) {
 					overlay.setDigArea(customArea, TrueClueAreasOverlay.ClueType.MAP);
 					return;
@@ -188,16 +150,13 @@ public class TrueClueAreasPlugin extends Plugin {
 
 		if (newClue instanceof CoordinateClue) {
 			CoordinateClue coordClue = (CoordinateClue) newClue;
-			// Skip Elite coordinate clues to avoid a redundant overlay since they are just 1 tile
 			if (coordClue.getEnemy() == ARMADYLEAN_OR_BANDOSIAN_GUARD
 					|| coordClue.getEnemy() == ARMADYLEAN_GUARD
-					|| coordClue.getEnemy() == BANDOSIAN_GUARD) {
-				return;
-			}
+					|| coordClue.getEnemy() == BANDOSIAN_GUARD) return; // Skip Elite coordinate clues to avoid a redundant overlay since they are just 1 tile
 			WorldPoint loc = coordClue.getLocation(cluePlugin);
-			if (loc != null) {
-				overlay.setDigArea(new DigArea(loc, 3), TrueClueAreasOverlay.ClueType.COORDINATE);
-			}
+			if (loc == null) return;
+			DigArea custom = COORDINATE_STEPS_CUSTOM_AREAS.get(loc);
+			overlay.setDigArea(custom != null ? custom : new DigArea(loc, 3), TrueClueAreasOverlay.ClueType.COORDINATE);
 		}
 	}
 
@@ -230,7 +189,6 @@ public class TrueClueAreasPlugin extends Plugin {
 	}
 
 	private void handleTextClue() {
-		clearAll();
 		clientThread.invokeLater(() -> {
 			net.runelite.api.widgets.Widget clueWidget = client.getWidget(203, 2);
 			if (clueWidget == null || clueWidget.getText() == null || clueWidget.getText().isEmpty()) return;
