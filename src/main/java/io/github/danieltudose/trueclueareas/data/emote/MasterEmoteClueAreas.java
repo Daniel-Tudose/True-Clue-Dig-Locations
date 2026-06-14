@@ -10,7 +10,7 @@ public class MasterEmoteClueAreas {
     public static final Map<String, DigArea> AREAS = new ImmutableMap.Builder<String, DigArea>()
             .put("Think on the western coast of Salvager Overlook. Beware of double agents! Equip a Hueycoatl hide coif and some Hueycoatl hide vambraces.",
                     new DigArea(new WorldPoint(1610, 3296 , 0), new WorldPoint(1613, 3305 ,0)))
-            .put("Blow a kiss outside K'ril Tsutsaroth's chamber. Beware of double agents! Equip a zamorak full helm and the shadow sword..",
+            .put("Blow a kiss outside K'ril Tsutsaroth's chamber. Beware of double agents! Equip a zamorak full helm and the shadow sword.",
                     new DigArea(new WorldPoint(2924, 5333 , 2), new WorldPoint(2926, 5337 ,2)))
             .put("Show your anger at the Wise old man. Beware of double agents! Equip an abyssal whip, a legend's cape and some spined chaps.",
                     new DigArea(new WorldPoint(3088, 3251 , 0), new WorldPoint(3090, 3254 ,0)))
