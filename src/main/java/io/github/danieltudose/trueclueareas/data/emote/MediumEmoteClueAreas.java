@@ -15,7 +15,7 @@ public class MediumEmoteClueAreas {
             .put("Dance a jig under Shantay's Awning. Bow before you talk to me. Equip a pointed blue snail helmet, an air staff and a bronze square shield.",
                     new DigArea(new WorldPoint(3301, 3121, 0), new WorldPoint(3306, 3126,0)))
             .put("Nod your head where the River Ortus meets the Proudspire. Indicate 'no' before you talk to me. Equip a blue wizard hat, a blue wizard robe and wear nothing on your legs.",
-                    new DigArea(new WorldPoint(1626, 3241, 0), new WorldPoint(1627, 3240,0)))
+                    new DigArea(new WorldPoint(1626, 3240, 0), new WorldPoint(1627, 3241,0)))
             .put("Cheer in the Barbarian Agility Arena. Headbang before you talk to me. Equip a steel platebody, maple shortbow and a Wilderness cape.",
                     new DigArea(new WorldPoint(2529, 3542, 0), new WorldPoint(2553, 3556,0)))
             .put("Think in the centre of the Observatory. Spin before you talk to me. Equip a mithril chain body, green dragonhide chaps and a ruby amulet.",
