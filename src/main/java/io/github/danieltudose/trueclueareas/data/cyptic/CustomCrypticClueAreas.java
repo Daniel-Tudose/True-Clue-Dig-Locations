@@ -9,7 +9,6 @@ import java.util.*;
 public class CustomCrypticClueAreas {
 
     // Elite clues are single tile (base plugin already highlights them).
-    // Add any other single-tile clues from any tier here too.
     public static final Set<Integer> SKIP_CRYPTIC_CLUE_IDS = Set.of(
             ItemID.TRAIL_ELITE_RIDDLE_EXP7,
             ItemID.TRAIL_ELITE_RIDDLE_EXP11,
@@ -23,7 +22,7 @@ public class CustomCrypticClueAreas {
             ItemID.TRAIL_ELITE_RIDDLE_EXP38,
             ItemID.TRAIL_ELITE_RIDDLE_EXP39,
             ItemID.TRAIL_ELITE_RIDDLE_EXP2
-            // add single-tile easy/hard clue item IDs here as discovered
+            // add single-tile any tier clue item IDs here as discovered
     );
 
     public static final Map<WorldPoint, DigArea> CRYPTIC_STEPS_CUSTOM_AREAS;

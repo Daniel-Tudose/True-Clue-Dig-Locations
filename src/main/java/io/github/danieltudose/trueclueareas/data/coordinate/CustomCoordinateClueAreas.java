@@ -10,10 +10,7 @@ public class CustomCoordinateClueAreas {
     public static final Map<WorldPoint, DigArea> COORDINATE_STEPS_CUSTOM_AREAS;
     static {
         Map<WorldPoint, DigArea> m = new HashMap<>();
-        // Key = base plugin's stored WorldPoint
-        // Value = corrected DigArea
-        // Example:
-        // m.put(new WorldPoint(x, y, 0), new DigArea(new WorldPoint(sw_x, sw_y, 0), new WorldPoint(ne_x, ne_y, 0)));
+        //Insert here new entries;
         COORDINATE_STEPS_CUSTOM_AREAS = Collections.unmodifiableMap(m);
     }
 }
