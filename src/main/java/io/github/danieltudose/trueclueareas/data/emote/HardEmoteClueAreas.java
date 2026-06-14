@@ -19,5 +19,7 @@ public class HardEmoteClueAreas {
                             new WorldPoint(2586, 3418, 0), new WorldPoint(2589, 3422, 0),
                             new WorldPoint(2588, 3413, 0), new WorldPoint(2592, 3419, 0)
                     ))
+            .put("Shrug in the woods east of the Level 19 Wilderness Obelisk. Beware of double agents! Equip rune platelegs, an iron platebody and blue dragonhide vambraces.",
+                    new DigArea(new WorldPoint(3239, 3668, 0), new WorldPoint(3243, 3674, 0)))
             .build();
 }
