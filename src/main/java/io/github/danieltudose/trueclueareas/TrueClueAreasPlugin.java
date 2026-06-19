@@ -132,6 +132,7 @@ public class TrueClueAreasPlugin extends Plugin {
 		if (newClue instanceof CrypticClue) {
 			CrypticClue crypticClue = (CrypticClue) newClue;
 			if (crypticClue.getItemIds().stream().anyMatch(SKIP_CRYPTIC_CLUE_IDS::contains)) return;
+			if (crypticClue.getItemIds().contains(ItemID.TRAIL_CLUE_MASTER)) return;
 			if (crypticClue.isRequiresSpade()) {
 				WorldPoint loc = crypticClue.getLocation(cluePlugin);
 				if (loc == null) return;
@@ -201,6 +202,18 @@ public class TrueClueAreasPlugin extends Plugin {
 			DigArea emoteArea = ALL_EMOTE_AREAS.get(text);
 			if (emoteArea != null) {
 				overlay.setDigArea(emoteArea, TrueClueAreasOverlay.ClueType.EMOTE);
+				return;
+			}
+			ClueScrollPlugin cluePlugin = getClueScrollPlugin();
+			if (cluePlugin != null && cluePlugin.getClue() instanceof CrypticClue) {
+				CrypticClue crypticClue = (CrypticClue) cluePlugin.getClue();
+				if (crypticClue.isRequiresSpade() && crypticClue.getItemIds().contains(ItemID.TRAIL_CLUE_MASTER)) {
+					WorldPoint loc = crypticClue.getLocation(cluePlugin);
+					if (loc != null) {
+						DigArea custom = CRYPTIC_STEPS_CUSTOM_AREAS.get(loc);
+						overlay.setDigArea(custom != null ? custom : new DigArea(loc, 7), TrueClueAreasOverlay.ClueType.MAP);
+					}
+				}
 			}
 		});
 	}
