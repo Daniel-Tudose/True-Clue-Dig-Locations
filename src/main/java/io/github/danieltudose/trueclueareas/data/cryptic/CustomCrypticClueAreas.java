@@ -10,7 +10,7 @@ public class CustomCrypticClueAreas {
 
     // Elite clues are single tile (base plugin already highlights them).
     public static final Set<Integer> SKIP_CRYPTIC_CLUE_IDS = Set.of(
-            ItemID.TRAIL_ELITE_RIDDLE_EXP7,
+            //ItemID.TRAIL_ELITE_RIDDLE_EXP7, //This is most likely a 3x3 area instead of the usual single tile highlighted by runelite's base clue plugin
             ItemID.TRAIL_ELITE_RIDDLE_EXP11,
             ItemID.TRAIL_ELITE_RIDDLE_EXP9,
             ItemID.TRAIL_ELITE_RIDDLE_EXP34,
