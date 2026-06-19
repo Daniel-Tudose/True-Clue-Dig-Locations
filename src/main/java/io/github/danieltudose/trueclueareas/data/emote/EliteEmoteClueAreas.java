@@ -26,5 +26,19 @@ public class EliteEmoteClueAreas {
                     new DigArea(new WorldPoint(27874, 3779, 0), new WorldPoint(2782, 3786, 0)))
             .put("Bow within the temple in Civitas illa Fortis. Equip any piece of sunfire fanatic armour.",
                     new DigArea(new WorldPoint(1697, 3085, 0), new WorldPoint(1701, 3088, 0)))
+            .put("Cheer in the Shadow dungeon. Equip a rune crossbow, climbing boots and any mitre.",
+                    new DigArea(new WorldPoint(2625, 5057, 0), new WorldPoint(2749, 5118, 0)))
+            .put("Headbang in the Fight Arena pub. Equip a pirate bandana, a dragonstone necklace and and a magic longbow.",
+                    new DigArea(new WorldPoint(2563, 3139, 0), new WorldPoint(2570, 3150, 0)))
+            .put("Laugh in front of the gem store in Ardougne market. Equip a Castlewars bracelet, a dragonstone amulet and a ring of forging.",
+                    new DigArea(new WorldPoint(2664, 3301, 0), new WorldPoint(2671, 3306, 0)))
+            .put("Bow upstairs in the Edgeville Monastery. Equip a completed prayer book.",
+                    new DigArea(new WorldPoint(3044, 3482, 1), new WorldPoint(3059, 3499, 1)))
+            .put("Salute in the Warriors' Guild bank. Equip only a black salamander.",
+                    new DigArea(new WorldPoint(2843, 3537, 0), new WorldPoint(2848, 3545, 0)))
+            .put("Jump for joy at the Neitiznot rune rock. Equip Rune boots, a proselyte hauberk and a dragonstone ring.",
+                    new DigArea(new WorldPoint(2373, 3848, 0), new WorldPoint(2377, 3852, 0)))
+            .put("Bow on the ground floor of the Legends' Guild. Equip a Cape of Legends, a dragon battleaxe and an amulet of glory.",
+                    new DigArea(new WorldPoint(2723, 3374, 0), new WorldPoint(2735, 3381, 0)))
             .build();
 }
