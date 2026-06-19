@@ -21,5 +21,11 @@ public class HardEmoteClueAreas {
                     ))
             .put("Shrug in the woods east of the Level 19 Wilderness Obelisk. Beware of double agents! Equip rune platelegs, an iron platebody and blue dragonhide vambraces.",
                     new DigArea(new WorldPoint(3239, 3668, 0), new WorldPoint(3243, 3674, 0)))
+            .put("Panic in the heart of the Haunted Woods. Beware of double agents! Have no items equipped when you do.",
+                    new DigArea(new WorldPoint(3611, 3483, 0), new WorldPoint(3621, 3493, 0)))
+            .put("Bow at the top of the lighthouse. Beware of double agents! Equip a blue dragonhide body, blue dragonhide vambraces and no jewelry.",
+                    new DigArea(new WorldPoint(2504, 3637, 2), new WorldPoint(2513, 3645, 2)))
+            .put("Laugh in Jokul's tent in the Mountain Camp. Beware of double agents! Equip a rune full helmet, blue dragonhide chaps and a fire battlestaff.",
+                    new DigArea(new WorldPoint(2811, 3680, 0), new WorldPoint(2813, 3681, 0)))
             .build();
 }
