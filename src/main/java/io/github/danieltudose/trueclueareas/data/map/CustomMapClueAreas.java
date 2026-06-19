@@ -20,7 +20,8 @@ public class CustomMapClueAreas {
     public static final Map<WorldPoint, DigArea> MAP_STEPS_CUSTOM_AREAS;
     static {
         Map<WorldPoint, DigArea> m = new HashMap<>();
-        //Insert here new entries;
+        m.put(new WorldPoint(2578, 3597, 0),  new DigArea(new WorldPoint(2578, 3597, 0), 3)); // South-east of the Lighthouse. Fairy ring ALP - Medium
+        //m.put(new WorldPoint(3043, 3398, 0),  new DigArea(new WorldPoint(3040, 3399, 0), 3)); // Standing stones north of Falador - Easy
         MAP_STEPS_CUSTOM_AREAS = Collections.unmodifiableMap(m);
     }
 }
