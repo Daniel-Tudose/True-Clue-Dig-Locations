@@ -27,5 +27,9 @@ public class HardEmoteClueAreas {
                     new DigArea(new WorldPoint(2504, 3637, 2), new WorldPoint(2513, 3645, 2)))
             .put("Laugh in Jokul's tent in the Mountain Camp. Beware of double agents! Equip a rune full helmet, blue dragonhide chaps and a fire battlestaff.",
                     new DigArea(new WorldPoint(2811, 3680, 0), new WorldPoint(2813, 3681, 0)))
+            .put("Headbang at the exam centre. Beware of double agents! Equip a mystic fire staff, a diamond bracelet and rune boots.",
+                    new DigArea(new WorldPoint(3357, 3332, 0), new WorldPoint(3367, 3348, 0)))
+            .put("Panic by the pilot on White Wolf Mountain. Beware of double agents! Equip mithril platelegs, a ring of life and a rune axe.",
+                    new DigArea(new WorldPoint(2845, 3497, 0), new WorldPoint(2849, 3501, 0)))
             .build();
 }
