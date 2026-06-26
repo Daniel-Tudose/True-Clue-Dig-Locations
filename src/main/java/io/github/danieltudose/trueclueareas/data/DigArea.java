@@ -36,6 +36,26 @@ public class DigArea {
         this.northEastCorners = Arrays.asList(ne1, ne2);
     }
 
+    // Internal constructor used by combine()
+    private DigArea(List<WorldPoint> sw, List<WorldPoint> ne) {
+        this.southWestCorners = sw;
+        this.northEastCorners = ne;
+    }
+
+    // Merges any number of DigAreas into one (e.g. multiple unfinished
+    // sub-steps of a ThreeStepCrypticClue, each shown at once)
+    public static DigArea combine(List<DigArea> areas) {
+        List<WorldPoint> sw = new java.util.ArrayList<>();
+        List<WorldPoint> ne = new java.util.ArrayList<>();
+        for (DigArea area : areas) {
+            for (int i = 0; i < area.getRectCount(); i++) {
+                sw.add(area.getSouthWestCorner(i));
+                ne.add(area.getNorthEastCorner(i));
+            }
+        }
+        return new DigArea(sw, ne);
+    }
+
     public int getRectCount() {
         return southWestCorners.size();
     }

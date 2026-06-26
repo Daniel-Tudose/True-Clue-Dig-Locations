@@ -204,15 +204,43 @@ public class TrueClueAreasPlugin extends Plugin {
 				overlay.setDigArea(emoteArea, TrueClueAreasOverlay.ClueType.EMOTE);
 				return;
 			}
+
 			ClueScrollPlugin cluePlugin = getClueScrollPlugin();
-			if (cluePlugin != null && cluePlugin.getClue() instanceof CrypticClue) {
-				CrypticClue crypticClue = (CrypticClue) cluePlugin.getClue();
+			if (cluePlugin == null) return;
+			ClueScroll active = cluePlugin.getClue();
+
+			if (active instanceof CrypticClue) {
+				CrypticClue crypticClue = (CrypticClue) active;
 				if (crypticClue.isRequiresSpade() && crypticClue.getItemIds().contains(ItemID.TRAIL_CLUE_MASTER)) {
 					WorldPoint loc = crypticClue.getLocation(cluePlugin);
 					if (loc != null) {
 						DigArea custom = CRYPTIC_STEPS_CUSTOM_AREAS.get(loc);
 						overlay.setDigArea(custom != null ? custom : new DigArea(loc, 7), TrueClueAreasOverlay.ClueType.MAP);
 					}
+				}
+				return;
+			}
+
+			if (active instanceof ThreeStepCrypticClue) {
+				ThreeStepCrypticClue threeStep = (ThreeStepCrypticClue) active;
+				List<DigArea> areas = new ArrayList<>();
+
+				for (Map.Entry<CrypticClue, Boolean> step : threeStep.getClueSteps()) {
+					if (step.getValue()) continue; // step already completed
+					CrypticClue sub = step.getKey();
+					if (!sub.isRequiresSpade()) continue; // NPC or object step, not a dig
+
+					WorldPoint loc = sub.getLocation(cluePlugin);
+					if (loc == null) continue;
+
+					DigArea custom = CRYPTIC_STEPS_CUSTOM_AREAS.get(loc);
+					areas.add(custom != null ? custom : new DigArea(loc, 7));
+				}
+
+				if (!areas.isEmpty()) {
+					overlay.setDigArea(DigArea.combine(areas), TrueClueAreasOverlay.ClueType.MAP);
+				} else {
+					overlay.clearDigArea();
 				}
 			}
 		});
