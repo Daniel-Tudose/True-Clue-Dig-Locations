@@ -50,5 +50,7 @@ public class MediumEmoteClueAreas {
                     new DigArea(new WorldPoint(3076, 3507, 0), new WorldPoint(3084, 3513,0)))
             .put("Cheer in the Ogre Pen in the Training Camp. Show you are angry before you talk to me. Equip a green dragonhide body and chaps and a steel square shield.",
                     new DigArea(new WorldPoint(2523, 3373, 0), new WorldPoint(2533, 3377,0)))
+            .put("Cry on top of the western tree in the Gnome Agility Arena. Indicate 'no' before you talk to me. Equip a steel kiteshield, ring of forging and green dragonhide chaps.",
+                    new DigArea(new WorldPoint(2472, 3418, 2), new WorldPoint(2477, 3421, 2)))
             .build();
 }
