@@ -68,5 +68,7 @@ public class EasyEmoteClueAreas {
                     new DigArea(new WorldPoint(3207, 3490, 0), new WorldPoint(3214, 3497, 0)))
             .put("Blow a raspberry at the monkey cage in Ardougne Zoo. Equip a studded leather body, bronze platelegs and a normal staff with no orb.",
                     new DigArea(new WorldPoint(2596, 3273, 0), new WorldPoint(2609, 3284, 0)))
+            .put("Dance at the entrance to the Grand Exchange. Equip a pink skirt, pink robe top and a body tiara.",
+                    new DigArea(new WorldPoint(3161, 3461, 0), new WorldPoint(3170, 3470, 0)))
             .build();
 }
