@@ -3,7 +3,8 @@
 #### 1.3.3 — 2026-06-28
 - **[Added]** Support for Master Cryptic steps; now fully operational.
 - **[Added]** 1 Master Cryptic custom area (Terrorbird display).
-- **[Added]** Support for 1 Easy Emote step, 1 Medium Emote step, and 2 Hard Emote steps.
+- **[Added]** Support for 1 Easy Emote step, 1 Medium Emote step, 2 Hard Emote steps and the LAST Master Emote step.
+- **[Fixed]** Clue text apostrophe not being read correctly.
 
 #### 1.3.2 — 2026-06-19
 - **[Added]** Support for 1 Easy Emote step, 3 Hard Emote steps, and 7 Elite Emote steps.
