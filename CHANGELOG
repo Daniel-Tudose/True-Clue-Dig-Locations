@@ -1,0 +1,44 @@
+# Changelog
+
+All notable changes to the True Tile Clue Areas plugin will be documented in this file.
+
+#### 1.3.3 — 2026-06-28
+- **[Added]** Support for Master Cryptic steps; now fully operational.
+- **[Added]** 1 Master Cryptic custom area (Terrorbird display).
+- **[Added]** Support for 1 Easy Emote step, 1 Medium Emote step, and 2 Hard Emote steps.
+
+#### 1.3.2 — 2026-06-19
+- **[Added]** Support for 1 Easy Emote step, 3 Hard Emote steps, and 7 Elite Emote steps.
+- **[Fixed]** Area correction for Medium Map clue step (SE of lighthouse - ALP Fairy ring).
+- **[Fixed]** Core bugfixes for Map and Cryptic steps.
+
+#### 1.3.1 — 2026-06-14
+- **[Added]** Support for 5 Easy Emote steps, 2 Hard Emote steps, 7 Elite Emote steps, and 3 Master Emote steps.
+- **[Added]** Support for 1 off-centered Hard Cryptic step.
+- **[Fixed]** General overlay stability bugfixes.
+- **[Fixed]** "Blow a kiss outside K'ril Tsutsaroth's chamber" Master step coordinate typo.
+
+#### 1.3.0 — 2026-06-06
+- **[Added]** Initial support for Cryptic clues, including custom areas for 7 Master Cryptic steps.
+- **[Added]** Support for 1 Easy Emote step, 1 Medium Emote step, and 11 Master Emote steps.
+- **[Added]** Support for 2 new Elite Emote steps.
+- **[Fixed]** Emote steps layout calculation so areas render properly in-game.
+
+#### 1.2.1 — 2026-05-30
+- **[Added]** Support for 2 Easy Emote steps, 18 Medium Emote steps, 3 Hard Emote steps, and 5 Master Emote steps.
+- **[Modified]** Adjusted coordinates for 1 Master Emote step.
+
+#### 1.2.0 — 2026-05-29
+- **[Rework]** Complete architectural rewrite to hook directly into RuneLite's built-in Clue Scroll Plugin for H&C, Map, and Cryptic clues.
+- **[Added]** Support for an additional 21 Easy Emote steps and 3 Master Emote steps.
+
+#### 1.1.0 — 2026-05-19
+- **[Added]** New `Individual Tiles` configuration option to allow users to toggle individual tile rendering (enabled by default).
+- **[Added]** Support for 5 new clue steps: 2 Master Emote steps, 2 Medium Emote steps, and 1 Elite Map step.
+
+#### 1.0.1 — 2026-05-15
+- **[Fixed]** Overlay persisting on screen after a clue step was completed or when walking far away from the location.
+
+#### 1.0.0 — 2026-05-08
+- **[Release]** Initial release on the RuneLite Plugin Hub.
+- **[Features]** True dig area highlights for baseline Beginner Map, Emote, and Hot/Cold steps.
