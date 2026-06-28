@@ -14,7 +14,7 @@
 - **[Added]** Support for 5 Easy Emote steps, 2 Hard Emote steps, 7 Elite Emote steps, and 3 Master Emote steps.
 - **[Added]** Support for 1 off-centered Hard Cryptic step.
 - **[Fixed]** General overlay stability bugfixes.
-- **[Fixed]** "Blow a kiss outside K'ril Tsutsaroth's chamber" Master step coordinate typo.
+- **[Fixed]** "Blow a kiss outside K'ril Tsutsaroth's chamber" Master step emote.
 
 #### 1.3.0 — 2026-06-06
 - **[Added]** Initial support for Cryptic clues, including custom areas for 7 Master Cryptic steps.
