@@ -22,9 +22,9 @@ A RuneLite plugin that highlights the **true dig/emote area** for clue scroll st
 | Tier | Map Clues | Emote Clues | Hot/Cold | Coordinate | Cryptic |
 |------|-----------|-------------|----------|----------|----------|
 | Beginner | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-100%25-green) | N/A | N/A |
-| Easy | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-30/33-orange) | N/A | N/A | 🚧 In Progress |
-| Medium | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-21/25-orange) | N/A | ![](https://img.shields.io/badge/Implemented-100%25-green) | N/A |
-| Hard | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-8/17-orange) | N/A | ![](https://img.shields.io/badge/Implemented-100%25-green) | 🚧 In Progress |
+| Easy | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-31/33-orange) | N/A | N/A | 🚧 In Progress |
+| Medium | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-22/25-orange) | N/A | ![](https://img.shields.io/badge/Implemented-100%25-green) | N/A |
+| Hard | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-10/17-orange) | N/A | ![](https://img.shields.io/badge/Implemented-100%25-green) | 🚧 In Progress |
 | Elite | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-16/19-orange) | N/A | ![](https://img.shields.io/badge/Implemented-100%25-green) | 🚧 In Progress |
 | Master | N/A | ![](https://img.shields.io/badge/Implemented-24/25-orange) | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-100%25-green) | 🚧 In Progress |
 ___
@@ -32,6 +32,9 @@ ___
 ___
 ## Changelog
 
+#### 1.3.3
+- Added support for Master Cryptic steps; now really working!
+- Added support for 1 Easy Emote step, 1 Medium Emote step and 2 Hard Emote steps
 #### 1.3.2
 - Added support for 1 Easy Emote step, 3 Hard Emote steps and 7 Elite Emote steps
 - Bugfixes for Map and cryptic steps 
