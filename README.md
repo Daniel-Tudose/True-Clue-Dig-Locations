@@ -20,45 +20,16 @@ A RuneLite plugin that highlights the **true dig/emote area** for clue scroll st
 ## Supported Clue Tiers
 
 | Tier | Map Clues | Emote Clues | Hot/Cold | Coordinate | Cryptic |
-|------|-----------|-------------|----------|----------|----------|
-| Beginner | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-100%25-green) | N/A | N/A |
-| Easy | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-31/33-orange) | N/A | N/A | 🚧 In Progress |
-| Medium | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-22/25-orange) | N/A | ![](https://img.shields.io/badge/Implemented-100%25-green) | N/A |
-| Hard | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-10/17-orange) | N/A | ![](https://img.shields.io/badge/Implemented-100%25-green) | 🚧 In Progress |
-| Elite | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-16/19-orange) | N/A | ![](https://img.shields.io/badge/Implemented-100%25-green) | 🚧 In Progress |
-| Master | N/A | ![](https://img.shields.io/badge/Implemented-24/25-orange) | ![](https://img.shields.io/badge/Implemented-100%25-green) | ![](https://img.shields.io/badge/Implemented-100%25-green) | 🚧 In Progress |
-___
+|------|-----------|-------------|----------|------------|---------|
+| **Beginner** | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | N/A | N/A |
+| **Easy** | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![31 of 33 Implemented](https://img.shields.io/badge/Implemented-31/33-orange) | N/A | N/A | ![In Progress](https://img.shields.io/badge/Status-In_Progress-blue) |
+| **Medium** | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![22 of 25 Implemented](https://img.shields.io/badge/Implemented-22/25-orange) | N/A | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | N/A |
+| **Hard** | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![10  of 17 Implemented](https://img.shields.io/badge/Implemented-10/17-orange) | N/A | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![In Progress](https://img.shields.io/badge/Status-In_Progress-blue) |
+| **Elite** | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![16 of 19 Implemented](https://img.shields.io/badge/Implemented-16/19-orange) | N/A | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![In Progress](https://img.shields.io/badge/Status-In_Progress-blue) |
+| **Master** | N/A | ![24 of 25 Implemented](https://img.shields.io/badge/Implemented-24/25-orange) | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![In Progress](https://img.shields.io/badge/Status-In_Progress-blue) |
+
+---
 ### [Contribute to the plugin here!](contributing.md)
-___
+---
 ## Changelog
-
-#### 1.3.3
-- Added support for Master Cryptic steps; now really working!
-- Added support for 1 Easy Emote step, 1 Medium Emote step and 2 Hard Emote steps
-#### 1.3.2
-- Added support for 1 Easy Emote step, 3 Hard Emote steps and 7 Elite Emote steps
-- Bugfixes for Map and cryptic steps 
-#### 1.3.1
-- Overlay bugfixes
-- "Blow a kiss outside K'ril Tsutsaroth's chamber" Master step should now display correctly
-- Added support for 5 Easy Emote steps, 2 Hard Emote steps, 7 Elite Emote steps and 3 Master Emote steps
-- Added support for 1 off-centered Hard Cryptic step
-#### 1.3.0
-- Added support for cryptic clues; also added custom areas for 7 Master Cryptic steps
-- Added support for 1 Easy Emote step, 1 Medium Emote step and 11 Master Emote steps
-- Added support for 2 new Elite Emote steps
-- Bugfix: emote steps display their area correctly now
-#### 1.2.1
-- Added support for an additional 2 Easy Emote steps, 18 Medium Emote steps, 3 Hard Emote steps, 5 Master Emote steps and modified one Master Emote step
-#### 1.2.0
-- Reworked the plugin's logic to use RuneLite's build in Clue Scroll Plugin for H&C, Map and Cryptic clues
-- Added support for an additional 21 Easy Emote steps and 3 Master Emote steps
-#### 1.1.0
-- Added individual tile rendering option in config (the new option ```Individual Tiles``` is selected by default)
-- Added support for 5 new clue steps: 2 Master Emote steps, 2 Medium Emote steps and 1 Elite Map step
-
-#### 1.0.1
-- Fixed overlay persisting after clue step completion
-
-#### 1.0.0
-- Initial release
+See the full, detailed version log inside the [CHANGELOG.md](CHANGELOG.md) file.
