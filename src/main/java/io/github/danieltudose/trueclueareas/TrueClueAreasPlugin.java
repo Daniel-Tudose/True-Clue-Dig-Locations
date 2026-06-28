@@ -198,6 +198,7 @@ public class TrueClueAreasPlugin extends Plugin {
 					.replaceAll("(?i)<br\\s*/?>", " ")
 					.replaceAll("<[^>]*>", "")
 					.replaceAll("\\s+", " ")
+					.replace('\u2019', '\'')
 					.trim();
 			DigArea emoteArea = ALL_EMOTE_AREAS.get(text);
 			if (emoteArea != null) {
