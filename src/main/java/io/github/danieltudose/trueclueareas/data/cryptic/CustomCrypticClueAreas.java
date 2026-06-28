@@ -36,6 +36,7 @@ public class CustomCrypticClueAreas {
         m.put(new WorldPoint(2744, 5116, 0),  new DigArea(new WorldPoint(2745, 5115, 0), 7)); // Shadow Dungeon - Master
         m.put(new WorldPoint(3043, 4974, 1),  new DigArea(new WorldPoint(3043, 4973, 1), 7)); // Fire in the Rogues' Den - Master
         m.put(new WorldPoint(2874, 3757, 0),  new DigArea(new WorldPoint(2877, 3757, 0), 7)); // North of Trollheim - Master
+        m.put(new WorldPoint(1753, 4936, 0),  new DigArea(new WorldPoint(1759, 4942, 0), 7)); // Terrorbird Display - Master
         m.put(new WorldPoint(2591, 3879, 0),  new DigArea(new WorldPoint(2592, 3879, 0), 3)); // Evergreen in Etceteria - Hard
         CRYPTIC_STEPS_CUSTOM_AREAS = Collections.unmodifiableMap(m);
     }
