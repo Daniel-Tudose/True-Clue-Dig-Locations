@@ -53,8 +53,10 @@ public class MasterEmoteClueAreas {
             .put("Beckon by a collection of crystalline maple trees. Beware of double agents! Equip Bryophyta's staff and a nature tiara.",
                     new DigArea(new WorldPoint(2208, 3424, 0), new WorldPoint(2212, 3428, 0)))
             .put("Yawn in the 7th room of Pyramid Plunder. Beware of double agents! Equip a pharaoh sceptre and a full set of menaphite robes.",
-                    new DigArea(new WorldPoint(1941, 4422, 0), new WorldPoint(1954, 4430, 0)))
+                    new DigArea(new WorldPoint(1941, 4421, 0), new WorldPoint(1954, 4432, 0)))
             .put("Do a jig at the barrows chest. Beware of double agents! Equip any full barrows set.",
                     new DigArea(new WorldPoint(3547, 9690, 0), new WorldPoint(3556, 9699, 0)))
+            .put("Dance in the King Black Dragon's lair. Beware of double agents! Equip a black dragonhide body, black dragonhide vambraces and a black dragon mask.",
+                    new DigArea(new WorldPoint(2256, 4680, 0), new WorldPoint(2287, 4711, 0)))
             .build();
 }
