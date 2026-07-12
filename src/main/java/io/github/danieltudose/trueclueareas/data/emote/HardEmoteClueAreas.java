@@ -31,5 +31,9 @@ public class HardEmoteClueAreas {
                     new DigArea(new WorldPoint(3357, 3332, 0), new WorldPoint(3367, 3348, 0)))
             .put("Panic by the pilot on White Wolf Mountain. Beware of double agents! Equip mithril platelegs, a ring of life and a rune axe.",
                     new DigArea(new WorldPoint(2845, 3497, 0), new WorldPoint(2849, 3501, 0)))
+            .put("Dance at the cat-doored pyramid in Sophanem. Beware of double agents! Equip a ring of life, an uncharged amulet of glory and an adamant two-handed sword.",
+                    new DigArea(new WorldPoint(3292, 2780, 0), new WorldPoint(3297, 2784, 0)))
+            .put("Cheer at the top of the agility pyramid. Beware of double agents! Equip a blue mystic robe top and any rune heraldic shield.",
+                    new DigArea(new WorldPoint(3042, 4695, 3), new WorldPoint(3047, 4700, 3)))
             .build();
 }
