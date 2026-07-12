@@ -1,10 +1,15 @@
 # Changelog
 
+#### 1.3.4 — 2026-07-12
+
+- **[Added]** Support for 2 new Hard Emote steps: "Dance in Sophanem" and "Cheer atop the agility pyramid".
+- **[Fixed]** Center coordinates for the Hard Map clue step south of the Yanille bank.
+- **[Fixed]** Typo for the Exam Centre Hard Emote step.
+
 #### 1.3.3 — 2026-06-28
-- **[Added]** Support for Master Cryptic steps; now fully operational.
 - **[Added]** 1 Master Cryptic custom area (Terrorbird display).
 - **[Added]** Support for 1 Easy Emote step, 1 Medium Emote step, 2 Hard Emote steps and the LAST Master Emote step.
-- **[Fixed]** Clue text apostrophe not being read correctly.
+- **[Added]** Core engine support for properly reading and parsing clue text strings containing apostrophes.
 
 #### 1.3.2 — 2026-06-19
 - **[Added]** Support for 1 Easy Emote step, 3 Hard Emote steps, and 7 Elite Emote steps.
