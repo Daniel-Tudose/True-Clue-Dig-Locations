@@ -35,5 +35,15 @@ public class HardEmoteClueAreas {
                     new DigArea(new WorldPoint(3292, 2780, 0), new WorldPoint(3297, 2784, 0)))
             .put("Cheer at the top of the agility pyramid. Beware of double agents! Equip a blue mystic robe top and any rune heraldic shield.",
                     new DigArea(new WorldPoint(3042, 4695, 3), new WorldPoint(3047, 4700, 3)))
+            .put("Salute in the banana plantation. Beware of double agents! Equip a diamond ring, amulet of power, and nothing on your chest and legs.",
+                    new DigArea(new WorldPoint(2909, 3155, 0), new WorldPoint(2932, 3174, 0)))
+            .put("Blow a kiss between the tables in Shilo Village bank. Beware of double agents! Equip a blue mystic hat, bone spear and rune platebody.",
+                    new DigArea(new WorldPoint(2851, 2952, 0), new WorldPoint(2854, 2955, 0)))
+            .put("Yawn in the rogues' general store. Beware of double agents! Equip an adamant square shield, blue dragon vambraces and a rune pickaxe.",
+                    new DigArea(new WorldPoint(3024, 3699, 0), new WorldPoint(3027, 3704, 0)))
+            .put("Jig at Jiggig. Beware of double agents! Equip a Rune spear, rune platelegs and any rune heraldic helm.",
+                    new DigArea(new WorldPoint(2475, 3041, 0), new WorldPoint(2488, 3052, 0)))
+            .put("Salute in the centre of the mess hall. Beware of double agents! Equip a rune halberd rune platebody and an amulet of strength.",
+                    new DigArea(new WorldPoint(1644, 3629, 0), new WorldPoint(1648, 3636, 0)))
             .build();
 }
