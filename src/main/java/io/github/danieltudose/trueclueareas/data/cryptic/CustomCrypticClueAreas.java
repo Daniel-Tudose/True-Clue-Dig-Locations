@@ -39,6 +39,7 @@ public class CustomCrypticClueAreas {
         m.put(new WorldPoint(1753, 4936, 0),  new DigArea(new WorldPoint(1759, 4942, 0), 7)); // Terrorbird Display - Master
         m.put(new WorldPoint(2591, 3879, 0),  new DigArea(new WorldPoint(2592, 3879, 0), 3)); // Evergreen in Etceteria - Hard
         m.put(new WorldPoint(3195, 3357, 0),  new DigArea(new WorldPoint(3195, 3353, 0), new WorldPoint(3198, 3358, 0))); // Champion's Guild chicken coop - Hard
+        m.put(new WorldPoint(1820, 9935, 0),  new DigArea(new WorldPoint(1818, 9933, 0), new WorldPoint(1822, 9936, 0))); // Forthos Dungeon - Hard
         CRYPTIC_STEPS_CUSTOM_AREAS = Collections.unmodifiableMap(m);
     }
 }
