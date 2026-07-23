@@ -40,5 +40,7 @@ public class EliteEmoteClueAreas {
                     new DigArea(new WorldPoint(2373, 3848, 0), new WorldPoint(2377, 3852, 0)))
             .put("Bow on the ground floor of the Legends' Guild. Equip a Cape of Legends, a dragon battleaxe and an amulet of glory.",
                     new DigArea(new WorldPoint(2723, 3374, 0), new WorldPoint(2735, 3381, 0)))
+            .put("Salute by the Charcoal Burners. Equip a Farmer's strawhat, Shayzien platebody (5) and Pyromancer robes.",
+                    new DigArea(new WorldPoint(1644, 3629, 0), new WorldPoint(1648, 3636, 0)))
             .build();
 }
