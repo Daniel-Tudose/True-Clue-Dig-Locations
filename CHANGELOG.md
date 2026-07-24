@@ -1,7 +1,12 @@
 # Changelog
 
-#### 1.3.4 — 2026-07-12
+#### 1.3.5 — 2026-07-24
+- **[Added]** Last 5 Hard Emote steps (Karamja banana plantation, Shilo Village bank, Rogues' general store, Jiggig, and Mess Hall) — Hard Emote clues 100% complete!
+- **[Added]** Support for 1 Elite Emote step (Charcoal burners).
+- **[Added]** Custom dig area highlights for Cryptic steps in Forthos Dungeon and the Champions' Guild chicken coop.
+- **[Fixed]** (potential) Bug where the overlay would fail to update properly when juggling multiple clue scrolls of the same step.
 
+#### 1.3.4 — 2026-07-12
 - **[Added]** Support for 2 new Hard Emote steps: "Dance in Sophanem" and "Cheer atop the agility pyramid".
 - **[Fixed]** Center coordinates for the Hard Map clue step south of the Yanille bank.
 - **[Fixed]** Typo for the Exam Centre Hard Emote step.
