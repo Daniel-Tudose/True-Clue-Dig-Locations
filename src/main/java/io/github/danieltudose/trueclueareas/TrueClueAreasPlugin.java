@@ -243,7 +243,9 @@ public class TrueClueAreasPlugin extends Plugin {
 				} else {
 					overlay.clearDigArea();
 				}
+				return;
 			}
+			onClueChanged(active, cluePlugin);
 		});
 	}
 
