@@ -19,14 +19,14 @@ A RuneLite plugin that highlights the **true dig/emote area** for clue scroll st
 
 ## Supported Clue Tiers
 
-| Tier | Map Clues | Emote Clues | Hot/Cold | Coordinate | Cryptic |
-|------|-----------|-------------|----------|------------|---------|
-| **Beginner** | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | N/A | N/A |
+| Tier | Map Clues | Emote Clues                                                                    | Hot/Cold | Coordinate | Cryptic |
+|------|-----------|--------------------------------------------------------------------------------|----------|------------|---------|
+| **Beginner** | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green)     | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | N/A | N/A |
 | **Easy** | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![31 of 33 Implemented](https://img.shields.io/badge/Implemented-31/33-orange) | N/A | N/A | ![In Progress](https://img.shields.io/badge/Status-In_Progress-blue) |
 | **Medium** | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![22 of 25 Implemented](https://img.shields.io/badge/Implemented-22/25-orange) | N/A | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | N/A |
-| **Hard** | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![10  of 17 Implemented](https://img.shields.io/badge/Implemented-10/17-orange) | N/A | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![In Progress](https://img.shields.io/badge/Status-In_Progress-blue) |
-| **Elite** | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![16 of 19 Implemented](https://img.shields.io/badge/Implemented-16/19-orange) | N/A | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![In Progress](https://img.shields.io/badge/Status-In_Progress-blue) |
-| **Master** | N/A | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![In Progress](https://img.shields.io/badge/Status-In_Progress-blue) |
+| **Hard** | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green)     | N/A | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![In Progress](https://img.shields.io/badge/Status-In_Progress-blue) |
+| **Elite** | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![17 of 19 Implemented](https://img.shields.io/badge/Implemented-17/19-orange) | N/A | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![In Progress](https://img.shields.io/badge/Status-In_Progress-blue) |
+| **Master** | N/A | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green)     | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![In Progress](https://img.shields.io/badge/Status-In_Progress-blue) |
 
 ---
 ### [Contribute to the plugin here!](contributing.md)
