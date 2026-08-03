@@ -103,6 +103,8 @@ public class TrueClueAreasPlugin extends Plugin {
 		if (current != lastKnownClue) {
 			lastKnownClue = current;
 			onClueChanged(current, cluePlugin);
+		} else if (current != null && !overlay.hasDigArea()) {
+			onClueChanged(current, cluePlugin);
 		}
 
 		if (current instanceof HotColdClue) {
@@ -115,6 +117,18 @@ public class TrueClueAreasPlugin extends Plugin {
 	private void onClueChanged(ClueScroll newClue, ClueScrollPlugin cluePlugin) {
 		if (newClue == null) {
 			clearAll();
+			return;
+		}
+
+		if (newClue instanceof EmoteClue) {
+			EmoteClue emoteClue = (EmoteClue) newClue;
+			DigArea area = ALL_EMOTE_AREAS.entrySet().stream()
+					.filter(e -> e.getKey().equalsIgnoreCase(emoteClue.getText()))
+					.map(Map.Entry::getValue)
+					.findFirst().orElse(null);
+			if (area != null) {
+				overlay.setDigArea(area, TrueClueAreasOverlay.ClueType.EMOTE);
+			}
 			return;
 		}
 

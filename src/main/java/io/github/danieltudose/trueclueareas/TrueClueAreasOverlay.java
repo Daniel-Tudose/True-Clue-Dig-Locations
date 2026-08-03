@@ -162,4 +162,8 @@ public class TrueClueAreasOverlay extends Overlay {
             }
         }
     }
+
+    public boolean hasDigArea() {
+        return digArea != null;
+    }
 }
