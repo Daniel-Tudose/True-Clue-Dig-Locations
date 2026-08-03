@@ -23,7 +23,7 @@ public class EliteEmoteClueAreas {
             .put("Laugh by the fountain of heroes. Equip splitbark legs, dragon boots and a Rune longsword.",
                     new DigArea(new WorldPoint(2914, 9891, 0), new WorldPoint(2921, 9896, 0)))
             .put("Panic at the area flowers meet snow. Equip Blue D'hide vambraces, a dragon spear and a rune plateskirt.",
-                    new DigArea(new WorldPoint(27874, 3779, 0), new WorldPoint(2782, 3786, 0)))
+                    new DigArea(new WorldPoint(2774, 3779, 0), new WorldPoint(2782, 3786, 0)))
             .put("Bow within the temple in Civitas illa Fortis. Equip any piece of sunfire fanatic armour.",
                     new DigArea(new WorldPoint(1697, 3085, 0), new WorldPoint(1701, 3088, 0)))
             .put("Cheer in the Shadow dungeon. Equip a rune crossbow, climbing boots and any mitre.",
