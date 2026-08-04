@@ -21,6 +21,7 @@ public class CustomMapClueAreas {
     static {
         Map<WorldPoint, DigArea> m = new HashMap<>();
         m.put(new WorldPoint(2615, 3078, 0),  new DigArea(new WorldPoint(2616, 3077, 0), 3)); // South of Yanille bank - Hard
+        m.put(new WorldPoint(2651, 3231, 0),  new DigArea(new WorldPoint(2650, 3231, 0), 3)); // South of Yanille bank - Hard
         MAP_STEPS_CUSTOM_AREAS = Collections.unmodifiableMap(m);
     }
 }
