@@ -1,5 +1,10 @@
 # Changelog
 
+#### 1.3.6 — 2026-08-04
+- **[Added]** Custom dig area for South of East Ardougne (DJP Fairy Ring) Medium Map step.
+- **[Added]** Enhanced overlay support and interaction handling when juggling clue scrolls.
+- **[Fixed]** Overlay coordinates for the emote clue step "Panic on Trollweiss mountain".
+
 #### 1.3.5 — 2026-07-24
 - **[Added]** Last 5 Hard Emote steps (Karamja banana plantation, Shilo Village bank, Rogues' general store, Jiggig, and Mess Hall) — Hard Emote clues 100% complete!
 - **[Added]** Support for 1 Elite Emote step (Charcoal burners).
