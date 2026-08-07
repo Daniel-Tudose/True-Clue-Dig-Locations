@@ -58,8 +58,10 @@ public class TrueClueAreasOverlay extends Overlay {
                 color = config.emoteClueColor();
             }
             if (shouldShow) {
-                Color fill   = new Color(color.getRed(), color.getGreen(), color.getBlue(), 50);
-                Color border = new Color(color.getRed(), color.getGreen(), color.getBlue(), 200);
+                int fillAlpha = Math.max(10, color.getAlpha());
+                int borderAlpha = Math.min(255, fillAlpha * 2);
+                Color fill   = new Color(color.getRed(), color.getGreen(), color.getBlue(), fillAlpha);
+                Color border = new Color(color.getRed(), color.getGreen(), color.getBlue(), borderAlpha);
                 for (int i = 0; i < digArea.getRectCount(); i++) {
                     drawArea(graphics, digArea.getSouthWestCorner(i), digArea.getNorthEastCorner(i), fill, border);
                 }
@@ -68,6 +70,10 @@ public class TrueClueAreasOverlay extends Overlay {
 
         if (hotColdLocations != null && config.showHotColdClues()) {
             Color color = config.hotColdColor();
+            int fillAlpha = Math.max(10, color.getAlpha());
+            int borderAlpha = Math.min(255, fillAlpha * 2);
+            Color fill   = new Color(color.getRed(), color.getGreen(), color.getBlue(), fillAlpha);
+            Color border = new Color(color.getRed(), color.getGreen(), color.getBlue(), borderAlpha);
             for (HotColdLocation location : hotColdLocations) {
                 java.awt.Rectangle rect = location.getRect();
                 WorldPoint sw = new WorldPoint(
@@ -78,9 +84,7 @@ public class TrueClueAreasOverlay extends Overlay {
                         rect.x + rect.width - 1,
                         rect.y + rect.height - 1,
                         location.getWorldPoint().getPlane());
-                drawArea(graphics, sw, ne,
-                        new Color(color.getRed(), color.getGreen(), color.getBlue(), 50),
-                        new Color(color.getRed(), color.getGreen(), color.getBlue(), 200));
+                drawArea(graphics, sw, ne, fill, border);
             }
         }
         return null;

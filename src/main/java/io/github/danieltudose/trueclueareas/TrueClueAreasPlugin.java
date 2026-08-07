@@ -126,6 +126,8 @@ public class TrueClueAreasPlugin extends Plugin {
 					.filter(e -> e.getKey().equalsIgnoreCase(emoteClue.getText()))
 					.map(Map.Entry::getValue)
 					.findFirst().orElse(null);
+			log.info("Area found: {}", area != null);
+			log.info("Setting overlay: {}", area != null ? area.getRectCount() + " rects" : "null");
 			if (area != null) {
 				overlay.setDigArea(area, TrueClueAreasOverlay.ClueType.EMOTE);
 			}
@@ -205,6 +207,7 @@ public class TrueClueAreasPlugin extends Plugin {
 
 	private void handleTextClue() {
 		clientThread.invokeLater(() -> {
+			log.info("handleTextClue fired, current overlay has area: {}", overlay.hasDigArea());
 			net.runelite.api.widgets.Widget clueWidget = client.getWidget(203, 2);
 			if (clueWidget == null || clueWidget.getText() == null || clueWidget.getText().isEmpty()) return;
 
@@ -214,7 +217,10 @@ public class TrueClueAreasPlugin extends Plugin {
 					.replaceAll("\\s+", " ")
 					.replace('\u2019', '\'')
 					.trim();
-			DigArea emoteArea = ALL_EMOTE_AREAS.get(text);
+			DigArea emoteArea = ALL_EMOTE_AREAS.entrySet().stream()
+					.filter(e -> e.getKey().equalsIgnoreCase(text))
+					.map(Map.Entry::getValue)
+					.findFirst().orElse(null);
 			if (emoteArea != null) {
 				overlay.setDigArea(emoteArea, TrueClueAreasOverlay.ClueType.EMOTE);
 				return;
@@ -259,6 +265,7 @@ public class TrueClueAreasPlugin extends Plugin {
 				}
 				return;
 			}
+			if (active == null || active instanceof EmoteClue) return;
 			onClueChanged(active, cluePlugin);
 		});
 	}
