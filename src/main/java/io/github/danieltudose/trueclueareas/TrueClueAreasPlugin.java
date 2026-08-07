@@ -126,8 +126,8 @@ public class TrueClueAreasPlugin extends Plugin {
 					.filter(e -> e.getKey().equalsIgnoreCase(emoteClue.getText()))
 					.map(Map.Entry::getValue)
 					.findFirst().orElse(null);
-			log.info("Area found: {}", area != null);
-			log.info("Setting overlay: {}", area != null ? area.getRectCount() + " rects" : "null");
+			//log.info("Area found: {}", area != null);
+			//log.info("Setting overlay: {}", area != null ? area.getRectCount() + " rects" : "null");
 			if (area != null) {
 				overlay.setDigArea(area, TrueClueAreasOverlay.ClueType.EMOTE);
 			}
@@ -207,7 +207,7 @@ public class TrueClueAreasPlugin extends Plugin {
 
 	private void handleTextClue() {
 		clientThread.invokeLater(() -> {
-			log.info("handleTextClue fired, current overlay has area: {}", overlay.hasDigArea());
+			//log.info("handleTextClue fired, current overlay has area: {}", overlay.hasDigArea());
 			net.runelite.api.widgets.Widget clueWidget = client.getWidget(203, 2);
 			if (clueWidget == null || clueWidget.getText() == null || clueWidget.getText().isEmpty()) return;
 
