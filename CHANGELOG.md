@@ -1,5 +1,10 @@
 # Changelog
 
+#### 1.3.7 — 2026-08-07
+- **[Added]** Custom dig area for a Medium Map step (behind Chemist's house in Rimmington).
+- **[Fixed]** Overlay transparency not respecting the user's configured alpha value in-game.
+- **[Fixed]** Area coordinates for the Charcoal Burners Elite Emote step.
+
 #### 1.3.6 — 2026-08-04
 - **[Added]** Custom dig area for South of East Ardougne (DJP Fairy Ring) Medium Map step.
 - **[Added]** Enhanced overlay support and interaction handling when juggling clue scrolls.
