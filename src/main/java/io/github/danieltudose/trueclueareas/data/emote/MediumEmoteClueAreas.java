@@ -52,5 +52,7 @@ public class MediumEmoteClueAreas {
                     new DigArea(new WorldPoint(2523, 3373, 0), new WorldPoint(2533, 3377,0)))
             .put("Cry on top of the western tree in the Gnome Agility Arena. Indicate 'no' before you talk to me. Equip a steel kiteshield, ring of forging and green dragonhide chaps.",
                     new DigArea(new WorldPoint(2472, 3418, 2), new WorldPoint(2477, 3421, 2)))
+            .put("Cry on the shore of Catherby beach. Laugh before you talk to me, equip an adamant sq shield, a bone dagger and mithril platebody.",
+                    new DigArea(new WorldPoint(2849, 3425, 0), new WorldPoint(2857, 3431, 0)))
             .build();
 }
