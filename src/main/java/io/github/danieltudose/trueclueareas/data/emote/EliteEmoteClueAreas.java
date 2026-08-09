@@ -42,5 +42,7 @@ public class EliteEmoteClueAreas {
                     new DigArea(new WorldPoint(2723, 3374, 0), new WorldPoint(2735, 3381, 0)))
             .put("Salute by the Charcoal Burners. Equip a Farmer's strawhat, Shayzien platebody (5) and Pyromancer robes.",
                     new DigArea(new WorldPoint(1711, 3464, 0), new WorldPoint(1721, 3468, 0)))
+            .put("Shrug in the Shayzien war tent. Equip a blue mystic robe bottom, a rune kiteshield and any bob shirt.",
+                    new DigArea(new WorldPoint(1480, 3631, 0), new WorldPoint(1489, 3640, 0)))
             .build();
 }
