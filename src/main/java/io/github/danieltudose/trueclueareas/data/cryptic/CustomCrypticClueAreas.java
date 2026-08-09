@@ -11,7 +11,7 @@ public class CustomCrypticClueAreas {
     // Elite clues are single tile (base plugin already highlights them).
     public static final Set<Integer> SKIP_CRYPTIC_CLUE_IDS = Set.of(
             //ItemID.TRAIL_ELITE_RIDDLE_EXP7, //This is most likely a 3x3 area (or a 7x7 area for master tier steps)  instead of the usual single tile highlighted by runelite's base clue plugin
-            //ItemID.TRAIL_ELITE_RIDDLE_EXP11, //This is bigger than a single tile (elite cryptic step that says "Dig in front of the Law rift in the abyss")
+            //ItemID.TRAIL_ELITE_RIDDLE_EXP11, //This is bigger than a single tile (a 3x3?) - (elite cryptic step that says "Dig in front of the Law rift in the abyss")
             ItemID.TRAIL_ELITE_RIDDLE_EXP9,
             ItemID.TRAIL_ELITE_RIDDLE_EXP34,
             ItemID.TRAIL_ELITE_RIDDLE_EXP35,
