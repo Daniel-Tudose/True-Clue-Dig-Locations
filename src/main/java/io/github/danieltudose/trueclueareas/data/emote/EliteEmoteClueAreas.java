@@ -27,7 +27,7 @@ public class EliteEmoteClueAreas {
             .put("Bow within the temple in Civitas illa Fortis. Equip any piece of sunfire fanatic armour.",
                     new DigArea(new WorldPoint(1697, 3085, 0), new WorldPoint(1701, 3088, 0)))
             .put("Cheer in the Shadow dungeon. Equip a rune crossbow, climbing boots and any mitre.",
-                    new DigArea(new WorldPoint(2625, 5057, 0), new WorldPoint(2749, 5118, 0)))
+                    new DigArea(new WorldPoint(2629, 5071, 0), 9)) //Full area coordiantes: 2625, 5057 and 2749, 5118
             .put("Headbang in the Fight Arena pub. Equip a pirate bandana, a dragonstone necklace and and a magic longbow.",
                     new DigArea(new WorldPoint(2563, 3139, 0), new WorldPoint(2570, 3150, 0)))
             .put("Laugh in front of the gem store in Ardougne market. Equip a Castlewars bracelet, a dragonstone amulet and a ring of forging.",
