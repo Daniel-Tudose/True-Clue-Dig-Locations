@@ -165,6 +165,13 @@ public class TrueClueAreasPlugin extends Plugin {
 			}
 		}
 
+		if (newClue instanceof MusicClue) {
+			overlay.setDigArea(
+					new DigArea(new WorldPoint(2986, 3380, 0), new WorldPoint(2994, 3388, 0)),
+					TrueClueAreasOverlay.ClueType.MAP);
+			return;
+		}
+
 		if (newClue instanceof CoordinateClue) {
 			CoordinateClue coordClue = (CoordinateClue) newClue;
 			if (coordClue.getEnemy() == ARMADYLEAN_OR_BANDOSIAN_GUARD
