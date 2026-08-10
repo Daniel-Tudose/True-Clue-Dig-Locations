@@ -38,22 +38,28 @@ If running RuneLite in developer mode, the developer tools panel has a "Location
 ### Finding the Area Size
 Most areas are square:
 - Map clues: usually **3×3**
-- Emote clues: some are **5×5** or rectangles
+- Emote clues: most are rectangles of different sizes
 - Hot/cold clues: always **7x7**(beginner) or **9×9**(master)
-- Coordinate clues: *More data needed* (is it one tile only? all steps show the correct location then?)
-- Cryptic clues: *More data needed* (is the area an actual 3x3 like map steps or is it bigger and possibly a rectangle as emote steps?)
+- Coordinate clues: all are a **3x3**, except elite steps which are only one tile
+- Cryptic clues: variable size; hard to determine in one step; needs multiple steps to map the area
 
 ### Adding Map Clue Data
-- [x] [Beginner Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/1#issue-4372315461)
-- [ ] [Easy Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/4#issue-4407753830)
-- [ ] [Medium Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/5#issue-4407769223)
-- [ ] [Hard Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/6#issue-4407780006)
-- [ ] [Elite Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/7#issue-4407799473)
+- [x] [Beginner Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/1)
+- [ ] [Easy Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/4)
+- [ ] [Medium Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/5)
+- [x] [Hard Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/6)
+- [ ] [Elite Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/7)
 
 ### Adding Emote Clue Data
-- [x] [Beginner Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/3#issue-4372430299)
-- [ ] [Easy Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/8#issue-4407821433)
-- [ ] [Medium Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/9#issue-4407838694)
-- [ ] [Hard Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/10#issue-4407845807)
-- [ ] [Elite Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/11#issue-4407850976)
-- [ ] [Master Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/12#issue-4407856371)
+- [x] [Beginner Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/3)
+- [ ] [Easy Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/8)
+- [ ] [Medium Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/9)
+- [x] [Hard Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/10)
+- [ ] [Elite Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/11)
+- [x] [Master Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/12)
+
+### Adding Cryptic Clue Data
+- [ ] [Easy Cryptic Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/15)
+- [ ] [Hard Cryptic Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/16)
+- [ ] [Elite Cryptic Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/22)
+- [ ] [Master Cryptic Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/17)
