@@ -44,6 +44,7 @@ public class CustomCrypticClueAreas {
         m.put(new WorldPoint(3572, 4372, 0),  new DigArea(new WorldPoint(3572, 4372, 0), 10)); // Yu'biusk (fairy ring BLQ) - Hard
         m.put(new WorldPoint(3089, 3468, 0),  new DigArea(new WorldPoint(3088, 3469, 0), 3)); // Edgeville - R of the S yew tree - Hard
         m.put(new WorldPoint(1910, 4367, 0),  new DigArea(new WorldPoint(1911, 4367, 0), 3)); // Dagganoth ladder - Elite
+        m.put(new WorldPoint(1179, 3626, 0),  new DigArea(new WorldPoint(1172, 3621, 0), new WorldPoint(1183, 3633, 0))); // Fire beside Ket'sal K'uk (Kebos Swamp) - Hard
         CRYPTIC_STEPS_CUSTOM_AREAS = Collections.unmodifiableMap(m);
     }
 }
