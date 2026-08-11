@@ -154,4 +154,31 @@ public interface TrueClueAreasConfig extends Config {
 	default int hotColdThreshold() {
 		return 2;
 	}
+
+	@ConfigSection(
+			name = "Misc Clues",
+			description = "Settings for miscellaneous clue step highlights (music, Sherlock, etc.)",
+			position = 4)
+	String miscSection = "miscClues";
+
+	@ConfigItem(
+			keyName = "showMiscClues",
+			name = "Show misc clue areas",
+			description = "Highlight the area for miscellaneous clue steps",
+			section = miscSection,
+			position = 0)
+	default boolean showMiscClues() {
+		return true;
+	}
+
+	@Alpha
+	@ConfigItem(
+			keyName = "miscClueColor",
+			name = "Highlight color",
+			description = "Color of the misc clue area highlight",
+			section = miscSection,
+			position = 1)
+	default Color miscClueColor() {
+		return new Color(255, 165, 0, 40);
+	}
 }
