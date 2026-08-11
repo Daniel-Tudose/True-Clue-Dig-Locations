@@ -27,7 +27,7 @@ public class TrueClueAreasOverlay extends Overlay {
     private final Client client;
     private final TrueClueAreasConfig config;
 
-    public enum ClueType {MAP, EMOTE, COORDINATE}
+    public enum ClueType {MAP, EMOTE, COORDINATE, MISC}
 
     private DigArea digArea = null;
     private ClueType digAreaType = null;
@@ -53,7 +53,11 @@ public class TrueClueAreasOverlay extends Overlay {
             } else if (digAreaType == ClueType.COORDINATE) {
                 shouldShow = config.showCoordinateClues();
                 color = config.coordinateClueColor();
-            } else {
+            } else if (digAreaType == ClueType.MISC) {
+            shouldShow = config.showMiscClues();
+            color = config.miscClueColor();
+            }
+            else {
                 shouldShow = config.showEmoteClues();
                 color = config.emoteClueColor();
             }
@@ -87,6 +91,8 @@ public class TrueClueAreasOverlay extends Overlay {
                 drawArea(graphics, sw, ne, fill, border);
             }
         }
+
+
         return null;
     }
 
