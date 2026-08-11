@@ -164,7 +164,7 @@ public interface TrueClueAreasConfig extends Config {
 	@ConfigItem(
 			keyName = "showMiscClues",
 			name = "Show misc clue areas",
-			description = "Highlight the area for miscellaneous clue steps",
+			description = "Highlight the area for Music and some Sherlock clue steps",
 			section = miscSection,
 			position = 0)
 	default boolean showMiscClues() {
