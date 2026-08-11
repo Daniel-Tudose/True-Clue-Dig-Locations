@@ -63,9 +63,12 @@ public class TrueClueAreasPlugin extends Plugin {
 		ALL_EMOTE_AREAS = Collections.unmodifiableMap(emoteAreas);
 	}
 
+		private boolean manualClear = false;
+
 	private void clearAll() {
 		overlay.clearDigArea();
 		overlay.setHotColdLocations(null);
+		manualClear = true;
 	}
 
 	@Override
@@ -102,8 +105,9 @@ public class TrueClueAreasPlugin extends Plugin {
 
 		if (current != lastKnownClue) {
 			lastKnownClue = current;
+			manualClear = false;
 			onClueChanged(current, cluePlugin);
-		} else if (current != null && !overlay.hasDigArea()) {
+		} else if (current != null && !overlay.hasDigArea() && manualClear) {
 			onClueChanged(current, cluePlugin);
 		}
 
