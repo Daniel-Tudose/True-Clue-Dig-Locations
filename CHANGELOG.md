@@ -1,6 +1,6 @@
 # Changelog
 
-#### 1.3.8 — 2026-08-14
+#### 1.4.00 — 2026-08-14
 - **[Feature]** Added a new **Misc** category in the configuration panel to allow independent toggle/color configuration for Music clues.
 - **[Added]** Support for Music clue steps area highlights where you can play the song to Cecilia. Also for "Equip an abyssal whip in front of the abyssal demons of the Slayer Tower." Master Sherlock step.
 - **[Added]** Custom dig areas for Hard Cryptic steps: Tear of the Soul, Mort'ton road intersection, Ket'sal fire in Kebos Swamp, Yu'biusk, Edgeville yew tree, Clan Cup trophy SW of Citharede Abbey and Elite Cryptic step "Dig near Dagannoth ladder".
