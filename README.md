@@ -15,6 +15,7 @@ A RuneLite plugin that highlights the **true dig/emote area** for clue scroll st
 - Highlights the true dig area for **hot/cold clue** steps
 - Highlights the true dig area for **coordinate clue** steps
 - Highlights the true dig area for **cryptic clue** steps
+- Highlights the area where you can play songs for **music clue** steps
 - Configurable — toggle each clue type on/off, change highlight colors
 
 ## Supported Clue Tiers
