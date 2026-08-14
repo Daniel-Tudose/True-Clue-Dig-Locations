@@ -1,5 +1,13 @@
 # Changelog
 
+#### 1.3.8 — 2026-08-14
+- **[Feature]** Added a new **Misc** category in the configuration panel to allow independent toggle/color configuration for Music clues.
+- **[Added]** Support for Music clue steps area highlights where you can play the song to Cecilia. Also for "Equip an abyssal whip in front of the abyssal demons of the Slayer Tower." Master Sherlock step.
+- **[Added]** Custom dig areas for Hard Cryptic steps: Tear of the Soul, Mort'ton road intersection, Ket'sal fire in Kebos Swamp, Yu'biusk, Edgeville yew tree, Clan Cup trophy SW of Citharede Abbey and Elite Cryptic step "Dig near Dagannoth ladder".
+- **[Added]** Support for 1 Medium Emote step ("Cry on Catherby beach") and 1 Elite Emote step ("Shrug in Shayzien war tent").
+- **[Fixed]** Visual overlay flickering bug on Emote steps.
+- **[Modified]** The highlighted area size for the Elite Emote step "Cheer in Shadow Dungeon" is now set to a 10x10 instead of the whole dungeon.
+
 #### 1.3.7 — 2026-08-07
 - **[Added]** Custom dig area for a Medium Map step (behind Chemist's house in Rimmington).
 - **[Fixed]** Overlay transparency not respecting the user's configured alpha value in-game.
