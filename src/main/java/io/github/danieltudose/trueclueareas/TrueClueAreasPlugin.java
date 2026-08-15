@@ -107,7 +107,7 @@ public class TrueClueAreasPlugin extends Plugin {
 			lastKnownClue = current;
 			manualClear = false;
 			onClueChanged(current, cluePlugin);
-		} else if (current != null && !overlay.hasDigArea() && manualClear) {
+		} else if (current != null && !overlay.hasDigArea() && !manualClear) {
 			onClueChanged(current, cluePlugin);
 		}
 
