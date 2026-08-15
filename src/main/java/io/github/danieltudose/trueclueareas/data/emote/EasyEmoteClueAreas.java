@@ -70,5 +70,7 @@ public class EasyEmoteClueAreas {
                     new DigArea(new WorldPoint(2596, 3273, 0), new WorldPoint(2609, 3284, 0)))
             .put("Dance at the entrance to the Grand Exchange. Equip a pink skirt, pink robe top and a body tiara.",
                     new DigArea(new WorldPoint(3161, 3461, 0), new WorldPoint(3170, 3470, 0)))
+            .put("Yawn in Draynor marketplace. Equip studded leather chaps, an iron kiteshield and a steel longsword.",
+                    new DigArea(new WorldPoint(3075, 3245, 0), new WorldPoint(3086, 3255, 0)))
             .build();
 }
