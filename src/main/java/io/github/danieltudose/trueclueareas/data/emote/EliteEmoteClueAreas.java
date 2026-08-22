@@ -44,5 +44,7 @@ public class EliteEmoteClueAreas {
                     new DigArea(new WorldPoint(1711, 3464, 0), new WorldPoint(1721, 3468, 0)))
             .put("Shrug in the Shayzien war tent. Equip a blue mystic robe bottom, a rune kiteshield and any bob shirt.",
                     new DigArea(new WorldPoint(1480, 3631, 0), new WorldPoint(1489, 3640, 0)))
+            .put("Do the crab dance by the monument on Wintumber Island. Equip a crab helmet and a crab claw.",
+                    new DigArea(new WorldPoint(2068, 2607, 0), new WorldPoint(2070, 2609, 0)))
             .build();
 }
