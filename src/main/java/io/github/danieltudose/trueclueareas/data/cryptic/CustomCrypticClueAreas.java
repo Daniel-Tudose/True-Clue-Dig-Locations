@@ -49,6 +49,7 @@ public class CustomCrypticClueAreas {
         m.put(new WorldPoint(2324, 2772, 0),  new DigArea(new WorldPoint(2318, 2766, 0), new WorldPoint(2330, 2778, 0))); // Tear of the Soul beach - Hard
         m.put(new WorldPoint(1490, 3257, 0),  new DigArea(new WorldPoint(1490, 3256, 0), new WorldPoint(1490, 3258, 0))); // Flax field at Quetzacalli Gorge - Easy
         m.put(new WorldPoint(1390, 2926, 0),  new DigArea(new WorldPoint(1389, 2925, 0), new WorldPoint(1393, 2928, 0))); // Aldarin bank - Easy
+        m.put(new WorldPoint(3221, 3219, 0),  new DigArea(new WorldPoint(3218, 3212, 0), new WorldPoint(3225, 3223, 0))); // Lumbridge spawn - Easy
         CRYPTIC_STEPS_CUSTOM_AREAS = Collections.unmodifiableMap(m);
     }
 }
