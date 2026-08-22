@@ -72,5 +72,7 @@ public class EasyEmoteClueAreas {
                     new DigArea(new WorldPoint(3161, 3461, 0), new WorldPoint(3170, 3470, 0)))
             .put("Yawn in Draynor marketplace. Equip studded leather chaps, an iron kiteshield and a steel longsword.",
                     new DigArea(new WorldPoint(3075, 3245, 0), new WorldPoint(3086, 3255, 0)))
+            .put("Dance a jig by the entrance to the Fishing Guild. Equip an emerald ring, a sapphire amulet, and a bronze chain body.",
+                    new DigArea(new WorldPoint(2608, 3390, 0), new WorldPoint(2613, 3393, 0)))
             .build();
 }
