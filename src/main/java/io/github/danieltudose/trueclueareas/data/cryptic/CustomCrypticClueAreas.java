@@ -51,6 +51,7 @@ public class CustomCrypticClueAreas {
         m.put(new WorldPoint(1390, 2926, 0),  new DigArea(new WorldPoint(1389, 2925, 0), new WorldPoint(1393, 2928, 0))); // Aldarin bank - Easy
         m.put(new WorldPoint(3221, 3219, 0),  new DigArea(new WorldPoint(3218, 3212, 0), new WorldPoint(3225, 3223, 0))); // Lumbridge spawn - Easy
         m.put(new WorldPoint(1418, 3591, 0),  new DigArea(new WorldPoint(1415, 3589, 0), new WorldPoint(1419, 3593, 0))); // South-east of Lake Molch - Easy
+        m.put(new WorldPoint(2529, 2838, 0),  new DigArea(new WorldPoint(2528, 2836, 0), new WorldPoint(2531, 2840, 0))); // Under Ithoi the Navigator's cabin - Easy
         CRYPTIC_STEPS_CUSTOM_AREAS = Collections.unmodifiableMap(m);
     }
 }
