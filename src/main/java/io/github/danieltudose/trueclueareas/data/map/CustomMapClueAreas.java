@@ -24,6 +24,7 @@ public class CustomMapClueAreas {
         m.put(new WorldPoint(2651, 3231, 0),  new DigArea(new WorldPoint(2650, 3231, 0), 3)); // South of East Ardougne (DJP Fairy ring) - Medium
         m.put(new WorldPoint(2924, 3210, 0),  new DigArea(new WorldPoint(2924, 3209, 0), 3)); // Behind chemist's house Rimmington - Medium
         m.put(new WorldPoint(2612, 3482, 0),  new DigArea(new WorldPoint(2612, 3481, 0), 3)); // Galahad's house; McGrubor's Wood (ALS Fairy Ring) - Easy
+        m.put(new WorldPoint(3110, 3152, 0),  new DigArea(new WorldPoint(3109, 3153, 0), 3)); // South of Wizard's Tower (DIS Fairy Ring) - Easy
         MAP_STEPS_CUSTOM_AREAS = Collections.unmodifiableMap(m);
     }
 }
