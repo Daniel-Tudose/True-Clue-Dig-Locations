@@ -47,6 +47,7 @@ public class CustomCrypticClueAreas {
         m.put(new WorldPoint(1179, 3626, 0),  new DigArea(new WorldPoint(1171, 3621, 0), new WorldPoint(1183, 3633, 0))); // Fire beside Ket'sal K'uk (Kebos Swamp) - Hard
         m.put(new WorldPoint(3488, 3289, 0),  new DigArea(new WorldPoint(3486, 2385, 0), new WorldPoint(3490, 3289, 0))); // Road intersection in Mort'ton - Hard
         m.put(new WorldPoint(2324, 2772, 0),  new DigArea(new WorldPoint(2318, 2766, 0), new WorldPoint(2330, 2778, 0))); // Tear of the Soul beach - Hard
+        m.put(new WorldPoint(1490, 3257, 0),  new DigArea(new WorldPoint(1490, 3256, 0), new WorldPoint(1490, 3258, 0))); // Flax field at Quetzacalli Gorge - Easy
         CRYPTIC_STEPS_CUSTOM_AREAS = Collections.unmodifiableMap(m);
     }
 }
