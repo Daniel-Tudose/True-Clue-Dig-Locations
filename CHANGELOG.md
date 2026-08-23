@@ -1,6 +1,6 @@
 # Changelog
 
-#### 1.3.9 — 2026-08-23
+#### 1.4.01 — 2026-08-23
 - **[Added]** The remaining Easy and Elite Emote steps — **Easy Emotes and Elite Emotes are now 100% complete!**
 - **[Added]** The last 2 Hard Cryptic steps (Burgh de Rott fishing spots and Stronghold of Security entrance).
 - **[Added]** Custom dig areas for 4 Easy Map steps (Standing stones N of Falador, Crossroads N of Falador, S of Wizard's Tower, and Galahad's house).
