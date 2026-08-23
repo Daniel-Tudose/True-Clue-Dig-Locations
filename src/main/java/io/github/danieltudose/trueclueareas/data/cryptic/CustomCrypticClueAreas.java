@@ -54,6 +54,8 @@ public class CustomCrypticClueAreas {
         m.put(new WorldPoint(2529, 2838, 0),  new DigArea(new WorldPoint(2528, 2836, 0), new WorldPoint(2531, 2840, 0))); // Under Ithoi the Navigator's cabin - Easy
         m.put(new WorldPoint(3307, 9505, 0),  new DigArea(new WorldPoint(3306, 9504, 0), new WorldPoint(3308, 9505, 0))); // Entomologist, Kalphite Cave - Elite
         m.put(new WorldPoint(1639, 3673, 0),  new DigArea(new WorldPoint(1630, 3665, 0), new WorldPoint(1643, 3681, 0))); // Center Kourend statue - Easy
+        m.put(new WorldPoint(3547, 3183, 0),  new DigArea(new WorldPoint(3535, 3175, 0), new WorldPoint(3572, 3189, 0))); // Fishing spot southeast of Burgh de Rott - Hard
+        m.put(new WorldPoint(3081, 3421, 0),  new DigArea(new WorldPoint(3079, 3419, 0), new WorldPoint(3083, 3423, 0))); // Stronghold of Security entrance - Hard
         CRYPTIC_STEPS_CUSTOM_AREAS = Collections.unmodifiableMap(m);
     }
 }
