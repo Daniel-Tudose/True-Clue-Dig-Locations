@@ -29,6 +29,9 @@ public class CustomMapClueAreas {
         m.put(new WorldPoint(3043, 3398, 0),  new DigArea(new WorldPoint(3043, 3399, 0), 3)); // Standing stones north of Falador - Easy
         m.put(new WorldPoint(3166, 3361, 0),  new DigArea(new WorldPoint(3167, 3360, 0), 3)); // West of Champion Guild - Easy
         m.put(new WorldPoint(3290, 3374, 0),  new DigArea(new WorldPoint(3290, 3373, 0), 3)); // South-east Varrock mine - Easy
+        m.put(new WorldPoint(3434, 3265, 0),  new DigArea(new WorldPoint(3434, 3266, 0), 3)); // South of Mort'ton (BIP Fairy Ring) - Medium
+        m.put(new WorldPoint(2907, 3295, 0),  new DigArea(new WorldPoint(2906, 3294, 0), 3)); // West of Crafting Guild - Medium
+        m.put(new WorldPoint(2666, 3562, 0),  new DigArea(new WorldPoint(2667, 3562, 0), 3)); // North of Seers' Village - Medium
         MAP_STEPS_CUSTOM_AREAS = Collections.unmodifiableMap(m);
     }
 }
