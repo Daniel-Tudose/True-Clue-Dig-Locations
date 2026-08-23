@@ -27,6 +27,8 @@ public class CustomMapClueAreas {
         m.put(new WorldPoint(3110, 3152, 0),  new DigArea(new WorldPoint(3109, 3153, 0), 3)); // South of Wizard's Tower (DIS Fairy Ring) - Easy
         m.put(new WorldPoint(2970, 3415, 0),  new DigArea(new WorldPoint(2970, 3414, 0), 3)); // Crossroads north of Falador - Easy
         m.put(new WorldPoint(3043, 3398, 0),  new DigArea(new WorldPoint(3043, 3399, 0), 3)); // Standing stones north of Falador - Easy
+        m.put(new WorldPoint(3166, 3361, 0),  new DigArea(new WorldPoint(3167, 3360, 0), 3)); // West of Champion Guild - Easy
+        m.put(new WorldPoint(3290, 3374, 0),  new DigArea(new WorldPoint(3290, 3373, 0), 3)); // South-east Varrock mine - Easy
         MAP_STEPS_CUSTOM_AREAS = Collections.unmodifiableMap(m);
     }
 }
