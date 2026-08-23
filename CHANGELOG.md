@@ -1,5 +1,15 @@
 # Changelog
 
+#### 1.3.9 — 2026-08-23
+- **[Added]** The remaining Easy and Elite Emote steps — **Easy Emotes and Elite Emotes are now 100% complete!**
+- **[Added]** The last 2 Hard Cryptic steps (Burgh de Rott fishing spots and Stronghold of Security entrance).
+- **[Added]** Custom dig areas for 4 Easy Map steps (Standing stones N of Falador, Crossroads N of Falador, S of Wizard's Tower, and Galahad's house).
+- **[Added]** Custom dig areas for Easy Cryptic steps (Ithoi's cabin, SE of Lake Molch, Lumbridge spawn, Aldarin bank, Quetzacalli Gorge flax field, and Great Kourend statue).
+- **[Added]** Custom dig areas for Medium, Elite, and Master Cryptic steps (South of Mort'ton, West of Crafting Guild, North of Seers' Village, Kalphite Cave entomologist, and Varrock Museum Terrorbird display).
+- **[Added]** Support for 1 Medium Emote step ("Clap on Mount Karuulm").
+- **[Fixed]** Bug where diggable Master Cryptic steps would not show the dig area overlay when opening the clue scroll for the first time.
+- **[Fixed]** Bug where the overlay persisted on screen after completing a clue step.
+
 #### 1.4.00 — 2026-08-14
 - **[Feature]** Added a new **Misc** category in the configuration panel to allow independent toggle/color configuration for Music clues.
 - **[Added]** Support for Music clue steps area highlights where you can play the song to Cecilia. Also for "Equip an abyssal whip in front of the abyssal demons of the Slayer Tower." Master Sherlock step.
