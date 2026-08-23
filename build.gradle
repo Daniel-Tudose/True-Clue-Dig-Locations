@@ -28,7 +28,7 @@ dependencies {
 }
 
 group = 'io.github.danieltudose'
-version = '1.4.00'
+version = '1.4.01'
 
 tasks.withType(JavaCompile).configureEach {
 	options.encoding = 'UTF-8'
