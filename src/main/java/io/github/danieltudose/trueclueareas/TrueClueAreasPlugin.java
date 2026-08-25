@@ -130,8 +130,6 @@ public class TrueClueAreasPlugin extends Plugin {
 					.filter(e -> e.getKey().equalsIgnoreCase(emoteClue.getText()))
 					.map(Map.Entry::getValue)
 					.findFirst().orElse(null);
-			//log.info("Area found: {}", area != null);
-			//log.info("Setting overlay: {}", area != null ? area.getRectCount() + " rects" : "null");
 			if (area != null) {
 				overlay.setDigArea(area, TrueClueAreasOverlay.ClueType.EMOTE);
 			}
@@ -152,27 +150,24 @@ public class TrueClueAreasPlugin extends Plugin {
 		if (newClue instanceof CrypticClue) {
 			CrypticClue crypticClue = (CrypticClue) newClue;
 			if (crypticClue.getItemIds().stream().anyMatch(SKIP_CRYPTIC_CLUE_IDS::contains)) return;
-			if (crypticClue.getItemIds().contains(ItemID.TRAIL_CLUE_MASTER)) return;
-			if (crypticClue.isRequiresSpade()) {
-				WorldPoint loc = crypticClue.getLocation(cluePlugin);
-				if (loc == null) return;
 
+			WorldPoint loc = crypticClue.getLocation(cluePlugin);
+			if (loc != null) {
 				DigArea customArea = CRYPTIC_STEPS_CUSTOM_AREAS.get(loc);
 				if (customArea != null) {
 					overlay.setDigArea(customArea, TrueClueAreasOverlay.ClueType.MAP);
 					return;
 				}
-
-				boolean isMaster = crypticClue.getItemIds().contains(ItemID.TRAIL_CLUE_MASTER);
-				overlay.setDigArea(new DigArea(loc, isMaster ? 7 : 3), TrueClueAreasOverlay.ClueType.MAP);
-				return;
 			}
+
+			if (!crypticClue.isRequiresSpade()) return;
+			if (loc == null) return;
+			boolean isMaster = crypticClue.getItemIds().contains(ItemID.TRAIL_CLUE_MASTER);
+			overlay.setDigArea(new DigArea(loc, isMaster ? 7 : 3), TrueClueAreasOverlay.ClueType.MAP);
 		}
 
-		if (newClue instanceof MusicClue) {
-			overlay.setDigArea(
-					new DigArea(new WorldPoint(2986, 3380, 0), new WorldPoint(2994, 3388, 0)),
-					TrueClueAreasOverlay.ClueType.MISC);
+		if (newClue instanceof ThreeStepCrypticClue) {
+			handleThreeStepCryptic((ThreeStepCrypticClue) newClue, cluePlugin);
 			return;
 		}
 
@@ -180,13 +175,21 @@ public class TrueClueAreasPlugin extends Plugin {
 			CoordinateClue coordClue = (CoordinateClue) newClue;
 			if (coordClue.getEnemy() == ARMADYLEAN_OR_BANDOSIAN_GUARD
 					|| coordClue.getEnemy() == ARMADYLEAN_GUARD
-					|| coordClue.getEnemy() == BANDOSIAN_GUARD) return; // Skip Elite coordinate clues to avoid a redundant overlay since they are just 1 tile
+					|| coordClue.getEnemy() == BANDOSIAN_GUARD) return;
 			WorldPoint loc = coordClue.getLocation(cluePlugin);
 			if (loc == null) return;
 			DigArea custom = COORDINATE_STEPS_CUSTOM_AREAS.get(loc);
 			overlay.setDigArea(custom != null ? custom : new DigArea(loc, 3), TrueClueAreasOverlay.ClueType.COORDINATE);
+			return;
+		}
+
+		if (newClue instanceof MusicClue) {
+			overlay.setDigArea(
+					new DigArea(new WorldPoint(2986, 3380, 0), new WorldPoint(2994, 3388, 0)),
+					TrueClueAreasOverlay.ClueType.MISC);
 		}
 	}
+
 
 	private void updateHotColdFromBasePlugin(HotColdClue hotColdClue, ClueScrollPlugin cluePlugin) {
 		WorldPoint[] locations = hotColdClue.getLocations(cluePlugin);
@@ -234,53 +237,8 @@ public class TrueClueAreasPlugin extends Plugin {
 					.findFirst().orElse(null);
 			if (emoteArea != null) {
 				overlay.setDigArea(emoteArea, TrueClueAreasOverlay.ClueType.EMOTE);
-				return;
 			}
-
-			ClueScrollPlugin cluePlugin = getClueScrollPlugin();
-			if (cluePlugin == null) return;
-			ClueScroll active = cluePlugin.getClue();
-
-			if (active instanceof CrypticClue) {
-				CrypticClue crypticClue = (CrypticClue) active;
-				if (crypticClue.isRequiresSpade() && crypticClue.getItemIds().contains(ItemID.TRAIL_CLUE_MASTER)) {
-					WorldPoint loc = crypticClue.getLocation(cluePlugin);
-					if (loc != null) {
-						DigArea custom = CRYPTIC_STEPS_CUSTOM_AREAS.get(loc);
-						overlay.setDigArea(custom != null ? custom : new DigArea(loc, 7), TrueClueAreasOverlay.ClueType.MAP);
-					}
-				}
-				return;
-			}
-
-			if (active instanceof ThreeStepCrypticClue) {
-				handleThreeStepCryptic((ThreeStepCrypticClue) active, cluePlugin);
-				return;
-			}
-
-			if (active == null) {
-				clientThread.invokeLater(() -> {
-					ClueScrollPlugin retryPlugin = getClueScrollPlugin();
-					if (retryPlugin == null) return;
-					ClueScroll retryClue = retryPlugin.getClue();
-					if (retryClue instanceof ThreeStepCrypticClue) {
-						handleThreeStepCryptic((ThreeStepCrypticClue) retryClue, retryPlugin);
-					} else if (retryClue instanceof CrypticClue) {
-						CrypticClue crypticClue = (CrypticClue) retryClue;
-						if (crypticClue.isRequiresSpade() && crypticClue.getItemIds().contains(ItemID.TRAIL_CLUE_MASTER)) {
-							WorldPoint loc = crypticClue.getLocation(retryPlugin);
-							if (loc != null) {
-								DigArea custom = CRYPTIC_STEPS_CUSTOM_AREAS.get(loc);
-								overlay.setDigArea(custom != null ? custom : new DigArea(loc, 7), TrueClueAreasOverlay.ClueType.MAP);
-							}
-						}
-					}
-				});
-				return;
-			}
-
-			if (active instanceof EmoteClue) return;
-			onClueChanged(active, cluePlugin);
+			// Nothing else. All other types are handled by onClueChanged via onGameTick.
 		});
 	}
 
@@ -288,9 +246,9 @@ public class TrueClueAreasPlugin extends Plugin {
 		List<DigArea> areas = new ArrayList<>();
 
 		for (Map.Entry<CrypticClue, Boolean> step : threeStep.getClueSteps()) {
-			if (step.getValue()) continue;
+			if (step.getValue()) continue;        // step already completed
 			CrypticClue sub = step.getKey();
-			if (!sub.isRequiresSpade()) continue;
+			if (!sub.isRequiresSpade()) continue; // NPC or object step, not a dig
 
 			WorldPoint loc = sub.getLocation(cluePlugin);
 			if (loc == null) continue;
@@ -305,6 +263,7 @@ public class TrueClueAreasPlugin extends Plugin {
 			overlay.clearDigArea();
 		}
 	}
+
 
 	private void handleUriDialog() {
 		clientThread.invokeLater(() -> {
