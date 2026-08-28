@@ -58,6 +58,7 @@ public class CustomCrypticClueAreas {
         m.put(new WorldPoint(3081, 3421, 0),  new DigArea(new WorldPoint(3079, 3419, 0), new WorldPoint(3083, 3423, 0))); // Stronghold of Security entrance - Hard
         m.put(new WorldPoint(1756, 4940, 0),  new DigArea(new WorldPoint(1753, 4936, 0), new WorldPoint(1759, 4942, 0))); // Terrorbird display in Varrock Museum - Master
         m.put(new WorldPoint(2523, 3739, 0),  new DigArea(new WorldPoint(2523, 3739, 0), new WorldPoint(2524, 3740, 0))); // Waterbirth Island dungeon - Elite
+        m.put(new WorldPoint(2458, 3504, 0),  new DigArea(new WorldPoint(2459, 3505, 0), new WorldPoint(2524, 3740, 0))); // Near giant mushrooms near Grand Tree - Easy
         CRYPTIC_STEPS_CUSTOM_AREAS = Collections.unmodifiableMap(m);
     }
 }
