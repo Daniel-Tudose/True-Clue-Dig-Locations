@@ -1,5 +1,12 @@
 # Changelog
 
+#### 1.4.02 — 2026-09-02
+- **[Added]** Custom dig area highlights for 4 Elite Cryptic steps (Toad batta in Tarn's Lair, Telescope near Broken Handz, Center of Warriors' Guild, and Waterbirth Island Dungeon).
+- **[Added]** Custom dig area highlight for Easy Cryptic step ("Giant mushrooms near Grand Tree").
+- **[Fixed]** Core issue with overlays persisting on screen or failing to render properly.
+- **[Fixed]** Area coordinates for "Think in the center of the Observatory" Medium Emote step.
+- **[Modified]** Reduced highlighted overlay bounds for the Elite Emote step "Headbang at the top of the Slayer Tower".
+
 #### 1.4.01 — 2026-08-23
 - **[Added]** The remaining Easy and Elite Emote steps — **Easy Emotes and Elite Emotes are now 100% complete!**
 - **[Added]** The last 2 Hard Cryptic steps (Burgh de Rott fishing spots and Stronghold of Security entrance).
