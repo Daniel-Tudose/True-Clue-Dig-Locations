@@ -19,7 +19,7 @@ public class MediumEmoteClueAreas {
             .put("Cheer in the Barbarian Agility Arena. Headbang before you talk to me. Equip a steel platebody, maple shortbow and a Wilderness cape.",
                     new DigArea(new WorldPoint(2529, 3542, 0), new WorldPoint(2553, 3556,0)))
             .put("Think in the centre of the Observatory. Spin before you talk to me. Equip a mithril chain body, green dragonhide chaps and a ruby amulet.",
-                    new DigArea(new WorldPoint(2438, 3159, 0), new WorldPoint(2443, 3163,0)))
+                    new DigArea(new WorldPoint(2439, 3159, 0), new WorldPoint(2443, 3163,0)))
             .put("Jump for joy in Yanille bank. Dance a jig before you talk to me. Equip a brown apron, adamantite medium helmet and snakeskin chaps.",
                     new DigArea(new WorldPoint(2609, 3088, 0), new WorldPoint(2613, 3097,0)))
             .put("Shrug in Catherby bank. Yawn before you talk to me. Equip a maple longbow, green d'hide chaps and an iron med helm.",
