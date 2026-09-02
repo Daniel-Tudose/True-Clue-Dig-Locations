@@ -60,6 +60,6 @@ Most areas are square:
 
 ### Adding Cryptic Clue Data
 - [ ] [Easy Cryptic Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/15)
-- [ ] [Hard Cryptic Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/16)
+- [x] [Hard Cryptic Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/16)
 - [ ] [Elite Cryptic Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/22)
 - [ ] [Master Cryptic Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/17)
