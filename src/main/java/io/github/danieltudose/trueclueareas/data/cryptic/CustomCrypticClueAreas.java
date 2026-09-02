@@ -59,6 +59,9 @@ public class CustomCrypticClueAreas {
         m.put(new WorldPoint(1756, 4940, 0),  new DigArea(new WorldPoint(1753, 4936, 0), new WorldPoint(1759, 4942, 0))); // Terrorbird display in Varrock Museum - Master
         m.put(new WorldPoint(2523, 3739, 0),  new DigArea(new WorldPoint(2523, 3739, 0), new WorldPoint(2524, 3740, 0))); // Waterbirth Island dungeon - Elite
         m.put(new WorldPoint(2458, 3504, 0),  new DigArea(new WorldPoint(2459, 3505, 0), 3)); // Giant mushrooms near Grand Tree - Easy
+        m.put(new WorldPoint(3139, 4554, 0),  new DigArea(new WorldPoint(3138, 4554, 0), new WorldPoint(3140, 4555, 0))); // Toad batta (Tarn's lair) - Elite
+        m.put(new WorldPoint(2221, 3091, 0),  new DigArea(new WorldPoint(2220, 3091, 0), new WorldPoint(2221, 3092, 0))); // Telescope near Broken Handz - Elite
+        m.put(new WorldPoint(2867, 3546, 0),  new DigArea(new WorldPoint(2865, 3545, 0), new WorldPoint(2867, 3547, 0))); // Center of Warrior's guild - Elite
         CRYPTIC_STEPS_CUSTOM_AREAS = Collections.unmodifiableMap(m);
     }
 }
