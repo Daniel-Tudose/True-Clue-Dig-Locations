@@ -45,21 +45,21 @@ Most areas are square:
 
 ### Adding Map Clue Data
 - [x] [Beginner Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/1)
-- [ ] [Easy Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/4)
-- [ ] [Medium Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/5)
+- [x] [Easy Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/4)
+- [x] [Medium Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/5)
 - [x] [Hard Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/6)
-- [ ] [Elite Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/7)
+- [x] [Elite Map Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/7)
 
 ### Adding Emote Clue Data
 - [x] [Beginner Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/3)
-- [ ] [Easy Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/8)
-- [ ] [Medium Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/9)
+- [x] [Easy Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/8)
+- [x] [Medium Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/9)
 - [x] [Hard Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/10)
-- [ ] [Elite Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/11)
+- [x] [Elite Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/11)
 - [x] [Master Emote Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/12)
 
 ### Adding Cryptic Clue Data
-- [ ] [Easy Cryptic Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/15)
+- [x] [Easy Cryptic Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/15)
 - [x] [Hard Cryptic Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/16)
 - [ ] [Elite Cryptic Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/22)
 - [ ] [Master Cryptic Clue Steps Thread](https://github.com/Daniel-Tudose/True-Clue-Dig-Locations/issues/17)
