@@ -56,5 +56,7 @@ public class MediumEmoteClueAreas {
                     new DigArea(new WorldPoint(2849, 3425, 0), new WorldPoint(2857, 3431, 0)))
             .put("Clap your hands north of Mount Karuulm Spin before you talk to me. Equip an adamant warhammer, a ring of life and a pair of mithril boots.",
                     new DigArea(new WorldPoint(1292, 3837, 0), new WorldPoint(1323, 3854, 0)))
+            .put("Dance in the dark caves beneath Lumbridge Swamp. Blow a kiss before you talk to me. Equip an air staff, Bronze full helm and an amulet of power.",
+                    new DigArea(new WorldPoint(3166, 9568, 0), new WorldPoint(3172, 9574, 0)))
             .build();
 }
