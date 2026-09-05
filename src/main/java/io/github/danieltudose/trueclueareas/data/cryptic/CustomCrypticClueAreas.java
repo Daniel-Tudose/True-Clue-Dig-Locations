@@ -62,6 +62,7 @@ public class CustomCrypticClueAreas {
         m.put(new WorldPoint(3139, 4554, 0),  new DigArea(new WorldPoint(3138, 4554, 0), new WorldPoint(3140, 4555, 0))); // Toad batta (Tarn's lair) - Elite
         m.put(new WorldPoint(2221, 3091, 0),  new DigArea(new WorldPoint(2220, 3091, 0), new WorldPoint(2221, 3092, 0))); // Telescope near Broken Handz - Elite
         m.put(new WorldPoint(2867, 3546, 0),  new DigArea(new WorldPoint(2865, 3545, 0), new WorldPoint(2867, 3547, 0))); // Center of Warrior's guild - Elite
+        m.put(new WorldPoint(3069, 3935, 0),  new DigArea(new WorldPoint(3065, 3932, 0), new WorldPoint(3071, 3937, 0))); // Lava lake, west of the Mage Arena - Master
         CRYPTIC_STEPS_CUSTOM_AREAS = Collections.unmodifiableMap(m);
     }
 }
