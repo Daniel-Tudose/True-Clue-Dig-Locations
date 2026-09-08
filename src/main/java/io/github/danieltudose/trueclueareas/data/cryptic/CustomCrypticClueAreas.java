@@ -43,7 +43,7 @@ public class CustomCrypticClueAreas {
         m.put(new WorldPoint(3089, 3468, 0),  new DigArea(new WorldPoint(3088, 3469, 0), 3)); // Edgeville - R of the S yew tree - Hard
         m.put(new WorldPoint(1910, 4367, 0),  new DigArea(new WorldPoint(1911, 4367, 0), 3)); // Dagganoth ladder - Elite
         m.put(new WorldPoint(1179, 3626, 0),  new DigArea(new WorldPoint(1171, 3621, 0), new WorldPoint(1183, 3633, 0))); // Fire beside Ket'sal K'uk (Kebos Swamp) - Hard
-        m.put(new WorldPoint(3488, 3289, 0),  new DigArea(new WorldPoint(3486, 2385, 0), new WorldPoint(3490, 3289, 0))); // Road intersection in Mort'ton - Hard
+        m.put(new WorldPoint(3488, 3289, 0),  new DigArea(new WorldPoint(3488, 3287, 0), 5)); // Road intersection in Mort'ton - Hard
         m.put(new WorldPoint(2324, 2772, 0),  new DigArea(new WorldPoint(2318, 2766, 0), new WorldPoint(2330, 2778, 0))); // Tear of the Soul beach - Hard
         m.put(new WorldPoint(1490, 3257, 0),  new DigArea(new WorldPoint(1490, 3256, 0), new WorldPoint(1490, 3258, 0))); // Flax field at Quetzacalli Gorge - Easy
         m.put(new WorldPoint(1390, 2926, 0),  new DigArea(new WorldPoint(1389, 2925, 0), new WorldPoint(1393, 2928, 0))); // Aldarin bank - Easy
