@@ -1,5 +1,10 @@
 # Changelog
 
+#### 1.4.03 — 2026-09-08
+- **[Added]** The final Medium Emote step — **Emote clues across ALL tiers are now 100% complete!**
+- **[Added]** Custom dig areas for Cryptic steps: Lava lake, west of the Mage Arena (Master) and Fire next to Volcanic Mine entrance (Elite).
+- **[Fixed]** Area coordinates for the Mort'ton road intersection Hard Cryptic step and center tile alignment for the Volcanic Mine fire step.
+
 #### 1.4.02 — 2026-09-02
 - **[Added]** Custom dig area highlights for 4 Elite Cryptic steps (Toad batta in Tarn's Lair, Telescope near Broken Handz, Center of Warriors' Guild, and Waterbirth Island Dungeon).
 - **[Added]** Custom dig area highlight for Easy Cryptic step ("Giant mushrooms near Grand Tree").
