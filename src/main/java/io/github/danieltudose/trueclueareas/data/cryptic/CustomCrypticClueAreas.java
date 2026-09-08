@@ -17,7 +17,6 @@ public class CustomCrypticClueAreas {
             ItemID.TRAIL_ELITE_RIDDLE_EXP35,
             ItemID.TRAIL_ELITE_RIDDLE_EXP3,
             ItemID.TRAIL_ELITE_RIDDLE_EXP19,
-            ItemID.TRAIL_ELITE_RIDDLE_EXP4,
             ItemID.TRAIL_ELITE_RIDDLE_EXP37,
             ItemID.TRAIL_ELITE_RIDDLE_EXP38,
             ItemID.TRAIL_ELITE_RIDDLE_EXP39,
