@@ -7,18 +7,6 @@ import net.runelite.api.gameval.ItemID;
 import java.util.*;
 
 public class CustomCrypticClueAreas {
-
-    // Elite clues are single tile (base plugin already highlights them).
-    public static final Set<Integer> SKIP_CRYPTIC_CLUE_IDS = Set.of(
-            ItemID.TRAIL_ELITE_RIDDLE_EXP9,
-            ItemID.TRAIL_ELITE_RIDDLE_EXP34,
-            ItemID.TRAIL_ELITE_RIDDLE_EXP35,
-            ItemID.TRAIL_ELITE_RIDDLE_EXP3,
-            ItemID.TRAIL_ELITE_RIDDLE_EXP19,
-            ItemID.TRAIL_ELITE_RIDDLE_EXP39,
-            // add single-tile any tier clue item IDs here as discovered
-    );
-
     public static final Map<WorldPoint, DigArea> CRYPTIC_STEPS_CUSTOM_AREAS;
     static {
         Map<WorldPoint, DigArea> m = new HashMap<>();
