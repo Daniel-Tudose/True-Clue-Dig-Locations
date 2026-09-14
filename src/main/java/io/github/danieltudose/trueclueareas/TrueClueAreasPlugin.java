@@ -149,7 +149,6 @@ public class TrueClueAreasPlugin extends Plugin {
 
 		if (newClue instanceof CrypticClue) {
 			CrypticClue crypticClue = (CrypticClue) newClue;
-			if (crypticClue.getItemIds().stream().anyMatch(SKIP_CRYPTIC_CLUE_IDS::contains)) return;
 
 			WorldPoint loc = crypticClue.getLocation(cluePlugin);
 			if (loc != null) {
