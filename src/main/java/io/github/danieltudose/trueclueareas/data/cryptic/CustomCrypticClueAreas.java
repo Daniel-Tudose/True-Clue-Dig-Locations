@@ -10,8 +10,6 @@ public class CustomCrypticClueAreas {
 
     // Elite clues are single tile (base plugin already highlights them).
     public static final Set<Integer> SKIP_CRYPTIC_CLUE_IDS = Set.of(
-            //ItemID.TRAIL_ELITE_RIDDLE_EXP7, //This is most likely a 3x3 area (or a 7x7 area for master tier steps)  instead of the usual single tile highlighted by runelite's base clue plugin
-            //ItemID.TRAIL_ELITE_RIDDLE_EXP11, //This is bigger than a single tile (a 3x3?) - (elite cryptic step that says "Dig in front of the Law rift in the abyss")
             ItemID.TRAIL_ELITE_RIDDLE_EXP9,
             ItemID.TRAIL_ELITE_RIDDLE_EXP34,
             ItemID.TRAIL_ELITE_RIDDLE_EXP35,
@@ -61,6 +59,7 @@ public class CustomCrypticClueAreas {
         m.put(new WorldPoint(2867, 3546, 0),  new DigArea(new WorldPoint(2865, 3545, 0), new WorldPoint(2867, 3547, 0))); // Center of Warrior's guild - Elite
         m.put(new WorldPoint(3069, 3935, 0),  new DigArea(new WorldPoint(3065, 3932, 0), new WorldPoint(3071, 3937, 0))); // Lava lake, west of the Mage Arena - Master
         m.put(new WorldPoint(3816, 3810, 0),  new DigArea(new WorldPoint(3817, 3810, 0), 3)); // Fire next to Volcanic mine entrance - Elite
+        m.put(new WorldPoint(2780, 3783, 0),  new DigArea(new WorldPoint(2779, 3784, 0), 3)); // Trollweiss grows on Trollweiss mountain - Elite
         CRYPTIC_STEPS_CUSTOM_AREAS = Collections.unmodifiableMap(m);
     }
 }
