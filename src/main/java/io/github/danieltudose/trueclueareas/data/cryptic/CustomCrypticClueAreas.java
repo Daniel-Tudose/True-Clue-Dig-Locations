@@ -15,7 +15,6 @@ public class CustomCrypticClueAreas {
             ItemID.TRAIL_ELITE_RIDDLE_EXP35,
             ItemID.TRAIL_ELITE_RIDDLE_EXP3,
             ItemID.TRAIL_ELITE_RIDDLE_EXP19,
-            ItemID.TRAIL_ELITE_RIDDLE_EXP38,
             ItemID.TRAIL_ELITE_RIDDLE_EXP39,
             // add single-tile any tier clue item IDs here as discovered
     );
