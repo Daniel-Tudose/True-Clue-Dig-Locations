@@ -1,5 +1,9 @@
 # Changelog
 
+#### 1.4.04 — 2026-09-17
+- **[Added]** Custom dig area highlight for Elite Cryptic step ("Trollweiss mountain with sled"). meaning that elite cryptic steps are now COMPLETE!
+- **[Fixed]** Refactored Cryptic Clue logic, so it now shows all the cryptic areas correctly.
+
 #### 1.4.03 — 2026-09-08
 - **[Added]** The final Medium Emote step — **Emote clues across ALL tiers are now 100% complete!**
 - **[Added]** Custom dig areas for Cryptic steps: Lava lake, west of the Mage Arena (Master) and Fire next to Volcanic Mine entrance (Elite).
