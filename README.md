@@ -27,7 +27,7 @@ A RuneLite plugin that highlights the **true dig/emote area** for clue scroll st
 | **Medium** | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | N/A | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | N/A |
 | **Hard** | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green)     | N/A | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) |
 | **Elite** | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green)     | N/A | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) |
-| **Master** | N/A | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green)     | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![In Progress](https://img.shields.io/badge/Status-In_Progress-blue) |
+| **Master** | N/A | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green)     | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) | ![100% Implemented](https://img.shields.io/badge/Implemented-100%25-green) |
 
 ---
 ### [Contribute to the plugin here!](contributing.md)
