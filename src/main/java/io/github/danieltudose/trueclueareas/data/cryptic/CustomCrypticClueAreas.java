@@ -47,6 +47,7 @@ public class CustomCrypticClueAreas {
         m.put(new WorldPoint(3069, 3935, 0),  new DigArea(new WorldPoint(3065, 3932, 0), new WorldPoint(3071, 3937, 0))); // Lava lake, west of the Mage Arena - Master
         m.put(new WorldPoint(3816, 3810, 0),  new DigArea(new WorldPoint(3817, 3810, 0), 3)); // Fire next to Volcanic mine entrance - Elite
         m.put(new WorldPoint(2780, 3783, 0),  new DigArea(new WorldPoint(2779, 3784, 0), 3)); // Trollweiss grows on Trollweiss mountain - Elite
+        m.put(new WorldPoint(3055, 10338, 0),  new DigArea(new WorldPoint(3055, 10339, 0), 3)); // End of the Deep Wilderness Dungeon - Master
         CRYPTIC_STEPS_CUSTOM_AREAS = Collections.unmodifiableMap(m);
     }
 }
