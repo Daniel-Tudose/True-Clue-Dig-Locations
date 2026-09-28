@@ -1,5 +1,8 @@
 # Changelog
 
+#### 1.4.05 — 2026-09-28
+- **[Added]** The final Master Cryptic step — **All Cryptic clue steps are complete!**
+
 #### 1.4.04 — 2026-09-17
 - **[Added]** Custom dig area highlight for Elite Cryptic step ("Trollweiss mountain with sled"). meaning that elite cryptic steps are now COMPLETE!
 - **[Fixed]** Refactored Cryptic Clue logic, so it now shows all the cryptic areas correctly.
